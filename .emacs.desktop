@@ -2,35 +2,68 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Aug  5 20:49:05 2009
+;; Created Thu Aug  6 15:46:12 2009
 ;; Desktop file format version 206
 ;; Emacs version 22.2.1
 
 ;; Global section:
 (setq extended-command-history nil)
-(setq file-name-history '("/home/m4nic/.emacs.d/init-ido.el" "/home/m4nic/.emacs.d/init-fonts.el" "/home/m4nic/Projects/emacs-examples/conf-2/site-lisp/color-theme-tango-2/color-theme-tango-2.el" "/home/m4nic/.emacs.d/custom.el" "/home/m4nic/.emacs.d/init-gnus.el" "/home/m4nic/.emacs.d/site-lisp/smex/README.markdown" "/home/m4nic/.emacs.d/smex.save" "/home/m4nic/.emacs.d/site-lisp/smex/smex.el" "/home/m4nic/.emacs.d/init-haskell.el" "/home/m4nic/.emacs.d/site-lisp/haskell-mode/haskell-site-file.el" "/home/m4nic/.emacs.d/init-haskell.el" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/.emacs.d/init-haskell.el" "/home/m4nic/.emacs.d/init-themes.el" "/home/m4nic/.emacs" "/home/m4nic/.emacs.d/site-lisp/color-theme/themes/color-theme-library.el" "/home/m4nic/.emacs.d/site-lisp/color-theme/color-theme.el" "/home/m4nic/.emacs.d/site-lisp/color-theme/AUTHORS" "/home/m4nic/.emacs.d/init-fonts.el" "/home/m4nic/.emacs.d/init-themes.el" "/home/m4nic/.emacs.d/init.el" "/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/init.el" "/home/m4nic/.emacs" "/home/m4nic/.emacs.d/site-lisp/smex/smex.el" "/home/m4nic/.emacs.d/site-lisp/smex/README.markdown" "/home/m4nic/.emacs.d/init-ido.el" "/home/m4nic/.emacs.d/site-lisp/smex/smex.el" "/home/m4nic/.emacs" "/home/m4nic/.emacs.d/site-lisp/smex/smex.el" "/home/m4nic/.emacs.d/site-lisp/smex/README.markdown"))
-(setq ido-last-directory-list '(("/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" . "auto-save-list/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/" . "BUGFIXING/") ("/home/m4nic/Projects/haskell/bolt/" . "bolt-cabal/") ("/home/m4nic/Planning/data/" . "6d/") ("/home/m4nic/.emacs.d/site-lisp/" . "smex/") ("/home/m4nic/Projects/emacs-examples/" . "conf-0-first-attempt/") ("/home/m4nic/Planning/" . "data/") ("/usr/share/emacs22/" . "site-lisp/") ("/usr/share/" . "emacs22/") ("/home/m4nic/Projects/emacs/" . "Pymacs-0.23/") ("/home/m4nic/Projects/python/market/market/templates/" . "trading/") ("/home/m4nic/Projects/python/market/market/" . "controllers/") ("/home/m4nic/Projects/python/" . "market/") ("/home/m4nic/Projects/haskell/bolt/mks/" . "app/") ("/home/m4nic/Projects/lisp/clbuild/source/" . "casino/") ("/usr/" . "share/") ("/home/" . "m4nic/") ("/home/m4nic/" . ".emacs.d/") ("/" . "home/") ("/home/m4nic/.emacs.d/site-dir/" . "icicles/") ("/home/m4nic/.emacs.d/" . "site-lisp/") ("/home/m4nic/Projects/lisp/clbuild/" . "source/") ("/home/m4nic/Projects/lisp/" . "clbuild/") ("/home/m4nic/Projects/" . "emacs-examples/")))
-(setq ido-work-directory-list '("/home/m4nic/.emacs.d/" "/home/m4nic/.emacs.d/site-lisp/smex/" "/home/m4nic/.emacs.d/site-lisp/haskell-mode/" "/home/m4nic/" "/home/m4nic/.emacs.d/site-lisp/color-theme/themes/" "/home/m4nic/.emacs.d/site-lisp/color-theme/" "/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" "/home/m4nic/.emacs.d/site-lisp/vimpulse/" "/home/m4nic/Projects/python/market/market/controllers/" "/home/m4nic/Desktop/" "/home/m4nic/.emacs.d/site-lisp/org-mode/" "/home/m4nic/Planning/projects/" "/home/m4nic/Planning/" "/home/m4nic/Projects/haskell/bolt/bolt-cabal/" "/home/m4nic/Projects/haskell/" "~/.emacs.d/" "/home/m4nic/Projects/emacs-examples/conf-2/" "/" "/home/m4nic/Planning/support/" "/home/m4nic/.emacs.d/site-dir/ecb-2.40/info-help/" "/home/m4nic/Planning/learning/" "/home/m4nic/Planning/financial/" "/usr/share/emacs22/site-lisp/" "/home/m4nic/Projects/emacs/" "/home/m4nic/.emacs.d/site-dir/" "/home/m4nic/Projects/python/market/market/templates/trading/" "/home/m4nic/Projects/python/market/market/templates/" "/home/m4nic/Projects/python/market/market/" "/home/m4nic/Projects/lisp/clbuild/source/casino/" "/home/m4nic/Projects/lisp/" "/home/m4nic/Projects/lisp/clbuild/source/elephant/" "/usr/sbin/" "/home/m4nic/.emacs.d/site-dir/icicles/" "/home/m4nic/Projects/lisp/clbuild/_darcs/"))
-(setq ido-work-file-list '("init-ido.el" "init-fonts.el" "custom.el" "init-gnus.el" "README.markdown" "smex.save" "smex.el" "init-haskell.el" "haskell-site-file.el" ".viper"))
+(setq file-name-history '("/home/m4nic/Projects/lisp/clbuild/source/casino/casino.lisp" "/home/m4nic/.emacs.d/custom.el" "/home/m4nic/.emacs.d/init.el" "/tmp/test.py" "/home/m4nic/.emacs.d/init.el" "/home/m4nic/.emacs.d/init-ido.el" "/home/m4nic/.emacs.d/init-fonts.el" "/home/m4nic/Projects/emacs-examples/conf-2/site-lisp/color-theme-tango-2/color-theme-tango-2.el" "/home/m4nic/.emacs.d/custom.el" "/home/m4nic/.emacs.d/init-gnus.el" "/home/m4nic/.emacs.d/site-lisp/smex/README.markdown" "/home/m4nic/.emacs.d/smex.save" "/home/m4nic/.emacs.d/site-lisp/smex/smex.el" "/home/m4nic/.emacs.d/init-haskell.el" "/home/m4nic/.emacs.d/site-lisp/haskell-mode/haskell-site-file.el" "/home/m4nic/.emacs.d/init-haskell.el" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/.emacs.d/init-haskell.el" "/home/m4nic/.emacs.d/init-themes.el" "/home/m4nic/.emacs" "/home/m4nic/.emacs.d/site-lisp/color-theme/themes/color-theme-library.el" "/home/m4nic/.emacs.d/site-lisp/color-theme/color-theme.el" "/home/m4nic/.emacs.d/site-lisp/color-theme/AUTHORS" "/home/m4nic/.emacs.d/init-fonts.el" "/home/m4nic/.emacs.d/init-themes.el" "/home/m4nic/.emacs.d/init.el" "/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/init.el" "/home/m4nic/.emacs" "/home/m4nic/.emacs.d/site-lisp/smex/smex.el" "/home/m4nic/.emacs.d/site-lisp/smex/README.markdown"))
+(setq ido-last-directory-list '(("/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" . "auto-save-list/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/" . "BUGFIXING/") ("/home/m4nic/Projects/haskell/bolt/" . "bolt-cabal/") ("/home/m4nic/Planning/data/" . "6d/") ("/home/m4nic/.emacs.d/site-lisp/" . "smex/") ("/home/m4nic/Projects/emacs-examples/" . "conf-0-first-attempt/") ("/home/m4nic/Planning/" . "data/") ("/usr/share/emacs22/" . "site-lisp/") ("/usr/share/" . "emacs22/") ("/home/m4nic/Projects/emacs/" . "Pymacs-0.23/") ("/home/m4nic/Projects/python/market/market/templates/" . "trading/") ("/home/m4nic/Projects/python/market/market/" . "controllers/") ("/home/m4nic/Projects/python/" . "market/") ("/home/m4nic/Projects/haskell/bolt/mks/" . "app/") ("/home/m4nic/Projects/lisp/clbuild/source/" . "casino/") ("/usr/" . "share/") ("/home/" . "m4nic/") ("/home/m4nic/" . ".emacs.d/") ("/" . "home/") ("/home/m4nic/.emacs.d/site-dir/" . "icicles/") ("/home/m4nic/.emacs.d/" . "site-lisp/") ("/home/m4nic/Projects/lisp/clbuild/" . "source/") ("/home/m4nic/Projects/lisp/" . "clbuild/") ("/home/m4nic/Projects/" . "lisp/")))
+(setq ido-work-directory-list '("/home/m4nic/Projects/lisp/clbuild/source/casino/" "/home/m4nic/.emacs.d/" "/tmp/" "/home/m4nic/.emacs.d/site-lisp/smex/" "/home/m4nic/.emacs.d/site-lisp/haskell-mode/" "/home/m4nic/" "/home/m4nic/.emacs.d/site-lisp/color-theme/themes/" "/home/m4nic/.emacs.d/site-lisp/color-theme/" "/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" "/home/m4nic/.emacs.d/site-lisp/vimpulse/" "/home/m4nic/Projects/python/market/market/controllers/" "/home/m4nic/Desktop/" "/home/m4nic/.emacs.d/site-lisp/org-mode/" "/home/m4nic/Planning/projects/" "/home/m4nic/Planning/" "/home/m4nic/Projects/haskell/bolt/bolt-cabal/" "/home/m4nic/Projects/haskell/" "~/.emacs.d/" "/home/m4nic/Projects/emacs-examples/conf-2/" "/" "/home/m4nic/Planning/support/" "/home/m4nic/.emacs.d/site-dir/ecb-2.40/info-help/" "/home/m4nic/Planning/learning/" "/home/m4nic/Planning/financial/" "/usr/share/emacs22/site-lisp/" "/home/m4nic/Projects/emacs/" "/home/m4nic/.emacs.d/site-dir/" "/home/m4nic/Projects/python/market/market/templates/trading/" "/home/m4nic/Projects/python/market/market/templates/" "/home/m4nic/Projects/python/market/market/" "/home/m4nic/Projects/lisp/" "/home/m4nic/Projects/lisp/clbuild/source/elephant/" "/usr/sbin/" "/home/m4nic/.emacs.d/site-dir/icicles/" "/home/m4nic/Projects/lisp/clbuild/_darcs/"))
+(setq ido-work-file-list '("casino.lisp" "custom.el" "init.el" "test.py" "init-ido.el" "init-fonts.el" "init-gnus.el" "README.markdown" "smex.save" "smex.el"))
 (setq grep-history nil)
 (setq compile-history nil)
-(setq minibuffer-history '("colortang" "color-them" "color-theme-zenburn" "color-theme-tango-2" "color-the" "color-th" "color-the" "whclea" "color-the" "load-path" "colo" "color-t" "whicle" "smex-prompt-string" "cusopt" "load-path" "custoption" "color-them" "whitecl" "color-them" "color-the" "color-theme" "co" "color-them" "CadetBlue" "org-agenda-date-today" "custface" "colo" "git-sta" "git-dif"))
+(setq minibuffer-history '("slime" "Lollie" "perl" "w3m-per" "newsticker-start" "newti" "blah die blah" "blah" "w3m" "whitespace-toggle-tr" "global-whi" "w3m" "newsticker" "customgr" "newstsh" "eshe" "whcl" "flympyl" "whcle" "git-add" "git-st" "sh" "shopping" "colortang" "color-them" "color-theme-zenburn" "color-theme-tango-2" "color-the" "color-th" "color-the"))
 (setq query-replace-history nil)
 (setq read-expression-history nil)
 (setq regexp-history nil)
-(setq regexp-search-ring '("color-theme" "haskell" "color-theme" "color-them" "color" "next" "smex" "face" "faces"))
-(setq search-ring '("pier" "READ"))
+(setq regexp-search-ring '("cont" "color-theme" "haskell" "color-theme" "color-them" "color" "next" "smex" "face" "faces"))
+(setq search-ring '("whitespace" "ya" "pier" "READ"))
 (setq shell-command-history nil)
 (setq tags-file-name nil)
-(setq register-alist (list (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 464 (get-buffer "init-fonts.el")))) mk))))
+(setq register-alist (list (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk nil (get-buffer " *temp*")))) mk))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-ido.el"
-  "init-ido.el"
+  "/home/m4nic/Projects/lisp/clbuild/source/casino/casino.lisp"
+  "casino.lisp"
+  'lisp-mode
+  '(yas/minor-mode auto-complete-mode paredit-mode redshank-mode slime-mode)
+  6
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/custom.el"
+  "custom.el"
   'emacs-lisp-mode
-  '(auto-complete-mode eldoc-mode paredit-mode)
-  1463
+  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
+  3744
+  '(3123 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Planning/gtd.gtd"
+  "gtd.gtd"
+  'org-mode
+  '(yas/minor-mode auto-complete-mode)
+  11193
+  '(1769 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/init-fonts.el"
+  "init-fonts.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
+  2001
   '(nil nil)
   nil
   nil
@@ -40,19 +73,19 @@
   "/home/m4nic/.emacs.d/init.el"
   "init.el"
   'emacs-lisp-mode
-  '(auto-complete-mode eldoc-mode paredit-mode highlight-changes-mode)
-  32579
-  '(32562 nil)
+  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
+  1
+  '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . mule-utf-8-unix) (highlight-changes-mode . active)))
+  '((tab-width . 8) (buffer-file-coding-system . mule-utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-fonts.el"
-  "init-fonts.el"
+  "/home/m4nic/.emacs.d/init-ido.el"
+  "init-ido.el"
   'emacs-lisp-mode
-  '(auto-complete-mode eldoc-mode paredit-mode)
-  1
+  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
+  1463
   '(nil nil)
   nil
   nil
@@ -62,7 +95,7 @@
   "/home/m4nic/.emacs.d/init-themes.el"
   "init-themes.el"
   'emacs-lisp-mode
-  '(auto-complete-mode eldoc-mode paredit-mode)
+  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
   929
   '(247 nil)
   nil
@@ -70,13 +103,35 @@
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/custom.el"
-  "custom.el"
-  'emacs-lisp-mode
-  '(auto-complete-mode eldoc-mode paredit-mode)
-  5333
-  '(5299 nil)
+  "/home/m4nic/Planning/projects/gamebattle.gtd"
+  "gamebattle.gtd"
+  'org-mode
+  '(yas/minor-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/diary"
+  "diary"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.newsticker-cache"
+  ".newsticker-cache"
+  'fundamental-mode
+  nil
+  211064
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8)))
 
