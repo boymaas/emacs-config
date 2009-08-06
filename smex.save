@@ -1,16 +1,28 @@
 
 ;; ----- smex-history -----
 (
- cd
- df
- lm
- 5x5
- all
- arp
- dbx
+ slime
+ w3m-perldoc
+ newsticker-start
+ newsticker-show-news
+ w3m
+ whitespace-toggle-trailing-check
+ global-whitespace-mode
 )
 
 ;; ----- smex-data -----
 (
- 
+ (git-status . 3)
+ (git-add-file . 1)
+ (whitespace-cleanup . 2)
+ (flymake-python-load . 1)
+ (eshell . 1)
+ (newsticker-show-news . 2)
+ (customize-group . 1)
+ (w3m . 2)
+ (global-whitespace-mode . 1)
+ (whitespace-toggle-trailing-check . 1)
+ (newsticker-start . 1)
+ (w3m-perldoc . 1)
+ (slime . 1)
 )
