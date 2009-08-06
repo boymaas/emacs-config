@@ -16,7 +16,7 @@
 (setq *spell-check-support-enabled* nil)
 (setq *byte-code-cache-enabled* nil)
 (setq *twitter-support-enabled* nil)
-(setq *snippet-support-enabled* nil)
+(setq *snippet-support-enabled* t)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
@@ -33,10 +33,10 @@
 ;;----------------------------------------------------------------------------
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/site-lisp/")
-           (default-directory my-lisp-dir))
+	   (default-directory my-lisp-dir))
       (progn
-        (setq load-path (cons my-lisp-dir load-path))
-        (normal-top-level-add-subdirs-to-load-path))))
+	(setq load-path (cons my-lisp-dir load-path))
+	(normal-top-level-add-subdirs-to-load-path))))
 (setq load-path (cons (expand-file-name "~/.emacs.d") load-path))
 
 ;;----------------------------------------------------------------------------
@@ -85,9 +85,9 @@
   "Return the full path of an executable file name `name'
 in `exec-path', or nil if no such command exists"
   (loop for dir in exec-path
-        for full-path = (expand-file-name (concat dir "/" name))
-        when (file-executable-p full-path)
-        return full-path))
+	for full-path = (expand-file-name (concat dir "/" name))
+	when (file-executable-p full-path)
+	return full-path))
 
 
 ;;----------------------------------------------------------------------------
@@ -97,7 +97,7 @@ in `exec-path', or nil if no such command exists"
   (eval-after-load "woman"
     '(setq woman-manpath (append (list "/opt/local/man") woman-manpath)))
   (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin"
-                                           "/opt/local/lib/postgresql83/bin" "~/bin")))
+					   "/opt/local/lib/postgresql83/bin" "~/bin")))
     (setenv "PATH" (concat dir ":" (getenv "PATH")))
     (setq exec-path (append (list dir) exec-path))))
 
@@ -115,8 +115,8 @@ in `exec-path', or nil if no such command exists"
 `after-make-window-system-frame-hooks'"
   (select-frame frame)
   (run-hooks (if window-system
-                 'after-make-window-system-frame-hooks
-               'after-make-console-frame-hooks)))
+		 'after-make-window-system-frame-hooks
+	       'after-make-console-frame-hooks)))
 
 (add-hook 'after-make-frame-functions 'run-after-make-frame-hooks)
 
@@ -135,19 +135,19 @@ in `exec-path', or nil if no such command exists"
   (define-key function-key-map "\e[5D"   [C-left]))
 
 (add-hook 'after-make-console-frame-hooks
-          (lambda ()
-            (fix-up-xterm-control-arrows)
-            (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
-            (mwheel-install)))
+	  (lambda ()
+	    (fix-up-xterm-control-arrows)
+	    (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
+	    (mwheel-install)))
 
 (add-hook 'after-make-frame-functions
-          (lambda (frame)
-            (let ((prev-frame (selected-frame)))
-              (select-frame frame)
-              (prog1
-                  (unless window-system
-                    (set-frame-parameter frame 'menu-bar-lines 0))
-                (select-frame prev-frame)))))
+	  (lambda (frame)
+	    (let ((prev-frame (selected-frame)))
+	      (select-frame frame)
+	      (prog1
+		  (unless window-system
+		    (set-frame-parameter frame 'menu-bar-lines 0))
+		(select-frame prev-frame)))))
 
 
 ;;----------------------------------------------------------------------------
@@ -162,20 +162,20 @@ in `exec-path', or nil if no such command exists"
   (when *is-a-mac*
     (let ((scselect (shell-command-to-string "/usr/sbin/scselect")))
       (if (string-match "^ \\* .*(\\(.*\\))$" scselect)
-          (match-string 1 scselect)))))
+	  (match-string 1 scselect)))))
 
 (defun concise-network-location ()
   (let ((l (network-location)))
     (if (and l (not (string-equal "Automatic" l)))
-        (concat "[" l "]")
+	(concat "[" l "]")
       "")))
 
 (defun concise-buffer-file-name ()
   (when (buffer-file-name)
     (replace-regexp-in-string (regexp-quote (getenv "HOME")) "~" (buffer-file-name))))
 (setq frame-title-format '("%b - " *user* "@" *hostname*
-                           (:eval (concise-network-location)) " - "
-                           (:eval (concise-buffer-file-name))))
+			   (:eval (concise-network-location)) " - "
+			   (:eval (concise-buffer-file-name))))
 
 
 ;;----------------------------------------------------------------------------
@@ -358,7 +358,7 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 (eval-after-load "hippie-exp"
   '(setq hippie-expand-try-functions-list
-         (remove 'try-expand-line hippie-expand-try-functions-list)))
+	 (remove 'try-expand-line hippie-expand-try-functions-list)))
 
 
 ;;----------------------------------------------------------------------------
@@ -481,7 +481,7 @@ in `exec-path', or nil if no such command exists"
   (require 'yasnippet)
   ;; Don't map TAB to yasnippet
   ;; In fact, set it to something we'll never use because we'll only ever trigger it indirectly.
-  (setq yas/trigger-key (kbd "C-c <kp-multiply>"))
+  ;;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
   (yas/initialize)
   (yas/load-directory (concat (directory-of-library "yasnippet") "snippets")))
 
@@ -494,17 +494,17 @@ in `exec-path', or nil if no such command exists"
 (setq ac-auto-start 3)
 (setq ac-dwim nil)
 (set-default 'ac-sources
-             (if (> emacs-major-version 22)
-                 (progn
-                   (require 'ac-dabbrev)
-                   '(ac-source-dabbrev ac-source-words-in-buffer))
-               ;; dabbrev is very slow in emacs 22
-               '(ac-source-words-in-buffer)))
+	     (if (> emacs-major-version 22)
+		 (progn
+		   (require 'ac-dabbrev)
+		   '(ac-source-dabbrev ac-source-words-in-buffer))
+	       ;; dabbrev is very slow in emacs 22
+	       '(ac-source-words-in-buffer)))
 
 (dolist (mode '(log-edit-mode org-mode text-mode haml-mode
-                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
-                html-mode nxml-mode sh-mode smarty-mode clojure-mode
-                lisp-mode textile-mode markdown-mode tuareg-mode))
+		sass-mode yaml-mode csv-mode espresso-mode haskell-mode
+		html-mode nxml-mode sh-mode smarty-mode clojure-mode
+		lisp-mode textile-mode markdown-mode tuareg-mode))
   (add-to-list 'ac-modes mode))
 
 ;; This stops "end" followed by "RET" getting completed to something
@@ -552,21 +552,21 @@ in `exec-path', or nil if no such command exists"
 ;; for lists specify the len of the maximal saved data also
 (setq desktop-globals-to-save
       (append '((extended-command-history . 30)
-                (file-name-history        . 100)
-                (ido-last-directory-list  . 100)
-                (ido-work-directory-list  . 100)
-                (ido-work-file-list       . 100)
-                (grep-history             . 30)
-                (compile-history          . 30)
-                (minibuffer-history       . 50)
-                (query-replace-history    . 60)
-                (read-expression-history  . 60)
-                (regexp-history           . 60)
-                (regexp-search-ring       . 20)
-                (search-ring              . 20)
-                (shell-command-history    . 50)
-                tags-file-name
-                register-alist)))
+		(file-name-history        . 100)
+		(ido-last-directory-list  . 100)
+		(ido-work-directory-list  . 100)
+		(ido-work-file-list       . 100)
+		(grep-history             . 30)
+		(compile-history          . 30)
+		(minibuffer-history       . 50)
+		(query-replace-history    . 60)
+		(read-expression-history  . 60)
+		(regexp-history           . 60)
+		(regexp-search-ring       . 20)
+		(search-ring              . 20)
+		(shell-command-history    . 50)
+		tags-file-name
+		register-alist)))
 
 
 ;;----------------------------------------------------------------------------
@@ -662,8 +662,8 @@ in `exec-path', or nil if no such command exists"
 ;; htmlize
 ;;----------------------------------------------------------------------------
 (dolist (sym
-         (list 'htmlize-file 'htmlize-region 'htmlize-buffer
-               'htmlize-many-files 'htmlize-many-files-dired))
+	 (list 'htmlize-file 'htmlize-region 'htmlize-buffer
+	       'htmlize-many-files 'htmlize-many-files-dired))
   (autoload sym "htmlize"))
 
 
@@ -700,9 +700,9 @@ in `exec-path', or nil if no such command exists"
 (autoload 'php-mode "php-mode" "mode for editing php files" t)
 (add-auto-mode 'php-mode "\\.php[345]?\\'\\|\\.phtml\\." "\\.(inc|tpl)$" "\\.module$")
 (add-hook 'php-mode-hook
-          (lambda ()
-            (require 'flymake-php)
-            (flymake-mode t)))
+	  (lambda ()
+	    (require 'flymake-php)
+	    (flymake-mode t)))
 (autoload 'smarty-mode "smarty-mode" "Smarty Mode" t)
 (add-auto-mode 'smarty-mode "\\.tpl$")
 
