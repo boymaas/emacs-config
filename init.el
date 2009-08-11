@@ -5,12 +5,14 @@
 ;;----------------------------------------------------------------------------
 (setq *vi-emulation-support-enabled* t) ; "viper-mode"
 (setq *haskell-support-enabled* t)
+(setq *python-support-enabled* t)
+(setq *python-ropemacs-support-enabled* nil)
 (setq *ocaml-support-enabled* t)
 (setq *common-lisp-support-enabled* t)
 (setq *clojure-support-enabled* nil)
 (setq *scheme-support-enabled* t)
 (setq *macbook-pro-support-enabled* nil)
-(setq *erlang-support-enabled* t)
+(setq *erlang-support-enabled* nil)
 (setq *darcs-support-enabled* t)
 (setq *rails-support-enabled* nil)
 (setq *spell-check-support-enabled* nil)
@@ -257,7 +259,18 @@ in `exec-path', or nil if no such command exists"
   (setq highlight-symbol-on-navigation-p t)
   (define-key viper-vi-global-user-map "*" 'highlight-symbol-next)
   (define-key viper-vi-global-user-map "#" 'highlight-symbol-prev)
-  (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change))
+  (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change)
+
+  ;; make modes more prominent
+  (setq viper-vi-state-id (concat (propertize "<V>" 'face 'hi-blue-b) " "))
+  (setq viper-emacs-state-id (concat (propertize "<E>" 'face 'hi-red-b) " "))
+  (setq viper-insert-state-id (concat (propertize "<I>" 'face 'hi-blue-b) " "))
+  (setq viper-replace-state-id (concat (propertize "<R>" 'face 'hi-blue-b) " "))
+
+  ;; the property `risky-local-variable' is a security measure for mode line
+  ;; variables that have properties.
+  (put 'viper-mode-string 'risky-local-variable t)
+  )
 
 
 ;; Work around a problem in Cocoa emacs, wherein setting the cursor coloring
@@ -458,11 +471,9 @@ in `exec-path', or nil if no such command exists"
 
 
 ;;----------------------------------------------------------------------------
-;; Multiple major modes
+;; Multiple major modes (obsolte now we use mumamo-modes
 ;;----------------------------------------------------------------------------
-(require 'mmm-auto)
-(setq mmm-global-mode 'buffers-with-submode-classes)
-(setq mmm-submode-decoration-level 2)
+;;(require 'init-mmm)
 
 
 ;;----------------------------------------------------------------------------
@@ -576,7 +587,7 @@ in `exec-path', or nil if no such command exists"
 ;;(scroll-bar-mode -1)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 (require 'init-maxframe)
 
@@ -641,7 +652,8 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Python
 ;;----------------------------------------------------------------------------
-(require 'init-python-mode)
+(when *python-support-enabled*
+  (require 'init-python-mode))
 
 
 ;;----------------------------------------------------------------------------
@@ -666,6 +678,22 @@ in `exec-path', or nil if no such command exists"
 	       'htmlize-many-files 'htmlize-many-files-dired))
   (autoload sym "htmlize"))
 
+
+;;----------------------------------------------------------------------------
+;; HTML mode
+;;----------------------------------------------------------------------------
+;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
+;;(add-auto-mode 'html-helper-mode "\\.html$")
+;;(add-auto-mode 'html-helper-mode "\\.mak$")
+;;(setq tempo-interactive t)
+;;add-hook 'html-helper-load-hook '(lambda () (require 'html-font)))
+
+;; nxhtml-mode
+(load "~/.emacs.d/site-lisp/nxhtml/autostart.el")
+(add-auto-mode 'nxhtml-mode "\\.html$")
+(add-auto-mode 'mako-nxhtml-mumamo-mode "\\.mak$")
+
+;;(add-auto-mode 'sgml-mode "\\.mak$")
 
 ;;----------------------------------------------------------------------------
 ;; CSS mode
