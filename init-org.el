@@ -91,7 +91,7 @@
 (setq org-remember-templates
      '(
       ("Todo" ?t "* TODO %^{Brief Description} %^g\n%?\nAdded: %U\nLink: %a" "~/Planning/gtd.gtd" "Refile")
-      ("Private" ?p "\n* %^{topic} %T \n%i%?\n" "~/Planning/journal.gtd")
+      ("Journal" ?j "\n* %^{topic} %T \n%i%?\n" "~/Planning/journal.gtd")
       ("Note" ?n "\n* %^{topic} %T \n%i%?\n" "~/Planning/gtd.gtd" "Notes")
       ))
 
@@ -194,8 +194,32 @@
 (setq org-agenda-start-on-weekday nil)
 
 ;; Disable display of the time grid
-(setq org-agenda-time-grid
-      (quote (nil "----------------"
-                  (800 1000 1200 1400 1600 1800 2000))))
+;(setq org-agenda-time-grid
+;      (quote (nil "----------------"
+;                  (800 1000 1200 1400 1600 1800 2000))))
+
+
+;; PROJECTS
+(setq org-publish-project-alist
+           '(("market"
+              :base-directory "~/Projects/python/market/"
+              :base-extension "gtd"
+              :publishing-directory "/ssh:m4nic@tagged.nl:/projects/pylons/market/market/public/"
+              :publishing-function org-publish-org-to-html
+;              :exclude "PrivatePage.org"   ;; regexp
+              ;:headline-levels 3
+              :section-numbers t 
+              :table-of-contents t 
+;              :style "<link rel=\"stylesheet\"
+;                       href=\"/style.css\" type=\"text/css\"/>"
+              :auto-preamble t
+              :auto-postamble nil)))
+
+
+;; exporting to pdf
+  ; experimenting with docbook exports - not finished
+(require 'org-docbook)
+(setq org-export-docbook-xsl-fo-proc-command "fop %s %s")
+(setq org-export-docbook-xslt-proc-command "xsltproc --output %s /usr/share/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl %s")
 
 (provide 'init-org)

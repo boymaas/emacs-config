@@ -11,6 +11,7 @@
             ;;(define-key py-mode-map [tab] 'yas/expand)  
             ;;(setq yas/after-exit-snippet-hook 'indent-according-to-mode)  
             ;;(smart-operator-mode-on)  
+            (linum-mode)
             ))  
 ;; pymacs  
 (autoload 'pymacs-apply "pymacs")  
@@ -28,6 +29,7 @@
   (pymacs-load "ropemacs" "rope-"))
 
 (setq ropemacs-enable-autoimport t)  
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;;; Auto-completion  
 ;;;  Integrates:  
@@ -75,6 +77,7 @@
             (setcdr (nthcdr (1- ac-limit) cand) nil))  
         (setq candidates (append candidates cand))))  
     (delete-dups candidates)))  
+
 (add-hook 'python-mode-hook  
           (lambda ()  
             (auto-complete-mode 1)  
@@ -83,6 +86,7 @@
             (set (make-local-variable 'ac-find-function) 'ac-python-find)  
             (set (make-local-variable 'ac-candidate-function) 'ac-python-candidate)  
             (set (make-local-variable 'ac-auto-start) nil)))  
+
 ;;Ryan's python specific tab completion  
 (defun ryan-python-tab ()  
                                         ; Try the following:  
@@ -92,6 +96,7 @@
   (interactive)  
   (if (eql (ac-start) 0)  
       (indent-for-tab-command)))  
+
 (defadvice ac-start (before advice-turn-on-auto-start activate)  
   (set (make-local-variable 'ac-auto-start) t))  
 (defadvice ac-cleanup (after advice-turn-off-auto-start activate)  
@@ -100,6 +105,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;;; End Auto Completion  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
+
+
 ;; Auto Syntax Error Hightlight  
 (when (load "flymake" t)  
   (defun flymake-pyflakes-init ()  
@@ -112,4 +119,21 @@
   (add-to-list 'flymake-allowed-file-name-masks  
                '("\\.py\\'" flymake-pyflakes-init)))  
 (add-hook 'find-file-hook 'flymake-find-file-hook)  
+
+
+;; IPython support
+;; use emacs-paster-shell to run paster inside emacs
+;; can use this to experiment withing pylons
+;; (setq py-python-command "emacs-paster-shell") 
+
+
+;; make colors suitable for black background
+(setq py-python-command-args '("-colors" "Linux"))
+(require 'ipython)
+
+;; ipython completion
+;(setq ipython-completion-command-string "print(';'.join(__IP.Completer.all_completions('')))\n")
+(setq ipython-completion-command-string "print(';'.join(__IP.Completer.all_completions('%s')))\n")
+
+
 (provide 'init-python-mode)

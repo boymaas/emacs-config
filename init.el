@@ -6,6 +6,9 @@
 (setq *vi-emulation-support-enabled* t) ; "viper-mode"
 (setq *haskell-support-enabled* t)
 (setq *python-support-enabled* t)
+;; when ropemacs is activated help function
+;; seases to work and emacs doesn't load properly
+;; need to fix first
 (setq *python-ropemacs-support-enabled* nil)
 (setq *ocaml-support-enabled* t)
 (setq *common-lisp-support-enabled* t)
@@ -765,7 +768,8 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Gnus emailclient from emacs
 ;;----------------------------------------------------------------------------
-;;(require 'init-gnus)
+(require 'init-gnus)
+
 
 ;;----------------------------------------------------------------------------
 ;; Add spell-checking in comments for all programming language modes
