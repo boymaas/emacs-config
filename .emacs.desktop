@@ -2,157 +2,69 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Aug 15 16:09:42 2009
+;; Created Mon Aug 24 17:27:22 2009
 ;; Desktop file format version 206
-;; Emacs version 22.2.1
+;; Emacs version 23.0.91.1
 
 ;; Global section:
 (setq extended-command-history nil)
-(setq file-name-history '("/home/m4nic/.emacs.d/site-lisp/python-mode/python-mode.el" "/home/m4nic/.emacs.d/site-lisp/python-mode/ipython.el" "~/Projects/python/market/bin/paster" "~/Projects/python/market/bin/ipython" "~/Projects/" "/home/m4nic/.emacs" "/home/m4nic/.emacs.d/site-lisp/python-mode/ipython.el" "/home/m4nic/.emacs.d/site-lisp/python-mode/python-mode.el" "/home/m4nic/.emacs.d/init-anything.el" "/usr/share/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl" "/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/lisp/org-export-generic.el" "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-exp-blocks.el" "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-exp.el" "/home/m4nic/Planning/innovita.gtd" "/projects/pylons/shop/shop/model/datamodel.py" "/home/m4nic/.emacs.d/custom.el" "~/Projects/python/market/" "~/Projects/python/market/market.gtd" "/home/m4nic/.emacs.d/init-org.el" "/tmp/test.py" "/tml/test.py" "/home/m4nic/.emacs.d/init.el" "/home/m4nic/.emacs.d/site-lisp/python-mode/python-mode.el" "/home/m4nic/.emacs.d/init-python-mode.el" "/home/m4nic/Projects/python/market/market/controllers/trading.py" "/home/m4nic/Planning/projects/gamebattle.gtd" "/home/m4nic/Planning/innovita.gtd" "/home/m4nic/Planning/maybe.gtd" "/home/m4nic/Projects/python/market/market/public/planning.html" "/home/m4nic/Projects/python/market/market.gtd"))
-(setq ido-last-directory-list '(("/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/" . "lisp/") ("/projects/" . "pylons/") ("/projects/pylons/shop/shop/" . "model/") ("/etc/" . "X11/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/python-site-dir/" . "ropemode/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/" . "python-site-dir/") ("/home/m4nic/Projects/python/market/" . "bin/") ("/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" . "auto-save-list/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/" . "contrib/") ("/home/m4nic/Projects/haskell/bolt/" . "bolt-cabal/") ("/home/m4nic/Planning/data/" . "6d/") ("/home/m4nic/.emacs.d/site-lisp/" . "python-mode/") ("/home/m4nic/Projects/emacs-examples/" . "conf-0-first-attempt/") ("/home/m4nic/Planning/" . "data/") ("/usr/share/emacs22/" . "site-lisp/") ("/usr/share/" . "emacs22/") ("/home/m4nic/Projects/emacs/" . "Pymacs-0.23/") ("/home/m4nic/Projects/python/market/market/templates/" . "trading/") ("/home/m4nic/Projects/python/market/market/" . "public/") ("/home/m4nic/Projects/python/" . "market/") ("/home/m4nic/Projects/haskell/bolt/mks/" . "app/") ("/home/m4nic/Projects/lisp/clbuild/source/" . "casino/") ("/usr/" . "share/") ("/home/" . "m4nic/") ("/home/m4nic/" . ".emacs.d/") ("/" . "home/") ("/home/m4nic/.emacs.d/site-dir/" . "icicles/") ("/home/m4nic/.emacs.d/" . "site-lisp/") ("/home/m4nic/Projects/lisp/clbuild/" . "source/") ("/home/m4nic/Projects/lisp/" . "clbuild/") ("/home/m4nic/Projects/" . "python/")))
-(setq ido-work-directory-list '("/home/m4nic/.emacs.d/site-lisp/python-mode/" "/home/m4nic/" "/home/m4nic/.emacs.d/" "/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/lisp/" "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/" "/home/m4nic/Planning/" "/projects/pylons/shop/shop/model/" "/tmp/" "/home/m4nic/Projects/python/market/market/controllers/" "/home/m4nic/Projects/python/market/" "/home/m4nic/Planning/projects/" "/home/m4nic/Projects/python/market/market/public/" "/projects/pylons/shop/shop/templates/" "/projects/pylons/shop/shop/public/" "~/Planning/" "/home/m4nic/Planning/support/" "/etc/X11/" "/home/m4nic/.emacs.d/site-lisp/nxhtml/" "/home/m4nic/.emacs.d/site-lisp/htmlize/" "/home/m4nic/Projects/python/market/market/templates/" "/home/m4nic/.emacs.d/site-lisp/html-helper/" "/home/m4nic/.emacs.d/site-lisp/mmm-mode-0.4.8/" "/home/m4nic/Projects/python/market/market/templates/trading/" "/home/m4nic/Projects/python/market/market/lib/" "/home/m4nic/.emacs.d/site-lisp/pymacs/python-site-dir/ropemode/" "/home/m4nic/.emacs.d/site-lisp/pymacs/python-site-dir/ropemacs/" "/home/m4nic/Projects/python/market/market/" "/home/m4nic/Projects/python/market/bin/" "/home/m4nic/Projects/lisp/clbuild/source/casino/" "/home/m4nic/.emacs.d/site-lisp/smex/" "/home/m4nic/.emacs.d/site-lisp/haskell-mode/" "/home/m4nic/.emacs.d/site-lisp/color-theme/themes/" "/home/m4nic/.emacs.d/site-lisp/color-theme/" "/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" "/home/m4nic/.emacs.d/site-lisp/vimpulse/" "/home/m4nic/Desktop/" "/home/m4nic/.emacs.d/site-lisp/org-mode/" "/home/m4nic/Projects/haskell/bolt/bolt-cabal/" "/home/m4nic/Projects/haskell/" "~/.emacs.d/" "/home/m4nic/Projects/emacs-examples/conf-2/" "/" "/home/m4nic/.emacs.d/site-dir/ecb-2.40/info-help/" "/home/m4nic/Planning/learning/" "/home/m4nic/Planning/financial/" "/usr/share/emacs22/site-lisp/" "/home/m4nic/Projects/emacs/" "/home/m4nic/.emacs.d/site-dir/" "/home/m4nic/Projects/lisp/" "/home/m4nic/Projects/lisp/clbuild/source/elephant/"))
-(setq ido-work-file-list '("python-mode.el" "ipython.el" ".emacs" "init-anything.el" "org-export-generic.el" "org-exp-blocks.el" "org-exp.el" "innovita.gtd" "datamodel.py" "custom.el"))
-(setq grep-history '("grep -nH -e MarketShare -r ." "grep -nH -e TradingController -r ." "grep -nH -e 'feedback\\|warning' -r ." "grep -nH -e 'feedback' -r ." "grep -nH -e 'feedback' ." "grep -nH -e 'feedback'" "grep -nH -e ." "grep -nH -e -r 'feedback' ." "grep -r 'feedback\\|warning' ." "grep -nH -e -r \"self.warning|self.feedback\" ." "grep -nH -e -r \"self.warning|self.feedback\"" "grep -nH -e "))
+(setq file-name-history '("/home/m4nic/.emacs.d/site-lisp/vtags/vtags.el" "/projects/pylons/shop/shop/tags" "/home/m4nic/.emacs.d/site-lisp/vtags/vtags.el" "/projects/pylons/shop/shop/tagall" "/projects/pylons/shop/tagall" "/projects/pylons/shop/shop/templates/admin/coupons/list.mak" "/projects/pylons/shop/shop/model/datamodel.py" "/projects/pylons/shop/shop/model/__init__.py" "/home/m4nic/Planning/innovita.gtd" "/projects/pylons/shop/shop/svn-migrations/00-coupons.sql" "/projects/pylons/shop/shop/svn-migrations/README.txt" "/projects/pylons/shop/shop/controllers/counter.py" "/projects/pylons/shop/shop/model/datamodel.py" "/projects/pylons/shop/shop/controllers/admin/coupons.py" "/projects/pylons/shop/shop/controllers/admin/__init__.py" "/home/m4nic/.emacs.d/init-org.el" "/home/m4nic/Planning/maybe.gtd" "/home/m4nic/Planning/support/weekly-review.gtd" "/home/m4nic/Projects/python/org-mode/todaylist.py" "/home/m4nic/Projects/python/org-mode/generate-invoice.py" "/home/m4nic/Projects/python/org-mode/Orgnode.py" "/home/m4nic/.emacs.d/init-themes.el" "/home/m4nic/.emacs.d/site-lisp/color-theme-tango-2/color-theme-tango-2.el" "/home/m4nic/.emacs.d/custom.el" "~/.emacs.d/site-lisp/org-mode/lisp/org-agenda.el" "/home/m4nic/Planning/gtd.gtd_archive" "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-agenda.el" "/home/m4nic/Projects/python/market/market/lib/snapshot/config/player_counts.py" "/home/m4nic/Projects/python/market/market/model/objects/classes.py" "~/Projects/python/market/market/lib/snapshot/config/money.py"))
+(setq ido-last-directory-list '(("/projects/pylons/shop/" . "shop/") ("/projects/pylons/shop/shop/templates/admin/" . "coupons/") ("/projects/pylons/shop/shop/templates/" . "admin/") ("/projects/pylons/shop/shop/controllers/" . "admin/") ("/projects/pylons/" . "shop/") ("/home/m4nic/Projects/python/market/market/lib/snapshot/" . "config/") ("/home/m4nic/Planning/attachments/" . "art-of-assembly-programming/") ("/home/m4nic/Desktop/" . "PDFs/") ("/home/m4nic/Projects/python/market/market/public/jquery-boy/css/" . "le-frog/") ("/home/m4nic/Projects/python/market/market/public/jquery-boy/" . "css/") ("/home/m4nic/Projects/python/market/market/public/" . "jquery-boy/") ("/home/m4nic/Projects/python/market/market/model/" . "objects/") ("/home/m4nic/Projects/python/market/market/lib/" . "snapshot/") ("~/Projects/python/market/market/" . "config/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/" . "lisp/") ("/projects/" . "pylons/") ("/projects/pylons/shop/shop/" . "templates/") ("/etc/" . "X11/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/python-site-dir/" . "ropemode/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/" . "python-site-dir/") ("/home/m4nic/Projects/python/market/" . "market/") ("/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" . "auto-save-list/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/" . "lisp/") ("/home/m4nic/Projects/haskell/bolt/" . "bolt-cabal/") ("/home/m4nic/Planning/data/" . "6d/") ("/home/m4nic/.emacs.d/site-lisp/" . "vtags/") ("/home/m4nic/Projects/emacs-examples/" . "conf-0-first-attempt/") ("/home/m4nic/Planning/" . "attachments/") ("/usr/share/emacs22/" . "site-lisp/") ("/usr/share/" . "emacs22/") ("/home/m4nic/Projects/emacs/" . "Pymacs-0.23/") ("/home/m4nic/Projects/python/market/market/templates/" . "community/") ("/home/m4nic/Projects/python/market/market/" . "model/") ("/home/m4nic/Projects/python/" . "org-mode/") ("/home/m4nic/Projects/haskell/bolt/mks/" . "app/") ("/home/m4nic/Projects/lisp/clbuild/source/" . "casino/") ("/usr/" . "share/") ("/home/" . "m4nic/") ("/home/m4nic/" . ".emacs.d/") ("/" . "home/") ("/home/m4nic/.emacs.d/site-dir/" . "icicles/") ("/home/m4nic/.emacs.d/" . "site-lisp/") ("/home/m4nic/Projects/lisp/clbuild/" . "source/") ("/home/m4nic/Projects/lisp/" . "clbuild/") ("/home/m4nic/Projects/" . "python/")))
+(setq ido-work-directory-list '("/home/m4nic/.emacs.d/site-lisp/vtags/" "/projects/pylons/shop/shop/" "/projects/pylons/shop/" "/projects/pylons/shop/shop/templates/admin/coupons/" "/projects/pylons/shop/shop/model/" "/home/m4nic/Planning/" "/projects/pylons/shop/shop/svn-migrations/" "/projects/pylons/shop/shop/controllers/" "/projects/pylons/shop/shop/controllers/admin/" "/home/m4nic/.emacs.d/" "/home/m4nic/Planning/support/" "/home/m4nic/Projects/python/org-mode/" "/home/m4nic/Projects/python/market/" "/home/m4nic/.emacs.d/site-lisp/color-theme-tango-2/" "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/" "/home/m4nic/Projects/python/market/market/lib/snapshot/config/" "/home/m4nic/Projects/python/market/market/model/objects/" "/home/m4nic/Projects/python/market/market/templates/community/" "/home/m4nic/Projects/python/market/market/" "/home/m4nic/Projects/python/market/market/controllers/" "/home/m4nic/Projects/python/market/market/model/" "/home/m4nic/Projects/python/market/market/public/jquery-boy/css/le-frog/" "/home/m4nic/Projects/python/market/market/templates/trading/" "/home/m4nic/Projects/python/market/market/public/" "/home/m4nic/Projects/python/market/market/templates/" "/home/m4nic/Projects/python/market/market/templates/account/" "/home/m4nic/Projects/python/market/cron/" "/home/m4nic/Projects/python/market/market/lib/" "/home/m4nic/Projects/python/market/bin/" "/home/m4nic/Projects/python/market/market/forms/" "/home/m4nic/Projects/python/market/market/lib/bots/" "/home/m4nic/Projects/python/market/market/config/" "/home/m4nic/.emacs.d/site-lisp/ejumplist/" "/home/m4nic/.emacs.d/site-lisp/auto-complete/" "/home/m4nic/Projects/python/market/.ropeproject/" "/home/m4nic/.emacs.d/site-lisp/yasnippet-0.6.0c/" "~/Projects/python/market/market/config/" "/home/m4nic/.emacs.d/site-lisp/python-mode/" "/home/m4nic/" "/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/lisp/" "/tmp/" "/home/m4nic/Planning/projects/" "/projects/pylons/shop/shop/templates/" "/projects/pylons/shop/shop/public/" "~/Planning/" "/etc/X11/" "/home/m4nic/.emacs.d/site-lisp/nxhtml/" "/home/m4nic/.emacs.d/site-lisp/htmlize/" "/home/m4nic/.emacs.d/site-lisp/html-helper/" "/home/m4nic/.emacs.d/site-lisp/mmm-mode-0.4.8/"))
+(setq ido-work-file-list '("vtags.el" "tags" "tagall" "list.mak" "datamodel.py" "__init__.py" "innovita.gtd" "00-coupons.sql" "README.txt" "counter.py"))
+(setq grep-history '("grep -nH -e '\\w\\+\\.account\\.transfer' -r ./ --exclude-dir .svn" "grep -nH -e org-cycle -r ." "grep -nH -e '\\w\\+\\.account\\.transfer' -r ../model/ --exclude-dir .svn" "grep -nH -e '\\w\\+\\.account' -r ../model/ --exclude-dir .svn" "grep -nH -e '\\w+\\.account' -r ../model/ --exclude-dir .svn" "grep -nH -e Account -r ../model/ --exclude-dir .svn" "grep -nH -e Account -r ./ --exclude-dir .svn" "grep -nH -e warning -r ./ --exclude-dir .svn" "grep -nH -e 'org-.*-face' -r ../org-mode/lisp/" "grep -nH -e tipbox -r . --exclude-dir .svn" "grep -nH -e tipbox -r . --exclude .svn" "grep -nH -e tipbox -r ."))
 (setq compile-history nil)
-(setq minibuffer-history '("py" "eshell" "py" "py-shellcustomize" "py-python-command" "c" "py-python-command" "customize" "py" "bold" "default" "py-builtins-face" "customize-face" "custom" "default" "custom" "ipython" "py-shell" "rever" "python" "contrib" "anything" "new.docbook" "orgexportpdf" "phone" "org-date-f" "ecb-ac" "org-agenda-time-grid" "c" "org-agenda-time-grid"))
-(setq query-replace-history '("new" "pic" "new\\1" "pic\\d"))
+(setq minibuffer-history '("using_options" "company_or_last_first_name" "find-tag" "company_or_last_first_name" "vtags-mo" "company_or_last_first_name" "etags" "find-lib" "has_field" "company_or_last_first_name" "vtag" "vtags-mod" "sme" "company_or_last_first_name" "etags" "lib" "company_or_last_first_name" "authenticate" "has_field" "has_many" "cre" "crea" "mex" "smex" "has_many" "tags" "ebtags" "has_many" "org-mode" "git-status"))
+(setq query-replace-history '(";" "." ";" "^"))
 (setq read-expression-history nil)
 (setq regexp-history nil)
-(setq regexp-search-ring '("email" "link" "open" "browser" "mo" "old.*mail" "email"))
-(setq search-ring '("product" "load" " "))
+(setq regexp-search-ring '("Pa" "snapshot" "snapshots" "classes" "tab" "tab>" "TAB" "pymacs" "colview" "custom-" "el" "len(" "get_" "get" "import" "i"))
+(setq search-ring nil)
 (setq shell-command-history nil)
-(setq tags-file-name nil)
-(setq register-alist (list '(5 file-query "/home/m4nic/News/drafts/drafts/11" 36) (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 1 (get-buffer "init-python-mode.el")))) mk)) (desktop-list* 12 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk nil (get-buffer " *temp*")))) mk)) (desktop-list* 1 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk nil (get-buffer " *temp*")))) mk))))
+(setq tags-file-name "/projects/pylons/shop/shop/TAGS")
+(setq register-alist (list (desktop-list* 1 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 11338 (get-buffer "init.el")))) mk)) (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 4827 (get-buffer "init.el")))) mk))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/python-mode/python-mode.el"
-  "python-mode.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  118896
-  '(118661 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-python-mode.el"
-  "init-python-mode.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  5273
-  '(5080 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/python-mode/ipython.el"
-  "ipython.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  5617
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/controllers/trading.py"
-  "trading.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  16
-  '(9358 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/tables.py"
-  "tables.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  2019
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/bin/paster"
-  "paster"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/bin/ipython"
-  "ipython"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "python"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  236
-  '(nil nil)
-  t
-  '("/home/m4nic/Projects/python/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "Projects"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  537
-  '(nil nil)
-  t
-  '("/home/m4nic/Projects/")
-  nil)
-
 (desktop-create-buffer 206
   "/home/m4nic/.emacs.d/init.el"
   "init.el"
   'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  5527
-  '(3621 nil)
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  20923
+  '(1823 nil)
   nil
   nil
-  '((buffer-file-coding-system . mule-utf-8-unix)))
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/lib/simplexml.py"
-  "simplexml.py"
+  "/projects/pylons/shop/shop/model/datamodel.py"
+  "datamodel.py"
   'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  838
-  '(nil nil)
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  751
+  '(1218 nil)
+  t
   nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-anything.el"
-  "init-anything.el"
+  "/projects/pylons/shop/lib/python2.4/site-packages/Elixir-0.4.0-py2.4.egg/elixir/options.py"
+  "options.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  9314
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/vtags/vtags.el"
+  "vtags.el"
   'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  522
-  '(nil nil)
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  111962
+  '(23318 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -161,53 +73,350 @@
   "/home/m4nic/Planning/gtd.gtd"
   "gtd.gtd"
   'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1452
-  '(1452 nil)
+  '(yas/minor-mode auto-complete-mode)
+  25156
+  '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-org.el"
-  "init-org.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  9027
-  '(9016 nil)
+  "/projects/pylons/shop/lib/python2.4/site-packages/Elixir-0.4.0-py2.4.egg/tests/test_o2m.py"
+  "test_o2m.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  2928
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/projects/pylons/shop/shop/model/__init__.py"
+  "__init__.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  741
+  '(810 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/projects/pylons/shop/shop/tagall"
+  "tagall"
+  'sh-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode)
+  11
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
+  "/projects/pylons/shop/ez_setup/__init__.py"
+  "__init__.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
   "/home/m4nic/Planning/innovita.gtd"
   "innovita.gtd"
   'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  252
-  '(160 nil)
+  '(yas/minor-mode auto-complete-mode)
+  324
+  '(408 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
-  "/usr/share/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl"
-  "docbook.xsl"
-  'nxml-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1288
-  '(4186 nil)
-  t
+  "/projects/pylons/shop/shop/controllers/admin/coupons.py"
+  "coupons.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  364
+  '(238 nil)
   nil
-  '((buffer-file-coding-system . mule-utf-8-unix)))
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-docbook.el"
-  "org-docbook.el"
+  "/projects/pylons/shop/shop/templates/admin/coupons/list.mak"
+  "list.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  531
+  '(208 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/model/__init__.py"
+  "__init__.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  1166
+  '(1166 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/projects/pylons/shop/shop/controllers/counter.py"
+  "counter.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  2061
+  '(7961 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/projects/pylons/shop/shop/svn-migrations/00-coupons.sql"
+  "00-coupons.sql"
+  'sql-mode
+  '(yas/minor-mode)
+  98
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "svn-migrations"
+  'dired-mode
+  '(yas/minor-mode)
+  250
+  '(nil nil)
+  t
+  '("/projects/pylons/shop/shop/svn-migrations/")
+  nil)
+
+(desktop-create-buffer 206
+  "/projects/pylons/shop/shop/svn-migrations/README.txt"
+  "README.txt"
+  'text-mode
+  '(yas/minor-mode auto-complete-mode)
+  87
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/projects/pylons/shop/shop/controllers/admin/__init__.py"
+  "__init__.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/init-org.el"
+  "init-org.el"
   'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  2103
-  '(2066 t)
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  4827
+  '(4819 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/org-mode/Orgnode.py"
+  "Orgnode.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  142
+  '(5837 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/org-mode/generate-invoice.py"
+  "generate-invoice.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  65
+  '(18 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/org-mode/todaylist.py"
+  "todaylist.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  204
+  '(204 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "market"
+  'dired-mode
+  '(yas/minor-mode)
+  1251
+  '(476 nil)
+  t
+  '("/home/m4nic/Projects/python/market/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/color-theme-tango-2/color-theme-tango-2.el"
+  "color-theme-tango-2.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  2752
+  '(2687 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/init-themes.el"
+  "init-themes.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  1323
+  '(364 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/custom.el"
+  "custom.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  1
+  '(4885 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-agenda.el"
+  "org-agenda.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  219926
+  '(247614 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/snapshot/config/player_counts.py"
+  "player_counts.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode smerge-mode)
+  645
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/snapshot/config/money.py"
+  "money.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  2028
+  '(3440 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/model/objects/classes.py"
+  "classes.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode linum-mode)
+  8179
+  '(11202 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/controllers/account.py"
+  "account.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  768
+  '(4509 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/snapshot/config/__init__.py"
+  "__init__.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  337
+  '(391 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/init-python-mode.el"
+  "init-python-mode.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  2220
+  '(1035 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/controllers/trading.py"
+  "trading.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode linum-mode)
+  83
+  '(1139 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Planning/gtd.txt"
+  "gtd.txt"
+  'text-mode
+  '(yas/minor-mode auto-complete-mode)
+  8854
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-xoxo.el"
+  "org-xoxo.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  3974
+  '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -216,163 +425,152 @@
   nil
   "lisp"
   'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  1054
+  '(yas/minor-mode)
+  3503
   '(nil nil)
   t
   '("/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/")
   nil)
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-latex.el"
-  "org-latex.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  12308
-  '(nil nil)
+  "/home/m4nic/Projects/python/market/market/model/objects/option.py"
+  "option.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  3111
+  '(3196 nil)
   nil
   nil
-  '((buffer-file-coding-system . mule-utf-8-unix)))
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-bibtex.el"
-  "org-bibtex.el"
+  "/home/m4nic/Projects/python/market/market/model/objects/player.py"
+  "player.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  1880
+  '(6486 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/tests/test_models.py"
+  "test_models.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  1103
+  '(1122 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/tests/functional/test_trading.py"
+  "test_trading.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  448
+  '(471 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/config/adminusers.py"
+  "adminusers.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  645
+  '(668 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/model/objects/#option.py#"
+  "#option.py#"
+  'fundamental-mode
+  nil
+  3174
+  '(3196 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . emacs-mule-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/model/objects/portfolio.py"
+  "portfolio.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  7142
+  '(7165 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "market"
+  'dired-mode
+  '(yas/minor-mode)
+  150
+  '(nil nil)
+  t
+  '("/home/m4nic/Projects/python/market/market/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/ejumplist/jumplist.el"
+  "jumplist.el"
   'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  968
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  217
+  '(3749 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/init-ejumplist.el"
+  "init-ejumplist.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  15
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  nil
-  "org-mode"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  737
-  '(nil nil)
-  t
-  '("/home/m4nic/.emacs.d/site-lisp/org-mode/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "ORGWEBPAGE"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  211
-  '(nil nil)
-  t
-  '("/home/m4nic/.emacs.d/site-lisp/org-mode/ORGWEBPAGE/")
-  nil)
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/ORGWEBPAGE/org.css"
-  "org.css"
-  'css-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1096
-  '(nil nil)
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org.el"
+  "org.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  192767
+  '(187622 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/ORGWEBPAGE/tasks.png"
-  "tasks.png"
-  'image-mode
-  '(yas/minor-mode ecb-minor-mode)
-  1
-  '(nil nil)
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/ChangeLog.01"
+  "ChangeLog.01"
+  'change-log-mode
+  '(yas/minor-mode)
+  16848
+  '(16857 nil)
   nil
   nil
-  '((buffer-file-coding-system . no-conversion) (truncate-lines . t)))
+  '((show-trailing-whitespace . t) (tab-width . 8) (indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix) (fill-column . 74)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/ORGWEBPAGE/Changes.org"
-  "Changes.org"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  48013
-  '(40 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (fill-column . 65) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  nil
-  "UTILITIES"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  205
-  '(nil nil)
-  t
-  '("/home/m4nic/.emacs.d/site-lisp/org-mode/UTILITIES/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "EXPERIMENTAL"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  208
-  '(nil nil)
-  t
-  '("/home/m4nic/.emacs.d/site-lisp/org-mode/EXPERIMENTAL/")
-  nil)
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/EXPERIMENTAL/org-export.el"
-  "org-export.el"
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-install.el"
+  "org-install.el"
   'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  6512
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "contrib"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  203
-  '(nil nil)
-  t
-  '("/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "lisp"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  209
-  '(nil nil)
-  t
-  '("/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/lisp/")
-  nil)
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/lisp/org-export-generic.el"
-  "org-export-generic.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  4188
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-exp-blocks.el"
-  "org-exp-blocks.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  2037
-  '(nil nil)
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  7320
+  '(7329 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -381,95 +579,612 @@
   "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-exp.el"
   "org-exp.el"
   'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  33594
-  '(33695 nil)
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  86342
+  '(86351 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/tmp/planning-dreamflyer.nl.txt"
-  "planning-dreamflyer.nl.txt"
-  'text-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  178
-  '(4598 nil)
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/ChangeLog"
+  "ChangeLog"
+  'change-log-mode
+  '(yas/minor-mode)
+  67
+  '(67 nil)
   nil
   nil
-  '((buffer-file-coding-system . mule-utf-8)))
+  '((show-trailing-whitespace . t) (tab-width . 8) (indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix) (fill-column . 74)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market.gtd"
-  "market.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  216
-  '(137 nil)
+  "/home/m4nic/Projects/python/market/market/templates/trading/layout.mak"
+  "layout.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  1389
+  '(460 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  nil
-  "market"
-  'dired-mode
-  '(yas/minor-mode ecb-minor-mode)
-  1685
-  '(1506 nil)
-  t
-  '("/home/m4nic/Projects/python/market/")
-  nil)
-
-(desktop-create-buffer 206
-  "/projects/pylons/shop/shop/model/datamodel.py"
-  "datamodel.py"
+  "/home/m4nic/Projects/python/market/market/model/tables.py"
+  "tables.py"
   'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  5050
-  '(7341 nil)
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  5232
+  '(5239 nil)
   nil
   nil
   '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/custom.el"
-  "custom.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode ecb-minor-mode)
-  2491
+  "/home/m4nic/Projects/python/market/market/model/objects/mapper.py"
+  "mapper.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  3896
+  '(3903 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/diary"
+  "diary"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/layout.mak"
+  "layout.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  2935
+  '(2673 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/public/style.css"
+  "style.css"
+  'css-mode
+  '(yas/minor-mode auto-complete-mode)
+  1274
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  nil
+  "Planning"
+  'dired-mode
+  '(yas/minor-mode)
+  407
+  '(nil nil)
+  t
+  '("/home/m4nic/Planning/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/snippets.mak"
+  "snippets.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  303
+  '(97 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/trading/snippets.mak"
+  "snippets.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  1
+  '(3017 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/trading/buy_from_proposal.mak"
+  "buy_from_proposal.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  2475
   '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/public/planning.html"
-  "planning.html"
-  'nxml-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  2817
+  "/home/m4nic/Projects/python/market/market/templates/trading/buy_market_share.mak"
+  "buy_market_share.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  698
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . iso-latin-1-unix)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/Planning/journal.gtd"
-  "journal.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  60
+  "/home/m4nic/Projects/python/market/market/controllers/homepage.py"
+  "homepage.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode linum-mode)
+  1638
+  '(1551 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/base.py"
+  "base.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode linum-mode)
+  2151
+  '(2151 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-colview.el"
+  "org-colview.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  2466
+  '(7076 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/contact.mak"
+  "contact.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  181
+  '(52 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/transactions.mak"
+  "transactions.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  3
+  '(292 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/deposit.mak"
+  "deposit.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  299
+  '(820 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/profile.mak"
+  "profile.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  3618
+  '(267 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/welcome.mak"
+  "welcome.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  33
+  '(78 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/trading/index.mak"
+  "index.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  787
+  '(581 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/trading/create_sell_proposal.mak"
+  "create_sell_proposal.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  720
+  '(205 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/trading/show-proposals.mak"
+  "show-proposals.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  530
+  '(386 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/micropayment/Success.mak"
+  "Success.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  128
+  '(134 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/payout_confirm.mak"
+  "payout_confirm.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  737
+  '(561 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/payout_done.mak"
+  "payout_done.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  237
+  '(136 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/resell_option.mak"
+  "resell_option.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  115
+  '(115 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/payout.mak"
+  "payout.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  358
+  '(125 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/account/unsubscribe.mak"
+  "unsubscribe.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  1279
+  '(1260 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/public/jquery-ui.css"
+  "jquery-ui.css"
+  'css-mode
+  '(yas/minor-mode auto-complete-mode)
+  3000
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/diary"
-  "diary"
+  "/home/m4nic/Projects/python/market/market/public/images/d8d8d8_40x100_textures_02_glass_90.png"
+  "d8d8d8_40x100_textures_02_glass_90.png"
+  'image-mode
+  '(yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . no-conversion) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/index.mak"
+  "index.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  731
+  '(732 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/cron/botje"
+  "botje"
+  'sh-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode)
+  35
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/cli.py"
+  "cli.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  554
+  '(913 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/botje.py"
+  "botje.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  141
+  '(1137 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/bots/players.py"
+  "players.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  1222
+  '(1368 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/config/nicks.py"
+  "nicks.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  142
+  '(114 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/bin/emacs-paster-shell"
+  "emacs-paster-shell"
+  'sh-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode)
+  39
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/forms/base.py"
+  "base.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  3594
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/forms/login.py"
+  "login.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode linum-mode)
+  4167
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/lib/helpers.py"
+  "helpers.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode linum-mode)
+  4151
+  '(741 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/eua.mak"
+  "eua.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  5429
+  '(5401 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "templates"
+  'dired-mode
+  '(yas/minor-mode)
+  723
+  '(nil nil)
+  t
+  '("/home/m4nic/Projects/python/market/market/templates/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/auto-complete/auto-complete-yasnippet.el"
+  "auto-complete-yasnippet.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  931
+  '(574 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/auto-complete/auto-complete-python.el"
+  "auto-complete-python.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  1126
+  '(1061 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/auto-complete/auto-complete.el"
+  "auto-complete.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  28977
+  '(17443 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/auto-complete/auto-complete-css.el"
+  "auto-complete-css.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  409
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/auto-complete/auto-complete-emacs-lisp.el"
+  "auto-complete-emacs-lisp.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  1194
+  '(1289 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/__init__.py"
+  "__init__.py"
+  'python-mode
+  '(yas/minor-mode auto-complete-mode flymake-mode linum-mode)
+  335
+  '(1 nil)
+  t
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.emacs.d/site-lisp/yasnippet-0.6.0c/yasnippet.el"
+  "yasnippet.el"
+  'emacs-lisp-mode
+  '(yas/minor-mode auto-complete-mode eldoc-mode paredit-mode)
+  22547
+  '(22459 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.newsrc-dribble"
+  ".newsrc-dribble"
   'fundamental-mode
-  '(ecb-minor-mode)
+  nil
+  596
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/.bbdb"
+  ".bbdb"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . iso-2022-7bit-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/community/profile.mak"
+  "profile.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  3333
+  '(3334 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Projects/python/market/market/templates/tools/sendafriend.mak"
+  "sendafriend.mak"
+  'sgml-mode
+  '(yas/minor-mode auto-complete-mode)
+  105
+  '(83 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/m4nic/Planning/gtd.html"
+  "gtd.html"
+  'html-mode
+  '(yas/minor-mode auto-complete-mode outline-minor-mode hs-minor-mode)
   1
   '(nil nil)
   nil
@@ -480,263 +1195,32 @@
   "/home/m4nic/Planning/maybe.gtd"
   "maybe.gtd"
   'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
+  '(yas/minor-mode auto-complete-mode)
   1
-  '(1 nil)
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
-  "/home/m4nic/Planning/gtd.gtd_archive"
-  "gtd.gtd_archive"
+  "/home/m4nic/Projects/python/market/market.gtd"
+  "market.gtd"
   'org-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
+  '(yas/minor-mode auto-complete-mode)
   1
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . mule-utf-8-unix) (truncate-lines . t)))
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
-  "/tmp/test.py"
-  "test.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  124
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . mule-utf-8)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/objects/option.py"
-  "option.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  3748
-  '(3506 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/ipython_log.py"
-  "ipython_log.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
+  "/home/m4nic/Planning/journal.gtd"
+  "journal.gtd"
+  'org-mode
+  '(yas/minor-mode auto-complete-mode)
   1
   '(nil nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/objects/mapper.py"
-  "mapper.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  2151
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/__init__.py"
-  "__init__.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  89
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/objects/portfolio.py"
-  "portfolio.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  1336
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/main.py"
-  "main.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  1517
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/setup.py"
-  "setup.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/objects/classes.py"
-  "classes.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  2945
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/objects/player.py"
-  "player.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  1834
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/lib/mailer.py"
-  "mailer.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  179
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/lib/uilayer.py"
-  "uilayer.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  287
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/TODO"
-  "TODO"
-  'todoo-mode
-  '(auto-fill-mode yas/minor-mode outline-minor-mode ecb-minor-mode)
-  52
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/tagall"
-  "tagall"
-  'sh-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/setup.cfg"
-  "setup.cfg"
-  'conf-unix-mode
-  '(yas/minor-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/README.txt"
-  "README.txt"
-  'text-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "*info*"
-  'Info-mode
-  '(yas/minor-mode ecb-minor-mode)
-  30045
-  '(nil nil)
-  t
-  '("/usr/share/info/ecb.info.gz" "First steps")
-  '((tab-width . 8) (buffer-file-coding-system . iso-latin-1-unix) (case-fold-search . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market.html"
-  "market.html"
-  'nxml-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . iso-latin-1-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita.html"
-  "innovita.html"
-  'nxml-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . mule-utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita.tex"
-  "innovita.tex"
-  'latex-mode
-  '(yas/minor-mode ecb-minor-mode)
-  371
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . mule-utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/session.10868d0efc677ee934125025536993379500000041450112"
-  "session.10868d0efc677ee934125025536993379500000041450112"
-  'fundamental-mode
-  '(ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . mule-utf-8)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita.xml"
-  "innovita.xml"
-  'nxml-mode
-  '(yas/minor-mode auto-complete-mode ecb-minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . mule-utf-8-unix)))
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
 

@@ -28,4 +28,7 @@
      (dolist (mode (list 'html-mode 'nxml-mode))
        (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?$" 'html-css))))
 
+(require 'auto-complete-css)
+(ac-css-init)
+
 (provide 'init-css)

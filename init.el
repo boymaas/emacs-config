@@ -40,7 +40,8 @@
     (let* ((my-lisp-dir "~/.emacs.d/site-lisp/")
 	   (default-directory my-lisp-dir))
       (progn
-	(setq load-path (cons my-lisp-dir load-path))
+        (setq load-path (cons my-lisp-dir load-path))
+        ;;(setq load-path my-lisp-dir)
 	(normal-top-level-add-subdirs-to-load-path))))
 (setq load-path (cons (expand-file-name "~/.emacs.d") load-path))
 
@@ -263,12 +264,16 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map "*" 'highlight-symbol-next)
   (define-key viper-vi-global-user-map "#" 'highlight-symbol-prev)
   (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change)
+  (define-key viper-vi-global-user-map ";be" 'ibuffer)
 
   ;; make modes more prominent
   (setq viper-vi-state-id (concat (propertize "<V>" 'face 'hi-blue-b) " "))
   (setq viper-emacs-state-id (concat (propertize "<E>" 'face 'hi-red-b) " "))
   (setq viper-insert-state-id (concat (propertize "<I>" 'face 'hi-blue-b) " "))
   (setq viper-replace-state-id (concat (propertize "<R>" 'face 'hi-blue-b) " "))
+
+  ;; use jumplist just like vim
+  ;(require 'init-ejumplist)
 
   ;; the property `risky-local-variable' is a security measure for mode line
   ;; variables that have properties.
@@ -501,6 +506,12 @@ in `exec-path', or nil if no such command exists"
 
 
 ;;----------------------------------------------------------------------------
+;; Tags
+;;----------------------------------------------------------------------------
+;;(load "~/.emacs.d/site-lisp/vtags/vtags.el")
+(require 'etags-select)
+
+;;----------------------------------------------------------------------------
 ;; Autocomplete
 ;;----------------------------------------------------------------------------
 (require 'auto-complete nil t)
@@ -521,9 +532,15 @@ in `exec-path', or nil if no such command exists"
 		lisp-mode textile-mode markdown-mode tuareg-mode))
   (add-to-list 'ac-modes mode))
 
+
+
 ;; This stops "end" followed by "RET" getting completed to something
 ;; like "endomorph" - have to use an explicit "TAB" to complete.
 (define-key ac-complete-mode-map (kbd "\r") nil)
+
+;; add auto-complete-mode for emacs lisp
+(require 'auto-complete-emacs-lisp)
+(ac-emacs-lisp-init)
 
 (when *vi-emulation-support-enabled*
   (define-key ac-complete-mode-map (kbd "C-n") 'dabbrev-expand)
@@ -649,7 +666,7 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; NXML
 ;;----------------------------------------------------------------------------
-(require 'init-nxml)
+;;(require 'init-nxml)
 
 
 ;;----------------------------------------------------------------------------
@@ -694,7 +711,8 @@ in `exec-path', or nil if no such command exists"
 ;; nxhtml-mode
 (load "~/.emacs.d/site-lisp/nxhtml/autostart.el")
 (add-auto-mode 'nxhtml-mode "\\.html$")
-(add-auto-mode 'mako-nxhtml-mumamo-mode "\\.mak$")
+(add-auto-mode 'sgml-mode "\\.mak$")
+;(add-auto-mode 'mako-nxhtml-mumamo-mode "\\.mak$")
 
 ;;(add-auto-mode 'sgml-mode "\\.mak$")
 

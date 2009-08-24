@@ -1,26 +1,36 @@
 (setq load-path (cons "~/.emacs.d/site-lisp/org-mode/lisp" load-path))
 (setq load-path (cons "~/.emacs.d/site-lisp/org-mode/contrib/lisp" load-path))
+
+(require 'org)
+(require 'org-agenda)
+
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
+;(define-key org-mode-map "\t" 'org-indent-line-function)
 (setq org-log-done t)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.gtd$" . org-mode))
 
 (setq org-completion-use-ido t)
 
+(setq org-startup-indented nil)
+(setq org-adapt-indentation t)
 
 ; Refile targets include this file and any file contributing to the agenda - up to 5 levels deep
-(setq org-refile-targets (quote ((nil :maxlevel . 5) (org-agenda-files :maxlevel . 5))))
+(setq org-refile-targets (quote ((nil :maxlevel . 2) (org-agenda-files :maxlevel . 2))))
 ; Targets start with the file name - allows creating level 1 tasks
 (setq org-refile-use-outline-path (quote file))
 ; Targets complete in steps so we start with filename, TAB shows the next level of targets etc 
-(setq org-outline-path-complete-in-steps t)
+;(setq org-outline-path-complete-in-steps t)
 
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "SOMEDAY(S)" "PROJECT(P@)" "|" "CANCELLED(c@/!)"))))
 
+
+(require 'org-clock)
+(require 'org-remember)
 
 ;; Resume clocking tasks when emacs is restarted
 (org-clock-persistence-insinuate)
@@ -93,6 +103,7 @@
       ("Todo" ?t "* TODO %^{Brief Description} %^g\n%?\nAdded: %U\nLink: %a" "~/Planning/gtd.gtd" "Refile")
       ("Journal" ?j "\n* %^{topic} %T \n%i%?\n" "~/Planning/journal.gtd")
       ("Note" ?n "\n* %^{topic} %T \n%i%?\n" "~/Planning/gtd.gtd" "Notes")
+      ("Someday" ?s "\n* %^{topic} %T \n%i%?\n" "~/Planning/maybe.gtd")
       ))
 
 ;; global shortcut to invoke remember
@@ -116,6 +127,7 @@
 (setq org-agenda-custom-commands
       (quote (("P" "Projects" tags "/!PROJECT" ((org-use-tag-inheritance nil)))
               ("s" "Started Tasks" todo "STARTED" ((org-agenda-todo-ignore-with-date nil)))
+              ("c" "Active Project" tags-todo "active&boy" ((org-agenda-todo-ignore-with-date nil)))
               ("w" "Tasks waiting on something" tags "WAITING" ((org-use-tag-inheritance nil)))
               ("r" "Refile New Notes and Tasks" tags "refile" ((org-agenda-todo-ignore-with-date nil)))
               ("n" "Notes" tags "note" nil))))
@@ -207,7 +219,7 @@
               :publishing-directory "/ssh:m4nic@tagged.nl:/projects/pylons/market/market/public/"
               :publishing-function org-publish-org-to-html
 ;              :exclude "PrivatePage.org"   ;; regexp
-              ;:headline-levels 3
+              :headline-levels 4
               :section-numbers t 
               :table-of-contents t 
 ;              :style "<link rel=\"stylesheet\"
@@ -222,4 +234,12 @@
 (setq org-export-docbook-xsl-fo-proc-command "fop %s %s")
 (setq org-export-docbook-xslt-proc-command "xsltproc --output %s /usr/share/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl %s")
 
+(require 'org-xoxo)
+(require 'org-html)
+
+;; custom keys
+(define-key org-agenda-keymap (kbd "w") 'org-agenda-refile)
+
+
 (provide 'init-org)
+
