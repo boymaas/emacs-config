@@ -129,7 +129,7 @@
               ("s" "Started Tasks" todo "STARTED" ((org-agenda-todo-ignore-with-date nil)))
               ("c" "Active Project" tags-todo "active&boy" ((org-agenda-todo-ignore-with-date nil)))
               ("w" "Tasks waiting on something" tags "WAITING" ((org-use-tag-inheritance nil)))
-              ("r" "Refile New Notes and Tasks" tags "refile" ((org-agenda-todo-ignore-with-date nil)))
+              ("r" "Refile New Notes and Tasks" tags "@refile" ((org-agenda-todo-ignore-with-date nil)))
               ("n" "Notes" tags "note" nil))))
 ;; (setq org-agenda-custom-commands
 ;;       '(

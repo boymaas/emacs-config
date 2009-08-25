@@ -10,10 +10,10 @@
 ;; seases to work and emacs doesn't load properly
 ;; need to fix first
 (setq *python-ropemacs-support-enabled* nil)
-(setq *ocaml-support-enabled* t)
-(setq *common-lisp-support-enabled* t)
-(setq *clojure-support-enabled* nil)
-(setq *scheme-support-enabled* t)
+(setq *ocaml-support-enabled* nil)
+(setq *common-lisp-support-enabled* nil)
+(setq *clojure-support-enabled* t)
+(setq *scheme-support-enabled* nil)
 (setq *macbook-pro-support-enabled* nil)
 (setq *erlang-support-enabled* nil)
 (setq *darcs-support-enabled* t)
@@ -510,6 +510,8 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;;(load "~/.emacs.d/site-lisp/vtags/vtags.el")
 (require 'etags-select)
+(global-set-key "\M-?" 'etags-select-find-tag-at-point)
+(global-set-key "\M-." 'etags-select-find-tag)
 
 ;;----------------------------------------------------------------------------
 ;; Autocomplete
