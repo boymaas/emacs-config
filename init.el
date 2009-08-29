@@ -265,6 +265,10 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map "#" 'highlight-symbol-prev)
   (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change)
   (define-key viper-vi-global-user-map ";be" 'ibuffer)
+  (define-key viper-vi-global-user-map "zo" 'show-entry)
+  (define-key viper-vi-global-user-map "zc" 'hide-entry)
+  (define-key viper-vi-global-user-map "zr" 'show-all)
+  (define-key viper-vi-global-user-map "zm" 'hide-body)
 
   ;; make modes more prominent
   (setq viper-vi-state-id (concat (propertize "<V>" 'face 'hi-blue-b) " "))
@@ -308,7 +312,7 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Navigate windows "C-<arrow>"
 ;;----------------------------------------------------------------------------
-(windmove-default-keybindings 'control)
+(windmove-default-keybindings 'shift)
 
 
 ;;----------------------------------------------------------------------------
@@ -512,6 +516,10 @@ in `exec-path', or nil if no such command exists"
 (require 'etags-select)
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
 (global-set-key "\M-." 'etags-select-find-tag)
+
+;;----------------------------------------------------------------------------
+(require 'hideshow-org)
+
 
 ;;----------------------------------------------------------------------------
 ;; Autocomplete

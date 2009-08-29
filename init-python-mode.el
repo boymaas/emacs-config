@@ -2,6 +2,25 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))  
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))  
 (require 'python-mode)  
+
+;; Python stuff for outline mode.
+;;(defvar py-outline-regexp "^\\([ \t]*\\)\\(def\\|class\\|if\\|elif\\|else\\|while\\|for\\|try\\|except\\|with\\)"
+;;  "This variable defines what constitutes a 'headline' to outline mode.")
+(defvar py-outline-regexp "^\\([ \t]*\\)\\(def\\|class\\|@\\|#\\|\"\"\"\\)"
+  "This variable defines what constitutes a 'headline' to outline mode.")
+
+(defun py-outline-level ()
+  "Report outline level for Python outlining."
+  (save-excursion
+    (end-of-line)
+    (let ((indentation (progn
+                         (re-search-backward py-outline-regexp)
+                         (match-string-no-properties 1))))
+      (if (and (> (length indentation) 0)
+               (string= "\t" (substring indentation 0 1)))
+          (length indentation)
+        (/ (length indentation) py-indent-offset)))))
+
 (add-hook 'python-mode-hook  
           (lambda ()  
             (set-variable 'py-indent-offset 4)  
@@ -12,8 +31,26 @@
             ;;(setq yas/after-exit-snippet-hook 'indent-according-to-mode)  
             ;;(smart-operator-mode-on)  
             (linum-mode)
-            ))  
+            
+            (outline-minor-mode 1)
+            (setq outline-regexp py-outline-regexp
+                  outline-level 'py-outline-level)
+            (hide-body)
+
+            (define-key viper-vi-local-user-map "zo" 'show-subtree)
+            (define-key viper-vi-local-user-map "zc" 'hide-leaves)
+            ))
  
+(defun py-open-block ()
+  (interactive)
+  (outline-up-heading)
+  (show-subtree))
+
+(defun py-close-block ()
+  (interactive)
+  (outline-up-heading)
+  (hide-leaves))
+
 (when *python-ropemacs-support-enabled*
   ;; pymacs  
   (autoload 'pymacs-apply "pymacs")  

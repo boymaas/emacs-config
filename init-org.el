@@ -1,8 +1,10 @@
 (setq load-path (cons "~/.emacs.d/site-lisp/org-mode/lisp" load-path))
 (setq load-path (cons "~/.emacs.d/site-lisp/org-mode/contrib/lisp" load-path))
+(setq load-path (cons "~/.emacs.d/site-lisp/org-babel/lisp" load-path))
 
 (require 'org)
 (require 'org-agenda)
+;(require 'org-babel)
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)

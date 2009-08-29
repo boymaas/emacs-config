@@ -117,6 +117,6 @@
  '(mumamo-background-chunk-major ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "DarkOliveGreen"))))
  '(org-agenda-date-today ((t (:background "CadetBlue" :foreground "Black" :weight extra-bold))) t)
- '(org-column ((t (:background "grey30" :strike-through nil :underline nil :slant normal :weight normal :height 100 :family "Terminus"))))
+ '(org-column ((t (:background "grey30" :strike-through nil :underline nil :slant normal :weight normal :height 1.0 :family "DejaVu Sans Mono"))))
  '(org-column-title ((t (:inherit org-column :background "grey30" :underline t :weight bold))))
  '(org-tag ((t (:underline t)))))
