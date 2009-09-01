@@ -6,7 +6,7 @@
 ;; Python stuff for outline mode.
 ;;(defvar py-outline-regexp "^\\([ \t]*\\)\\(def\\|class\\|if\\|elif\\|else\\|while\\|for\\|try\\|except\\|with\\)"
 ;;  "This variable defines what constitutes a 'headline' to outline mode.")
-(defvar py-outline-regexp "^\\([ \t]*\\)\\(def\\|class\\|@\\|#\\|\"\"\"\\)"
+(defvar py-outline-regexp "^\\([ \t]*\\)\\(def\\|class\\|@\\)"
   "This variable defines what constitutes a 'headline' to outline mode.")
 
 (defun py-outline-level ()

@@ -242,6 +242,8 @@
 ;; custom keys
 (define-key org-agenda-keymap (kbd "w") 'org-agenda-refile)
 
+;; (backing-up policy)
+(run-at-time "00:59" 3600 'org-save-all-org-buffers)
 
 (provide 'init-org)
 

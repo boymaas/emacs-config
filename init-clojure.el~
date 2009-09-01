@@ -5,20 +5,10 @@
 
 (eval-after-load 'clojure-mode '(clojure-slime-config))
 
-(add-hook 'clojure-mode-hook (lambda ()
-                               (enable-paredit clojure-mode-map)
-                               (linum-mode)))
-
 (defun slime-clojure ()
   "Fire up slime running the swank-clojure backend"
   (interactive)
   (slime 'clojure))
-
-(defun clojure-cheat ()
-  "Opens cheatsheet using org-mode function"
-  (interactive)
-  (org-open-file "~/Planning/data/50/e18f6a-7ae2-4086-8d1a-0f30cd18bbee/clojure-cheat-sheet-a4.pdf"))
-
 
 (defun clojure-project (path)
   "Setup classpaths for a clojure project and starts a new SLIME session."
@@ -48,14 +38,14 @@
   (save-window-excursion
     (slime)))
 
+;; want window movement keys working also in slime mode
+;(define-key slime-repl-mode-map (kbd "C-<up>") 'windmove-up)
+;(define-key slime-repl-mode-map (kbd "C-<down>") 'windmove-down)
 
 (eval-after-load 'slime-repl-mode
   '(lambda () 
-;; want window movement keys working also in slime mode
-     ;;(define-key slime-repl-mode-map (kbd "C-<up>") 'windmove-up)
-     ;;(define-key slime-repl-mode-map (kbd "C-<down>") 'windmove-down)
      (define-key slime-repl-mode-map (kbd "C-<up>") 'slime-repl-previous-input)
-     (define-key slime-repl-mode-map (kbd "C-<down>") 'slime-repl-next-input)))
+     (define-key slime-repl-mode-map (kbd "C-<down>") 'slime-repl-next-input))
 
 
 (global-set-key [f4] 'slime-selector)
