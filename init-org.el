@@ -132,6 +132,12 @@
               ("c" "Active Project" tags-todo "active&boy" ((org-agenda-todo-ignore-with-date nil)))
               ("w" "Tasks waiting on something" tags "WAITING" ((org-use-tag-inheritance nil)))
               ("r" "Refile New Notes and Tasks" tags "@refile" ((org-agenda-todo-ignore-with-date nil)))
+              ("d" "Daily Overview"
+               ((agenda)
+                (tags-todo "@tasks")
+                (tags-todo "@shopping")
+                (todo "STARTED")
+                ))
               ("n" "Notes" tags "note" nil))))
 ;; (setq org-agenda-custom-commands
 ;;       '(
@@ -163,7 +169,7 @@
 ; Set default column view headings: Task Effort Clock_Summary
 (setq org-columns-default-format "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
 ; global Effort estimate values
-(setq org-global-properties (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00"))))
+(setq org-global-properties (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00 12:00 16:00 20:00 24:00"))))
 
 
 ; Erase all reminders and rebuilt reminders for today from the agenda
