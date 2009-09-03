@@ -135,6 +135,7 @@
               ("d" "Daily Overview"
                ((agenda)
                 (tags-todo "@refile")
+                (tags-tree "@daily")
                 (tags-todo "@tasks")
                 (tags-todo "@shopping")
                 (todo "STARTED")
