@@ -17,8 +17,12 @@
 (defun clojure-cheat ()
   "Opens cheatsheet using org-mode function"
   (interactive)
-  (org-open-file "~/Planning/data/50/e18f6a-7ae2-4086-8d1a-0f30cd18bbee/clojure-cheat-sheet-a4.pdf"))
+  (org-open-file "~/Planning/data/50/e18f6a-7ae2-4086-8d1a-0f30cd18bbee/clojure-cheat-seet-a4.pdf"))
 
+(defun clojure-guide ()
+  "Opens programming using org-mode function"
+  (interactive)
+  (org-open-file "~/Planning/data/50/e18f6a-7ae2-4086-8d1a-0f30cd18bbee/Pragmatic.Bookshelf.Programming.Clojure.May.2009.pdf"))
 
 (defun clojure-project (path)
   "Setup classpaths for a clojure project and starts a new SLIME session."

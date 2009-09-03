@@ -134,6 +134,7 @@
               ("r" "Refile New Notes and Tasks" tags "@refile" ((org-agenda-todo-ignore-with-date nil)))
               ("d" "Daily Overview"
                ((agenda)
+                (tags-todo "@refile")
                 (tags-todo "@tasks")
                 (tags-todo "@shopping")
                 (todo "STARTED")
