@@ -268,6 +268,8 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map ";;" 'ido-switch-buffer)
   (define-key viper-vi-global-user-map ";d" 'dired)
   (define-key viper-vi-global-user-map ";f" 'ido-find-file)
+  (define-key viper-vi-global-user-map ";x" 'smex)
+  (define-key viper-vi-global-user-map ";X" 'smex-update-and-run)
   (define-key viper-vi-global-user-map "zo" 'show-entry)
   (define-key viper-vi-global-user-map "zc" 'hide-entry)
   (define-key viper-vi-global-user-map "zr" 'show-all)

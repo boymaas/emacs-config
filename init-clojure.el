@@ -7,7 +7,8 @@
 
 (add-hook 'clojure-mode-hook (lambda ()
                                (enable-paredit clojure-mode-map)
-                               (linum-mode)))
+                               (define-key viper-vi-local-user-map ";c" 'slime-compile-and-load-file)
+                               (linum-mode nil)))
 
 (defun slime-clojure ()
   "Fire up slime running the swank-clojure backend"
