@@ -265,6 +265,8 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map "#" 'highlight-symbol-prev)
   (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change)
   (define-key viper-vi-global-user-map ";be" 'ibuffer)
+  (define-key viper-vi-global-user-map ";;" 'ido-switch-buffer)
+  (define-key viper-vi-global-user-map ";d" 'dired)
   (define-key viper-vi-global-user-map "zo" 'show-entry)
   (define-key viper-vi-global-user-map "zc" 'hide-entry)
   (define-key viper-vi-global-user-map "zr" 'show-all)
@@ -375,8 +377,7 @@ in `exec-path', or nil if no such command exists"
 ;; Use ibuffer instead of the built in buffer list
 ;;----------------------------------------------------------------------------
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-b") 'ibuffer)
-
+(global-set-key (kbd "<f2>") 'ibuffer)
 
 ;;----------------------------------------------------------------------------
 ;; Dynamic expansion tweaks
