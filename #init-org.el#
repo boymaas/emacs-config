@@ -136,9 +136,9 @@
                ((agenda)
                 (tags-todo "@refile")
                 (tags-todo "@tasks")
-                (todo "STARTED")))
+                (todo "STARTED")
                 (tags "@daily+LEVEL=2/-DONE")
-                (tags-todo "@shopping")
+                (tags-todo "@shopping")))
               ("n" "Notes" tags "note" nil))))
 ;; (setq org-agenda-custom-commands
 ;;       '(
