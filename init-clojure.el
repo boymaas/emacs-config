@@ -7,7 +7,8 @@
 
 (add-hook 'clojure-mode-hook (lambda ()
                                (enable-paredit clojure-mode-map)
-                               (define-key viper-vi-local-user-map ";c" 'slime-compile-and-load-file)
+                               ;; don't want this is still defined in other buffers as well
+                               ;; (define-key viper-vi-local-user-map ";c" 'slime-compile-and-load-file)
                                (linum-mode nil)))
 
 (defun slime-clojure ()
