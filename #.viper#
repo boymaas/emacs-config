@@ -10,4 +10,4 @@
 
 (viper-record-kbd-macro "z" 'vi-state [\; \; (control m)] 't)
 
-(viper-record-kbd-macro ";r" 'vi-state [\; \; r e p l \ (control x) b \] 'clojure-mode)
+(viper-record-kbd-macro ";r" 'vi-state [\; \o r e p l \ ] 'clojure-mode)

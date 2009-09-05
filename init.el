@@ -255,7 +255,7 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-insert-global-user-map (kbd "C-p") 'dabbrev-expand)
 
   ;; rate at which macros should be typed
-  (setq viper-fast-keyseq-timeout 1000)
+  (setq viper-fast-keyseq-timeout 200)
   
   ;; Stop C-u from clobbering prefix-arg -- I always use C-b/C-f to scroll
   (define-key viper-vi-basic-map "\C-u" nil)
@@ -268,7 +268,9 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map "#" 'highlight-symbol-prev)
   (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change)
   (define-key viper-vi-global-user-map ";b" 'ibuffer)
-  (define-key viper-vi-global-user-map ";;" 'ido-switch-buffer)
+  (define-key viper-vi-global-user-map ";;" 'switch-to-buffer)
+  (define-key viper-vi-global-user-map ";'" 'delete-other-windows)
+  (define-key viper-vi-global-user-map ";o" 'switch-to-buffer-other-window)
   (define-key viper-vi-global-user-map ";d" 'dired)
   (define-key viper-vi-global-user-map ";f" 'ido-find-file)
   (define-key viper-vi-global-user-map ";x" 'smex)
