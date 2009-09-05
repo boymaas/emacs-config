@@ -279,6 +279,7 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map "zc" 'hide-entry)
   (define-key viper-vi-global-user-map "zr" 'show-all)
   (define-key viper-vi-global-user-map "zm" 'hide-body)
+  ;; other keys are defined in .viper
 
   ;; make modes more prominent
   (setq viper-vi-state-id (concat (propertize "<V>" 'face 'hi-blue-b) " "))
