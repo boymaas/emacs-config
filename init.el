@@ -288,6 +288,10 @@ in `exec-path', or nil if no such command exists"
 
   ;; use jumplist just like vim
   ;(require 'init-ejumplist)
+  (global-set-key "\C-o"
+                  '(lambda ()
+                     (interactive)
+                     (set-mark-command 0)))
 
   ;; the property `risky-local-variable' is a security measure for mode line
   ;; variables that have properties.
