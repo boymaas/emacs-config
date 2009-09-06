@@ -111,6 +111,7 @@
 (defvar clojure-test-count 0)
 (defvar clojure-test-failure-count 0)
 (defvar clojure-test-error-count 0)
+(defvar clojure-test-error-messages 0)
 
 ;; Consts
 
@@ -167,6 +168,7 @@
                   line event (format "Expected %s, got %s" expected actual)))
         (when (equal :error event)
           (incf clojure-test-error-count)
+          (error actual)
           (clojure-test-highlight-problem line event actual)))))))
 
 (defun clojure-test-highlight-problem (line event message)
