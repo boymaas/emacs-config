@@ -171,7 +171,7 @@
           (setq clojure-test-error-messages (cons actual clojure-test-error-messages))
           (clojure-test-highlight-problem line event actual))))))
   (when (> clojure-test-error-count 0)
-    (save-window-excursion clojure-test-error-messages)))
+    (with-output-to-temp-buffer "*clojure-test-error-messages" (dolist (msg clojure-test-error-messages) (print msg)))))
 
 (defun clojure-test-highlight-problem (line event message)
   ;; (add-to-list 'the-results (list line event message))
