@@ -56,6 +56,8 @@
  '(org-link-frame-setup (quote ((vm . vm-visit-folder-other-frame) (gnus . gnus) (file . find-file-other-window))))
  '(org-tags-column 80)
  '(quack-fontify-style nil)
+ '(quack-programs (quote ("gsi " "bigloo" "csi" "csi -hygienic" "gosh" "gsi" "gsi ~/syntax-case.scm -" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mred -z" "mzscheme" "mzscheme -M
+    errortrace" "mzscheme3m" "mzschemecgc" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(rails-ws:default-server-type "thin")
  '(recentf-exclude (quote ("/tmp/" "/ssh:")))
  '(recentf-mode t)
