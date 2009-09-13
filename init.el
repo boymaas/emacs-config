@@ -13,7 +13,7 @@
 (setq *ocaml-support-enabled* nil)
 (setq *common-lisp-support-enabled* nil)
 (setq *clojure-support-enabled* t)
-(setq *scheme-support-enabled* t)
+(setq *scheme-support-enabled* nil)
 (setq *macbook-pro-support-enabled* nil)
 (setq *erlang-support-enabled* nil)
 (setq *darcs-support-enabled* t)
