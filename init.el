@@ -20,7 +20,7 @@
 (setq *rails-support-enabled* nil)
 (setq *spell-check-support-enabled* nil)
 (setq *byte-code-cache-enabled* nil)
-(setq *twitter-support-enabled* nil)
+(setq *twitter-support-enabled* t)
 (setq *snippet-support-enabled* t)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
