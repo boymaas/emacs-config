@@ -6,6 +6,10 @@
 (require 'org-agenda)
 ;(require 'org-babel)
 
+
+;; load my personal blog
+(load "~/Personal/blog/web/publish_config.el")
+
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 ;(define-key org-mode-map "\t" 'org-indent-line-function)
@@ -118,7 +122,7 @@
   (concat org-directory fname))
 
 ;; some handy settings
-(setq org-timeline-show-empty-dates nil)
+(setq org-timeline-show-empty-dates t)
 (setq org-insert-mode-line-in-empty-file t)
 
 ;; Where to put the refile trees
