@@ -107,7 +107,7 @@
 (setq org-remember-templates
      '(
       ("Todo" ?t "* TODO %^{Brief Description} %^g\n%?\nAdded: %U\nLink: %a" "~/Planning/gtd.gtd" "Refile")
-      ("Journal" ?j "\n* %^{topic} %T \n%i%?\n" "~/Planning/journal.gtd")
+      ("Journal" ?j "\n* %^{topic} %T \n%i%c%?\nLink: %a\n" "~/Planning/journal.gtd")
       ("Note" ?n "\n* %^{topic} %T \n%i%?\n" "~/Planning/gtd.gtd" "Notes")
       ("Someday" ?s "\n* %^{topic} %T \n%i%?\n" "~/Planning/maybe.gtd")
       ))
