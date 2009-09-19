@@ -112,7 +112,7 @@
  '(flymake-warnline ((((class color)) (:background "red4"))))
  '(highlight ((t (:background "white" :foreground "black"))))
  '(highline-face ((t (:background "floral white"))))
- '(hl-line ((t (:background "magenta3"))))
+ '(hl-line ((t (:background "black"))))
  '(ido-first-match ((t (:background "black" :foreground "white"))))
  '(ido-indicator ((((class color)) (:background "black" :foreground "yellow" :width condensed))))
  '(ido-only-match ((((class color)) (:background "black" :foreground "ForestGreen"))))

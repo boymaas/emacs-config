@@ -523,7 +523,7 @@ in `exec-path', or nil if no such command exists"
   (require 'yasnippet)
   ;; Don't map TAB to yasnippet
   ;; In fact, set it to something we'll never use because we'll only ever trigger it indirectly.
-  ;;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
+  ;; (setq yas/trigger-key (kbd "<TAB>"))
   (yas/initialize)
   (yas/load-directory (concat (directory-of-library "yasnippet") "snippets")))
 
@@ -555,7 +555,7 @@ in `exec-path', or nil if no such command exists"
 	       ;; dabbrev is very slow in emacs 22
 	       '(ac-source-words-in-buffer)))
 
-(dolist (mode '(log-edit-mode org-mode text-mode haml-mode
+(dolist (mode '(log-edit-mode org-mode text-mode haml-mode 
 		sass-mode yaml-mode csv-mode espresso-mode haskell-mode
 		html-mode nxml-mode sh-mode smarty-mode clojure-mode
 		lisp-mode textile-mode markdown-mode tuareg-mode))

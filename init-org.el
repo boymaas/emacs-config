@@ -6,7 +6,6 @@
 (require 'org-install)
 (require 'org-babel-init)
 
-(setq org-src-lang-modes '())
 ;; Uncomment each of the following require lines if you want org-babel
 ;; to support that language.  Each language has a comment explaining
 ;; it's dependencies.  See the related files in lisp/langs for more
@@ -24,6 +23,14 @@
 ;; (require 'org-babel-sass)      ;; sass, sass-mode
 (require 'org-babel-sh)           ;; sass, sass-mode
 (require 'org-babel-sql)          ;; none
+
+;; add clojure to babel
+(org-babel-add-interpreter "clojure")
+(add-to-list 'org-babel-tangle-langs '("clojure" "clj" "#!/usr/bin/env clojure"))
+
+;; set lang modes
+(setq org-src-lang-modes '())
+(add-to-list 'org-src-lang-modes '("clojure" . clojure))
 
 ;; load my personal blog
 ;;(load "~/Personal/blog/web/publish_config.el")
