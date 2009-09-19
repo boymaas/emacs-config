@@ -26,8 +26,7 @@
 
 ;; add clojure to babel
 (org-babel-add-interpreter "clojure")
-(add-to-list 'org-babel-tangle-langs '("clojure-script" "clj" "#!/usr/bin/env clojure"))
-(add-to-list 'org-babel-tangle-langs '("clojure" "clj" ""))
+(add-to-list 'org-babel-tangle-langs '("clojure" "clj" "#!/usr/bin/env clojure"))
 
 ;; set lang modes
 (setq org-src-lang-modes '())
