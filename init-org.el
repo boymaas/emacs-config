@@ -1,14 +1,32 @@
 (setq load-path (cons "~/.emacs.d/site-lisp/org-mode/lisp" load-path))
 (setq load-path (cons "~/.emacs.d/site-lisp/org-mode/contrib/lisp" load-path))
-(setq load-path (cons "~/.emacs.d/site-lisp/org-babel/lisp" load-path))
 
 (require 'org)
 (require 'org-agenda)
-;(require 'org-babel)
+(require 'org-install)
+(require 'org-babel-init)
 
+(setq org-src-lang-modes '())
+;; Uncomment each of the following require lines if you want org-babel
+;; to support that language.  Each language has a comment explaining
+;; it's dependencies.  See the related files in lisp/langs for more
+;; detailed explanations of requirements.
+;; (require 'org-babel-R)         ;; R and ess-mode
+;; (require 'org-babel-asymptote) ;; asymptote
+;; (require 'org-babel-css)       ;; none
+;; (require 'org-babel-ditaa)     ;; ditaa
+;; (require 'org-babel-dot)       ;; dot
+;; (require 'org-babel-gnuplot)   ;; gnuplot, and gnuplot-mode
+(require 'org-babel-haskell)   ;; haskell, haskell-mode, inf-haskell
+;; (require 'org-babel-ocaml)     ;; ocaml, and tuareg-mode
+(require 'org-babel-python)    ;; python, and python-mode
+;; (require 'org-babel-ruby)      ;; ruby, irb, ruby-mode, and inf-ruby
+;; (require 'org-babel-sass)      ;; sass, sass-mode
+(require 'org-babel-sh)           ;; sass, sass-mode
+(require 'org-babel-sql)          ;; none
 
 ;; load my personal blog
-(load "~/Personal/blog/web/publish_config.el")
+;;(load "~/Personal/blog/web/publish_config.el")
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
