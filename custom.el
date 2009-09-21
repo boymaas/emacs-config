@@ -37,7 +37,7 @@
  '(frame-background-mode nil)
  '(global-font-lock-mode t nil (font-lock))
  '(global-hl-line-mode nil)
- '(global-smart-tab-mode t)
+ '(global-smart-tab-mode nil)
  '(grep-highlight-matches t)
  '(grep-scroll-output t)
  '(highlight-changes-global-changes-existing-buffers t)
