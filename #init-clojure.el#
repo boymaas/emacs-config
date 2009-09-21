@@ -62,8 +62,8 @@
      ;;(define-key slime-repl-mode-map (kbd "C-<down>") 'windmove-down)
      (define-key paredit-mode-map (kbd "M-<right>") 'paredit-forward)
      (define-key paredit-mode-map (kbd "M-<left>") 'paredit-backward)
-     (define-key slime-repl-mode-map (kbd "C-<up>") 'slime-repl-previous-matching-input)
-     (define-key slime-repl-mode-map (kbd "C-<down>") 'slime-repl-next-matching-input)))
+     (define-key slime-repl-mode-map (kbd "C-<up>") 'slime-repl-previous-input)
+     (define-key slime-repl-mode-map (kbd "C-<down>") 'slime-repl-next-input)))
 
 
 (global-set-key [f4] 'slime-selector)
