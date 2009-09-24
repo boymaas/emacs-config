@@ -51,7 +51,7 @@
  '(max-lisp-eval-depth 800)
  '(mouse-yank-at-point t)
  '(newsticker-url-list-defaults (quote (("Emacs Wiki" "http://www.emacswiki.org/cgi-bin/wiki.pl?action=rss" nil 3600) ("Quote of the day" "http://www.quotationspage.com/data/qotd.rss" "07:00" 86400) ("The Register" "http://www.theregister.co.uk/tonys/slashdot.rdf") ("slashdot" "http://slashdot.org/index.rss" nil 3600))))
- '(org-agenda-files (quote ("~/Planning/concepts/blog.gtd" "~/Planning/innovita/casino.gtd" "~/Planning/innovita/gamebattle.gtd" "~/Planning/innovita/dreamflyer.gtd" "~/Planning/educoncepts.gtd" "~/Planning/innovita.gtd" "~/Planning/maybe.gtd" "~/Projects/python/market/market.gtd" "~/Planning/journal.gtd" "~/Planning/gtd.gtd")))
+ '(org-agenda-files (quote ("~/Planning/concepts/ocasso.gtd" "~/Planning/concepts/blog.gtd" "~/Planning/innovita/casino.gtd" "~/Planning/innovita/gamebattle.gtd" "~/Planning/innovita/dreamflyer.gtd" "~/Planning/educoncepts.gtd" "~/Planning/innovita.gtd" "~/Planning/maybe.gtd" "~/Projects/python/market/market.gtd" "~/Planning/journal.gtd" "~/Planning/gtd.gtd")))
  '(org-agenda-include-diary t)
  '(org-agenda-ndays 14)
  '(org-agenda-window-setup (quote current-window))
