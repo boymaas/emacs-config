@@ -803,6 +803,10 @@ in `exec-path', or nil if no such command exists"
 (when *haskell-support-enabled*
   (require 'init-haskell))
 
+;;
+;; Haxe
+;;
+(require 'init-haxe)
 
 ;;----------------------------------------------------------------------------
 ;; OCaml
