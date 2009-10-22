@@ -83,6 +83,7 @@
  '(svn-status-hide-unmodified t)
  '(tooltip-delay 1.5)
  '(tooltip-mode t)
+ '(transient-mark-mode (quote (only . t)))
  '(truncate-lines nil)
  '(truncate-partial-width-windows nil)
  '(twit-user-image-dir "~/tmp/twitter-images/")
@@ -101,7 +102,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#121212" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 77 :width normal :foundry "bitstream" :family "Bitstream Vera Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#121212" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 116 :width normal :foundry "bitstream" :family "Bitstream Vera Sans Mono"))))
  '(darcsum-need-action-marked-face ((t (:foreground "forestgreen"))))
  '(diredp-dir-heading ((t (:background "black" :foreground "Blue" :weight bold))))
  '(diredp-dir-priv ((t (:foreground "DarkRed" :underline t))))

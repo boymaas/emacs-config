@@ -1,1 +1,1 @@
-;; org-persist.el - eve at <2009-10-05 Mon 21:57>
+;; org-persist.el - Idefix-Ubuntu at <2009-10-20 Tue 16:08>
