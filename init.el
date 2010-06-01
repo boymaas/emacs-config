@@ -12,7 +12,7 @@
 (setq *python-ropemacs-support-enabled* nil)
 (setq *ocaml-support-enabled* nil)
 (setq *common-lisp-support-enabled* nil)
-(setq *clojure-support-enabled* t)
+(setq *clojure-support-enabled* nil)
 (setq *scheme-support-enabled* nil)
 (setq *macbook-pro-support-enabled* nil)
 (setq *erlang-support-enabled* nil)

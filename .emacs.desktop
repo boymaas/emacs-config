@@ -2,609 +2,92 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Sep 15 23:12:47 2009
+;; Created Tue Jun  1 02:33:15 2010
 ;; Desktop file format version 206
 ;; Emacs version 23.0.91.1
 
 ;; Global section:
 (setq extended-command-history nil)
-(setq file-name-history '("/home/m4nic/.emacs.d/.viper" "/home/m4nic/Planning/concepts/playlist-convertor.gtd" "/home/m4nic/Personal/finance/bookmarks.txt" "/home/m4nic/Personal/finance/payments.txt" "/home/m4nic/Projects/gambc/hello-world.scm" "/home/m4nic/Projects/clojure/casino/src/casino/model/game.clj" "/home/m4nic/.emacs.d/init.el" "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/clojure-test-mode.el" "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/clojure-test-mode-pkg.el" "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/clojure-test-mode-autoloads.el" "/home/m4nic/.emacs.d/elpa/builtin-packages" "/home/m4nic/.emacs.d/site-lisp/clojure-mode/clojure-test-mode.el" "/home/m4nic/Projects/clojure/casino/src/inno/sql.clj" "/home/m4nic/Projects/python/market/market/model/tables.py" "/home/m4nic/Projects/python/market/market/model/objects/classes.py" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/.emacs.d/site-lisp/viper-addons/viper-in-more-modes.el" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/.emacs.d/custom.el" "/home/m4nic/.emacs.d/init.el" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/Projects/clojure-src/slime/HACKING" "/home/m4nic/.emacs.d/.viper" "/usr/share/emacs/23.0.91/lisp/emulation/viper.elc" "/home/m4nic/.emacs.d/site-lisp/vimpulse/vimpulse.el" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/.emacs.d/init-ido.el" "/home/m4nic/.emacs.d/.viper" "/home/m4nic/Projects/clojure/casino/src/casino/emacs-config.el" "/home/m4nic/Projects/clojure/casino/src/casino/model/fadfadfasdf"))
-(setq ido-last-directory-list '(("/home/m4nic/Personal/" . "finance/") ("/home/m4nic/.emacs.d/elpa/" . "clojure-test-mode-1.2/") ("/usr/share/emacs/23.0.91/lisp/" . "emulation/") ("/usr/share/emacs/site-lisp/" . "emacs-goodies-el/") ("/usr/share/emacs/23.0.91/" . "leim/") ("/usr/share/emacs/" . "23.0.91/") ("/home/m4nic/Projects/clojure/casino/src/casino/" . "core/") ("/home/m4nic/Projects/clojure/casino/src/inno/" . "sql/") ("/home/m4nic/Projects/clojure-src/clojure/src/clj/" . "clojure/") ("/home/m4nic/Projects/clojure-src/clojure/src/" . "clj/") ("/home/m4nic/Projects/clojure/casino/src/" . "casino/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/" . "sql/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/" . "contrib/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/" . "clojure/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/" . "src/") ("/home/m4nic/Projects/python/market/market/config/snapshot/" . "snaps/") ("/home/m4nic/Projects/python/market/market/config/" . "snapshot/") ("/home/m4nic/Projects/clojure-code/compojure/test/compojure/" . "http/") ("/home/m4nic/Projects/clojure-code/compojure/test/" . "compojure/") ("/home/m4nic/Projects/clojure-code/compojure/" . "test/") ("/home/m4nic/Projects/clojure-src/swank-clojure/swank/" . "commands/") ("/home/m4nic/Projects/clojure-src/swank-clojure/" . "swank/") ("/home/m4nic/Projects/clojure/casino/" . "src/") ("/home/m4nic/Projects/clojure/" . "casino/") ("/home/m4nic/Projects/clojure-src/clojure/classes/" . "clojure/") ("/home/m4nic/Projects/clojure-src/clojure/" . "src/") ("/home/m4nic/Projects/clojure-src/" . "slime/") ("/home/m4nic/Projects/clojure-code/programming-clojure/examples/" . "server/") ("/home/m4nic/Projects/clojure-code/programming-clojure/" . "lancet/") ("/home/m4nic/Projects/clojure-code/" . "compojure/") ("/projects/pylons/shop/" . "shop/") ("/projects/pylons/shop/shop/templates/admin/" . "coupons/") ("/projects/pylons/shop/shop/templates/" . "admin/") ("/projects/pylons/shop/shop/controllers/" . "admin/") ("/projects/pylons/" . "shop/") ("/home/m4nic/Projects/python/market/market/lib/snapshot/" . "config/") ("/home/m4nic/Planning/attachments/" . "art-of-assembly-programming/") ("/home/m4nic/Desktop/" . "Pragmatic.Bookshelf.Programming.Clojure.May.2009.eBook-BBL/") ("/home/m4nic/Projects/python/market/market/public/jquery-boy/css/" . "le-frog/") ("/home/m4nic/Projects/python/market/market/public/jquery-boy/" . "css/") ("/home/m4nic/Projects/python/market/market/public/" . "jquery-boy/") ("/home/m4nic/Projects/python/market/market/model/" . "objects/") ("/home/m4nic/Projects/python/market/market/lib/" . "snapshot/") ("~/Projects/python/market/market/" . "config/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/" . "lisp/") ("/projects/" . "pylons/") ("/projects/pylons/shop/shop/" . "model/") ("/etc/" . "X11/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/python-site-dir/" . "ropemode/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/" . "python-site-dir/") ("/home/m4nic/Projects/python/market/" . "lib/") ("/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" . "auto-save-list/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/" . "lisp/") ("/home/m4nic/Projects/haskell/bolt/" . "bolt-cabal/") ("/home/m4nic/Planning/data/" . "6d/") ("/home/m4nic/.emacs.d/site-lisp/" . "viper-addons/") ("/home/m4nic/Projects/emacs-examples/" . "conf-0-first-attempt/") ("/home/m4nic/Planning/" . "concepts/") ("/usr/share/emacs22/" . "site-lisp/") ("/usr/share/" . "emacs/") ("/home/m4nic/Projects/emacs/" . "Pymacs-0.23/") ("/home/m4nic/Projects/python/market/market/templates/" . "community/") ("/home/m4nic/Projects/python/market/market/" . "model/") ("/home/m4nic/Projects/python/" . "market/") ("/home/m4nic/Projects/haskell/bolt/mks/" . "app/") ("/home/m4nic/Projects/lisp/clbuild/source/" . "casino/") ("/usr/" . "share/") ("/home/" . "m4nic/") ("/home/m4nic/" . "Personal/") ("/" . "home/") ("/home/m4nic/.emacs.d/site-dir/" . "icicles/") ("/home/m4nic/.emacs.d/" . "elpa/") ("/home/m4nic/Projects/lisp/clbuild/" . "source/") ("/home/m4nic/Projects/lisp/" . "clbuild/") ("/home/m4nic/Projects/" . "gambc/")))
-(setq ido-work-directory-list '("/home/m4nic/.emacs.d/" "/home/m4nic/Planning/concepts/" "/home/m4nic/Personal/finance/" "/home/m4nic/Projects/gambc/" "/home/m4nic/Projects/clojure/casino/src/casino/model/" "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/" "/home/m4nic/.emacs.d/elpa/" "/home/m4nic/.emacs.d/site-lisp/clojure-mode/" "/home/m4nic/Projects/clojure/casino/src/inno/" "/home/m4nic/Projects/python/market/market/model/" "/home/m4nic/Projects/python/market/market/model/objects/" "/home/m4nic/.emacs.d/site-lisp/viper-addons/" "/home/m4nic/Projects/clojure-src/slime/" "/usr/share/emacs/23.0.91/lisp/emulation/" "/home/m4nic/.emacs.d/site-lisp/vimpulse/" "/home/m4nic/Projects/clojure/casino/src/casino/" "/home/m4nic/Projects/clojure/casino/test/" "/home/m4nic/Planning/" "/home/m4nic/Projects/clojure/casino/src/" "/home/m4nic/Projects/clojure-src/clojure/src/clj/clojure/" "/home/m4nic/Projects/clojure/casino/src/inno/sql/" "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/" "/home/m4nic/Projects/clojure-src/clojure-contrib/" "/home/m4nic/Projects/clojure/casino/src/casino/core/" "/home/m4nic/" "/home/m4nic/bin/" "/home/m4nic/Desktop/" "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/" "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/sql/" "/home/m4nic/Projects/clojure/casino/" "/home/m4nic/Projects/python/market/market/config/snapshot/snaps/" "/home/m4nic/Projects/clojure-code/compojure/test/compojure/http/" "/home/m4nic/Projects/clojure-code/compojure/test/compojure/html/" "/home/m4nic/Projects/clojure-code/compojure/test/" "/home/m4nic/Projects/clojure-code/compojure/src/" "/projects/pylons/shop/shop/model/" "/projects/pylons/shop/shop/controllers/" "/home/m4nic/Projects/lisp/clbuild/source/casino/" "/home/m4nic/Projects/clojure-src/swank-clojure/swank/commands/" "/home/m4nic/Projects/clojure-src/swank-clojure/swank/" "/home/m4nic/Projects/clojure-code/mona-clojure/" "/home/m4nic/Projects/clojure/casino/lib/" "/home/m4nic/Projects/clojure-code/programming-clojure/lancet/" "/home/m4nic/Projects/clojure-code/programming-clojure/reader/" "/home/m4nic/Projects/clojure-code/programming-clojure/examples/" "/home/m4nic/Projects/clojure-src/clojure/src/" "/home/m4nic/Projects/clojure-code/programming-clojure/examples/server/" "/home/m4nic/.emacs.d/site-lisp/hideshow-org/" "/home/m4nic/Projects/python/market/market/lib/snapshot/" "/home/m4nic/Projects/python/market/market/forms/"))
-(setq ido-work-file-list '(".viper" "playlist-convertor.gtd" "bookmarks.txt" "payments.txt" "hello-world.scm" "game.clj" "init.el" "clojure-test-mode.el" "clojure-test-mode-pkg.el" "clojure-test-mode-autoloads.el"))
-(setq grep-history '("grep -nH -e '\\w\\+\\.account\\.transfer' -r ./ --exclude-dir .svn" "grep -nH -e org-cycle -r ." "grep -nH -e '\\w\\+\\.account\\.transfer' -r ../model/ --exclude-dir .svn" "grep -nH -e '\\w\\+\\.account' -r ../model/ --exclude-dir .svn" "grep -nH -e '\\w+\\.account' -r ../model/ --exclude-dir .svn" "grep -nH -e Account -r ../model/ --exclude-dir .svn" "grep -nH -e Account -r ./ --exclude-dir .svn" "grep -nH -e warning -r ./ --exclude-dir .svn" "grep -nH -e 'org-.*-face' -r ../org-mode/lisp/" "grep -nH -e tipbox -r . --exclude-dir .svn" "grep -nH -e tipbox -r . --exclude .svn" "grep -nH -e tipbox -r ."))
+(setq file-name-history '("~/.emacs.d/org-clock-save.el" "~/Sites/slutmachines.com/lib/compojure-0.4.0-RC3.jar" "~/Sites/slutmachines.com/lib/swank-clojure-1.2.0.jar" "~/Sites/slutmachines.com/src/server.clj" "~/.emacs.d/org-clock-save.el" "~/Sites/slutmachines.com/src/server.clj" "/home/m4nic/Lab/clojure/Gajure/src/gajure/core.clj" "~/.emacs.d/elpa/swank-clojure-1.1.0/swank-clojure-autoloads.el" "~/.emacs.d/elpa/slime-repl-20100404/slime-repl-autoloads.el" "~/.emacs.d/elpa/slime-20100404/slime-autoloads.el" "~/.emacs.d/elpa/clojure-mode-1.7.1/clojure-mode-autoloads.el" "~/.emacs.d/elpa/smart-tab-0.3/smart-tab-autoloads.el" "~/.emacs.d/site-lisp/org-mode/lisp/org-attach.el" "~/.emacs.d/site-lisp/vimpulse/vimpulse.el" "/usr/share/emacs/23.0.91/lisp/emulation/viper.elc" "~/.emacs.d/init-ido.el" "~/.emacs.d/custom.el" "~/.emacs.d/site-lisp/viper-addons/viper-in-more-modes.el" "~/.emacs.d/elpa/builtin-packages" "~/.emacs.d/.viper" "~/.emacs.d/site-lisp/org-babel/lisp/org-babel.el" "~/.emacs.d/site-lisp/org-mode/contrib/lisp/org-babel-init.el" "~/.emacs.d/site-lisp/org-babel/lisp/langs/org-babel-sh.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-haskell.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-emacs-lisp.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-R.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-asymptote.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-css.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-sql.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/langs/org-babel-sh.el" "~/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/org-babel-tangle.el" "~/.emacs.d/site-lisp/yasnippet-0.6.0c/snippets/text-mode/org-mode/block" "~/.emacs.d/site-lisp/yasnippet-0.6.0c/snippets/text-mode/org-mode/src" "~/.emacs.d/elpa/smart-tab-0.3/smart-tab.el" "~/.emacs.d/init-org.el" "~/.clojure.conf"))
+(setq ido-last-directory-list '(("/home/m4nic/" . "Sites/") ("/home/m4nic/Lab/clojure/Gajure/src/" . "gajure/") ("/home/m4nic/Lab/clojure/Gajure/" . "src/") ("/home/m4nic/Lab/clojure/" . "Gajure/") ("/home/m4nic/Lab/" . "clojure/") ("/home/m4nic/Sites/slutmachines.com/" . "src/") ("/home/m4nic/Sites/" . "slutmachines.com/") ("/home/m4nic/Projects/clojure/server/casino/public/games/flas/" . "clubk/") ("/home/m4nic/Projects/clojure/server/casino/public/games/" . "flas/") ("/home/m4nic/Projects/clojure/server/casino/public/" . "games/") ("/home/m4nic/Projects/clojure-examples/compojure.org/public/" . "img/") ("/home/m4nic/Projects/clojure-examples/compojure.org/src/org/" . "compojure/") ("/home/m4nic/Projects/clojure-examples/compojure.org/src/" . "org/") ("/home/m4nic/Projects/clojure-examples/compojure.org/" . "pages/") ("/home/m4nic/Projects/clojure-examples/" . "compojure.org/") ("/home/m4nic/Projects/python/market/market/systemtest/config/" . "markets/") ("/home/m4nic/Projects/python/market/market/tests/" . "fixtures/") ("/home/m4nic/Projects/python/market/market/systemtest/" . "cases/") ("~/Projects/python/" . "market/") ("~/Projects/" . "python/") ("/home/m4nic/Projects/clojure/server/casino/src/casino/" . "model/") ("/home/m4nic/Projects/clojure/server/casino/src/" . "casino/") ("/home/m4nic/Projects/clojure/server/casino/" . "public/") ("/home/m4nic/Projects/clojure/server/" . "casino/") ("/home/m4nic/Personal/personal/writings/programming/" . "python/") ("/home/m4nic/Personal/personal/writings/philosophy/" . "_attic/") ("/home/m4nic/Personal/personal/writings/" . "philosophy/") ("/home/m4nic/Personal/personal/" . "writings/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/test_contrib/" . "pprint/") ("/home/m4nic/Projects/clojure/blog/src/" . "org_file/") ("/home/m4nic/Projects/clojure/blog/" . "test-org-files/") ("/home/m4nic/.emacs.d/site-lisp/yasnippet-0.6.0c/snippets/text-mode/" . "org-mode/") ("/home/m4nic/.emacs.d/site-lisp/yasnippet-0.6.0c/snippets/" . "text-mode/") ("/home/m4nic/.emacs.d/site-lisp/yasnippet-0.6.0c/" . "snippets/") ("/home/m4nic/Personal/" . "personal/") ("/home/m4nic/.emacs.d/elpa/" . "smart-tab-0.3/") ("/usr/share/emacs/23.0.91/lisp/" . "emulation/") ("/usr/share/emacs/site-lisp/" . "emacs-goodies-el/") ("/usr/share/emacs/23.0.91/" . "leim/") ("/usr/share/emacs/" . "23.0.91/") ("/home/m4nic/Projects/clojure/casino/src/casino/" . "core/") ("/home/m4nic/Projects/clojure/casino/src/inno/" . "sql/") ("/home/m4nic/Projects/clojure-src/clojure/src/clj/" . "clojure/") ("/home/m4nic/Projects/clojure-src/clojure/src/" . "clj/") ("/home/m4nic/Projects/clojure/casino/src/" . "casino/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/" . "test_contrib/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/" . "contrib/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/src/" . "clojure/") ("/home/m4nic/Projects/clojure-src/clojure-contrib/" . "src/") ("/home/m4nic/Projects/python/market/market/config/snapshot/" . "snaps/") ("/home/m4nic/Projects/python/market/market/config/" . "markets/") ("/home/m4nic/Projects/clojure-code/compojure/test/compojure/" . "http/") ("/home/m4nic/Projects/clojure-code/compojure/test/" . "compojure/") ("/home/m4nic/Projects/clojure-code/compojure/" . "test/") ("/home/m4nic/Projects/clojure-src/swank-clojure/swank/" . "commands/") ("/home/m4nic/Projects/clojure-src/swank-clojure/" . "swank/") ("/home/m4nic/Projects/clojure/casino/" . "src/") ("/home/m4nic/Projects/clojure/" . "server/") ("/home/m4nic/Projects/clojure-src/clojure/classes/" . "clojure/") ("/home/m4nic/Projects/clojure-src/clojure/" . "src/") ("/home/m4nic/Projects/clojure-src/" . "slime/") ("/home/m4nic/Projects/clojure-code/programming-clojure/examples/" . "server/") ("/home/m4nic/Projects/clojure-code/programming-clojure/" . "lancet/") ("/home/m4nic/Projects/clojure-code/" . "compojure/") ("/projects/pylons/shop/" . "shop/") ("/projects/pylons/shop/shop/templates/admin/" . "coupons/") ("/projects/pylons/shop/shop/templates/" . "admin/") ("/projects/pylons/shop/shop/controllers/" . "admin/") ("/projects/pylons/" . "shop/") ("/home/m4nic/Projects/python/market/market/lib/snapshot/" . "config/") ("/home/m4nic/Planning/attachments/" . "art-of-assembly-programming/") ("/home/m4nic/Desktop/" . "Psych/") ("/home/m4nic/Projects/python/market/market/public/jquery-boy/css/" . "le-frog/") ("/home/m4nic/Projects/python/market/market/public/jquery-boy/" . "css/") ("/home/m4nic/Projects/python/market/market/public/" . "jquery-boy/") ("/home/m4nic/Projects/python/market/market/model/" . "objects/") ("/home/m4nic/Projects/python/market/market/lib/" . "snapshot/") ("~/Projects/python/market/market/" . "config/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/" . "lisp/") ("/projects/" . "pylons/") ("/projects/pylons/shop/shop/" . "model/") ("/etc/" . "X11/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/python-site-dir/" . "ropemode/") ("/home/m4nic/.emacs.d/site-lisp/pymacs/" . "python-site-dir/") ("/home/m4nic/Projects/python/market/" . "market/") ("/home/m4nic/Projects/emacs-examples/conf-0-first-attempt/" . "auto-save-list/") ("/home/m4nic/.emacs.d/site-lisp/org-mode/" . "contrib/") ("/home/m4nic/Projects/haskell/bolt/" . "bolt-cabal/") ("/home/m4nic/Planning/data/" . "6d/") ("/home/m4nic/.emacs.d/site-lisp/" . "yasnippet-0.6.0c/") ("/home/m4nic/Projects/emacs-examples/" . "conf-0-first-attempt/") ("/home/m4nic/Planning/" . "innovita/") ("/usr/share/emacs22/" . "site-lisp/") ("/usr/share/" . "emacs/") ("/home/m4nic/Projects/emacs/" . "Pymacs-0.23/") ("/home/m4nic/Projects/python/market/market/templates/" . "community/") ("/home/m4nic/Projects/python/market/market/" . "tests/") ("/home/m4nic/Projects/python/" . "market/") ("/home/m4nic/Projects/haskell/bolt/mks/" . "app/") ("/home/m4nic/Projects/lisp/clbuild/source/" . "casino/")))
+(setq ido-work-directory-list '("/home/m4nic/Lab/clojure/Gajure/src/gajure/" "/home/m4nic/Lab/clojure/Gajure/src/Example/" "/home/m4nic/.emacs.d/" "/home/m4nic/Sites/slutmachines.com/src/" "/home/m4nic/" "/home/m4nic/Projects/haxe/" "/home/m4nic/Projects/clojure/server/casino/public/games/flas/clubk/" "/home/m4nic/Projects/clojure/server/casino/src/casino/game/" "/home/m4nic/Desktop/Psych/" "/home/m4nic/Projects/python/market/" "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/" "/home/m4nic/Projects/clojure-examples/compojure.org/pages/" "/home/m4nic/Projects/clojure-examples/compojure.org/scripts/" "/home/m4nic/Projects/clojure-examples/compojure.org/public/img/" "/home/m4nic/Projects/clojure-examples/compojure.org/public/css/" "/home/m4nic/Projects/clojure-examples/compojure.org/src/org/compojure/" "/home/m4nic/Projects/python/market/market/tests/" "/home/m4nic/Projects/python/market/market/" "/home/m4nic/Projects/python/market/market/systemtest/cases/" "/home/m4nic/Projects/python/market/market/controllers/" "/home/m4nic/Projects/python/market/market/config/markets/" "/home/m4nic/Projects/python/market/market/systemtest/config/markets/" "/home/m4nic/Projects/python/market/market/systemtest/config/" "/home/m4nic/Projects/python/market/market/config/" "/home/m4nic/Projects/python/market/market/tests/fixtures/" "/home/m4nic/Projects/python/market/market/lib/" "/home/m4nic/Projects/python/market/market/tests/functional/" "/home/m4nic/Projects/python/market/market/tests/unit/" "/home/m4nic/Projects/python/market/market/systemtest/" "~/Projects/python/market/" "/home/m4nic/Projects/clojure/server/casino/src/casino/model/" "/home/m4nic/Projects/clojure/server/casino/src/casino/" "/home/m4nic/Planning/innovita/" "/home/m4nic/Projects/haskell/" "/home/m4nic/Personal/personal/writings/philosophy/" "/home/m4nic/Personal/personal/writings/mindhacking/" "/home/m4nic/Personal/personal/writings/programming/python/" "/home/m4nic/Personal/personal/writings/programming/" "/home/m4nic/Personal/personal/writings/philosophy/_attic/" "/home/m4nic/Personal/personal/writings/" "/home/m4nic/bin/" "/home/m4nic/Projects/clojure/blog/src/" "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/test_contrib/pprint/" "/home/m4nic/Projects/clojure/blog/src/org_file/" "/home/m4nic/Projects/clojure/blog/src/org-file/" "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/datalog/" "/home/m4nic/Projects/clojure/blog/test-org-files/" "/home/m4nic/.emacs.d/elpa/smart-tab-0.3/" "/home/m4nic/.emacs.d/site-lisp/yasnippet-0.6.0c/snippets/text-mode/org-mode/" "/home/m4nic/.emacs.d/site-lisp/org-mode/contrib/babel/lisp/"))
+(setq ido-work-file-list '("core.clj" "example.clj" "init.el" "server.clj" ".gitignore" "DEPENDENCIES" "init-haxe.el" "compile.hxml" "Test.hx" "streams.txt"))
+(setq grep-history '("grep -nH -e cl-format -r ." "grep -nH -e org-src-lang-modes -r ." "grep -nH -e '\\w\\+\\.account\\.transfer' -r ./ --exclude-dir .svn" "grep -nH -e org-cycle -r ." "grep -nH -e '\\w\\+\\.account\\.transfer' -r ../model/ --exclude-dir .svn" "grep -nH -e '\\w\\+\\.account' -r ../model/ --exclude-dir .svn" "grep -nH -e '\\w+\\.account' -r ../model/ --exclude-dir .svn" "grep -nH -e Account -r ../model/ --exclude-dir .svn" "grep -nH -e Account -r ./ --exclude-dir .svn" "grep -nH -e warning -r ./ --exclude-dir .svn" "grep -nH -e 'org-.*-face' -r ../org-mode/lisp/" "grep -nH -e tipbox -r . --exclude-dir .svn" "grep -nH -e tipbox -r . --exclude .svn" "grep -nH -e tipbox -r ."))
 (setq compile-history nil)
-(setq minibuffer-history '("cloj-mo" "cloj" "git-sta" "casino.model.test.game" "par" "mzlib" "hello-world" "gsi -:d-" "clo" "git" "pa" "cloj" "git-s" "pac" "casino.model.tables" "clop" "par" "togg" "git" "git-status" "auto-fill" "clogui" "casino.model.account" "com" "clo" "1" "inde" "region" "clojte" "viper"))
+(setq minibuffer-history '("pa" "mac" "help" "4005" "127.0.0.1" "slm" "pa" "pp-ma" "macroe" "4005" "127.0.0.1" "slim" "4005" "127.0.0.1" "sl" "4005" "127.0.0.1" "slim" "cloj" "4005" "127.0.0.1" "sl" "pa" "4005" "127.0.0.1" "slim" "pa" "4005" "127.0.0.1" "sli"))
 (setq query-replace-history '("with-test-db" "model/with-test-db" "\\1:@\\2" "\\(\\*\\+.*\\):\\([a-z]\\)" ":@\\1" "\\*.*:\\([a-z]\\)" ":@\\1" ":\\([a-z]\\)" ":@\\1" ":\\([a-z]\\)" ":@\\1" ":\\([a-z]\\)" ":@\\1" ":\\([a-z])" ":@\\1" ":([a-z])" ":@\\1" ":[a-z]" ";" "." ";" "^"))
-(setq read-expression-history nil)
+(setq read-expression-history '("ANY"))
 (setq regexp-history nil)
-(setq regexp-search-ring '("clojure-mode" "C-k" "bin" "Companies" "Project" "lisp" "Time" "ema" "Pa" "snapshot" "snapshots" "classes" "tab" "tab>" "TAB" "pymacs"))
+(setq regexp-search-ring '("exmp" "slim" "slime" "swankq" "swank" "slime" "clojd" "swaknk" "swankd" "swank" "swankd" "slime" "C-c" "slime" "clojure-" "slime"))
 (setq search-ring nil)
 (setq shell-command-history nil)
 (setq tags-file-name "/home/m4nic/Projects/python/market/TAGS")
-(setq register-alist (list '(97 . ";;(viper-record-kbd-macro \";c\" 'vi-state [(control c) (control k)] 'clojure-mode)\n") (desktop-list* 20 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 154 (get-buffer "weekly-review.gtd")))) mk)) (desktop-list* 2 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 55 (get-buffer "weekly-review.gtd")))) mk)) (desktop-list* 1 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 98 (get-buffer "weekly-review.gtd")))) mk)) (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 5098 (get-buffer "game.clj —£À model")))) mk))))
+(setq register-alist (list '(26 file-query "/home/m4nic/Sites/slutmachines.com/lib/compojure-0.4.0-RC3.jar:compojure/core.clj" 2142) '(25 file-query "/home/m4nic/Sites/slutmachines.com/lib/compojure-0.4.0-RC3.jar:compojure/core.clj" 2142) '(97 . ";;(viper-record-kbd-macro \";c\" 'vi-state [(control c) (control k)] 'clojure-mode)\n") '(20 file-query "/home/m4nic/.emacs.d/init.el" 228) (desktop-list* 2 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk nil (get-buffer " *temp*")))) mk)) '(1 file-query "/home/m4nic/.emacs.d/init.el" 4871) (list 82 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk nil (get-buffer " *temp*")))) mk))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/game.clj"
-  "game.clj"
+  "/home/m4nic/Sites/slutmachines.com/lib/compojure-0.4.0-RC3.jar:compojure/core.clj"
+  "core.clj (compojure-0.4.0-RC3.jar)"
   'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  5127
-  '(nil nil)
+  '(yas/minor-mode auto-complete-mode slime-mode)
+  656
+  '(448 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  11908
-  '(11857 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/.viper"
-  ".viper"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  685
-  '(270 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/concepts/playlist-convertor.gtd"
-  "playlist-convertor.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  396
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/journal.gtd"
-  "journal.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(63841 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/gtd.gtd"
-  "gtd.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  543
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/data/2c/7e159b-05db-40a4-834f-176a75088075/weekly-review.gtd"
-  "weekly-review.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1643
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita/casino.gtd"
-  "casino.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  15686
-  '(28173 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/test/casino/model/test/game.clj"
-  "game.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  1026
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/tables.clj"
-  "tables.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  2009
-  '(2009 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/usr/lib/plt/collects/mzlib/match.ss"
-  "match.ss"
-  'scheme-mode
-  '(yas/minor-mode)
-  107
-  '(nil nil)
-  t
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "mzlib"
-  'dired-mode
-  '(yas/minor-mode)
-  1844
-  '(nil nil)
-  t
-  '("/usr/lib/plt/collects/mzlib/")
   nil)
 
 (desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/inno/sql/deftable.clj"
-  "deftable.clj"
+  "/home/m4nic/Sites/slutmachines.com/lib/compojure-0.4.0-RC3.jar:compojure/response.clj"
+  "response.clj (compojure-0.4.0-RC3.jar)"
   'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  2136
-  '(433 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-auto-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/account.clj"
-  "account.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  4694
-  '(4395 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/clojure-test-mode.el"
-  "clojure-test-mode.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  251
+  '(yas/minor-mode auto-complete-mode slime-mode)
+  390
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/clojure-test-mode-pkg.el"
-  "clojure-test-mode-pkg.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/elpa/clojure-test-mode-1.2/clojure-test-mode-autoloads.el"
-  "clojure-test-mode-autoloads.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  363
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/elpa/builtin-packages"
-  "builtin-packages"
-  'fundamental-mode
-  nil
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/inno/sql.clj"
-  "sql.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  162
-  '(571 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/config.clj"
-  "config.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  190
-  '(548 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/test/model.clj"
-  "model.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  1
-  '(458 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model.clj"
-  "model.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  1
-  '(280 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/transaction.clj"
-  "transaction.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  103
-  '(103 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market/model/objects/classes.py"
-  "classes.py"
-  'python-mode
-  '(yas/minor-mode auto-complete-mode outline-minor-mode linum-mode)
-  7566
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/viper-addons/viper-in-more-modes.el"
-  "viper-in-more-modes.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  4139
-  '(1833 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/custom.el"
-  "custom.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  1
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure-src/slime/slime.el"
-  "slime.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  92348
-  '(83873 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . iso-latin-1-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "slime"
-  'dired-mode
-  '(yas/minor-mode)
-  1175
-  '(nil nil)
-  t
-  '("/home/m4nic/Projects/clojure-src/slime/")
   nil)
 
 (desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-ido.el"
-  "init-ido.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  586
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure-src/slime/HACKING"
-  "HACKING"
-  'outline-mode
-  '(yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-clojure.el"
-  "init-clojure.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  487
-  '(490 nil)
+  "/home/m4nic/Sites/slutmachines.com/src/server.clj"
+  "server.clj"
+  'clojure-mode
+  '(yas/minor-mode auto-complete-mode slime-mode)
+  646
+  '(3656 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
-  "/usr/share/emacs/23.0.91/lisp/emulation/viper.elc"
-  "viper.elc"
-  'fundamental-mode
-  nil
-  1640
-  '(nil nil)
-  t
-  nil
-  '((buffer-file-coding-system . utf-8-emacs-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/vimpulse/vimpulse.el"
-  "vimpulse.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  26036
-  '(12471 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/player.clj"
-  "player.clj"
+  "/home/m4nic/Sites/slutmachines.com/lib/swank-clojure-1.2.0.jar:swank/commands/basic.clj"
+  "basic.clj (swank-clojure-1.2.0.jar)"
   'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  98
-  '(152 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/emacs-config.el"
-  "emacs-config.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  22
-  '(234 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "model"
-  'dired-mode
-  '(yas/minor-mode)
-  258
+  '(yas/minor-mode auto-complete-mode slime-mode)
+  5752
   '(nil nil)
-  t
-  '("/home/m4nic/Projects/clojure/casino/src/casino/model/")
+  nil
+  nil
   nil)
 
 (desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/casino/model/casino.clj"
-  "casino.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode clojure-test-mode eldoc-mode)
-  81
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/sql/test.clj"
-  "test.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  3259
-  '(3107 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "core"
-  'dired-mode
+  "/home/m4nic/Sites/slutmachines.com/lib/swank-clojure-1.2.0.jar"
+  "swank-clojure-1.2.0.jar"
+  'archive-mode
   '(yas/minor-mode)
-  207
+  790
   '(nil nil)
   t
-  '("/home/m4nic/Projects/clojure/casino/src/casino/core/")
-  nil)
+  nil
+  '((buffer-file-coding-system . no-conversion-multibyte)))
 
 (desktop-create-buffer 206
-  nil
-  "casino"
-  'dired-mode
+  "/home/m4nic/Sites/slutmachines.com/lib/compojure-0.4.0-RC3.jar"
+  "compojure-0.4.0-RC3.jar"
+  'archive-mode
   '(yas/minor-mode)
-  252
+  541
   '(nil nil)
   t
-  '("/home/m4nic/Projects/clojure/casino/src/casino/")
-  nil)
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/init-org.el"
-  "init-org.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  6345
-  '(6170 nil)
   nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/src/server.clj"
-  "server.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  530
-  '(817 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure/casino/bin/start-casino.sh"
-  "start-casino.sh"
-  'sh-mode
-  '(yas/minor-mode auto-complete-mode flymake-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/clojure-src/clojure-contrib/src/clojure/contrib/sql.clj"
-  "sql.clj"
-  'clojure-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode linum-mode slime-mode eldoc-mode)
-  1033
-  '(7175 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/site-lisp/org-mode/lisp/org-attach.el"
-  "org-attach.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  15503
-  '(5746 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita.gtd"
-  "innovita.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/maybe.gtd"
-  "maybe.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Projects/python/market/market.gtd"
-  "market.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/diary"
-  "diary"
-  'fundamental-mode
-  nil
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/.emacs.d/elpa/clojure-mode-1.4/clojure-mode-autoloads.el"
-  "clojure-mode-autoloads.el"
-  'emacs-lisp-mode
-  '(yas/minor-mode auto-complete-mode paredit-mode eldoc-mode)
-  2266
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita/gamebattle.gtd"
-  "gamebattle.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/innovita/dreamflyer.gtd"
-  "dreamflyer.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/m4nic/Planning/educoncepts.gtd"
-  "educoncepts.gtd"
-  'org-mode
-  '(yas/minor-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+  '((buffer-file-coding-system . no-conversion-multibyte)))
 

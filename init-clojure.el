@@ -1,7 +1,7 @@
 (require 'clojure-mode)
 ;;(require 'swank-clojure-autoload)
 
-(setq clojure-src-root (expand-file-name "~/Projects/clojure-src"))
+(setq clojure-src-root (expand-file-name "~/Src/clojure/"))
 
 (eval-after-load 'clojure-mode '(clojure-slime-config))
 

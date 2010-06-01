@@ -1,0 +1,23 @@
+;;; Installation:
+
+;; If you checked out from Git, do `make all' to produce
+;; vimpulse-big.el.  If on Windows, you can run compile.bat.  Then:
+;;
+;; 1. Copy vimpulse.el (or vimpulse-big.el) to somewhere in your
+;;    load-path, e.g., your site-lisp directory.
+;;
+;; 2. Comment out and add the following line to your .emacs file:
+;;
+;;        (require 'vimpulse)
+;;
+;;    If .emacs does not exist, create it.  If you use Windows,
+;;    see http://www.gnu.org/software/emacs/windows/faq3.html.
+;;
+;; That's all the required steps.  The rest is optional:
+;;
+;; 3. For linear undo/redo and undo branches, install
+;;    undo-tree.el: http://www.emacswiki.org/emacs/UndoTree.
+;;
+;; Vimpulse automatically enables Viper.  You can temporarily disable
+;; Viper (and Vimpulse) with the C-z key.
+
