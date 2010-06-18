@@ -1,3 +1,3 @@
 ;; -*- mode: emacs-lisp -*-
 ;; History entries used for anything adaptive display.
-(setq anything-c-adaptive-history (quote ((file ("/projects/pylons/shop/shop/controllers/counter.py" ("counter" . 2))) (buffer ("counter.py" ("" . 1)) ("python-mode.el" ("python" . 1))))))
+(setq anything-c-adaptive-history (quote (("Lacarte" (isearch-forward ("search" . 1))) (command ("ruby-end-of-block" ("ruby" . 1)) ("rename-file" ("rename-file" . 1)) ("rename-buffer" ("rename" . 1)) ("insert-kbd-macro" ("kbd-macro" . 1)) ("kbd-macro-query" ("kbd-m" . 1)) ("call-last-kbd-macro" ("macro" . 1)) ("slime-pprint-eval-last-expression" ("pprint" . 1))) (function ("dired-rename-file" ("rename" . 1)) ("cl-prettyexpand" ("pretty" . 1))) (file ("/projects/pylons/shop/shop/controllers/counter.py" ("counter" . 2))) (buffer ("counter.py" ("" . 1)) ("python-mode.el" ("python" . 1))))))

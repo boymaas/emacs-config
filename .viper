@@ -15,3 +15,5 @@
 
 (viper-record-kbd-macro "gv" 'vi-state [(control x) (control x)] 't)
 
+
+(viper-record-kbd-macro ";[" 'vi-state [\; x c l i p b o a r d - k i l l - r i g n (control h) (control h) n g - s a v e (control m)] 't)
