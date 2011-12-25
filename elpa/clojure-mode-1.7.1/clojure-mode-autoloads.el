@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (clojure-enable-slime-on-existing-buffers clojure-mode)
-;;;;;;  "clojure-mode" "clojure-mode.el" (19474 50811))
+;;;;;;  "clojure-mode" "clojure-mode.el" (20157 26949))
 ;;; Generated autoloads from clojure-mode.el
 
 (autoload 'clojure-mode "clojure-mode" "\
@@ -32,7 +32,7 @@ Not documented
 
 ;;;***
 
-;;;### (autoloads nil nil ("clojure-mode-pkg.el") (19474 50811 686160))
+;;;### (autoloads nil nil ("clojure-mode-pkg.el") (20157 26949 350624))
 
 ;;;***
 

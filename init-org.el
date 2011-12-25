@@ -4,36 +4,12 @@
 (require 'org)
 (require 'org-agenda)
 (require 'org-install)
-(require 'org-babel-init)
 
-;; Uncomment each of the following require lines if you want org-babel
-;; to support that language.  Each language has a comment explaining
-;; it's dependencies.  See the related files in lisp/langs for more
-;; detailed explanations of requirements.
-;; (require 'org-babel-R)         ;; R and ess-mode
-;; (require 'org-babel-asymptote) ;; asymptote
-;; (require 'org-babel-css)       ;; none
-;; (require 'org-babel-ditaa)     ;; ditaa
-;; (require 'org-babel-dot)       ;; dot
-;; (require 'org-babel-gnuplot)   ;; gnuplot, and gnuplot-mode
-(require 'org-babel-haskell)   ;; haskell, haskell-mode, inf-haskell
-;; (require 'org-babel-ocaml)     ;; ocaml, and tuareg-mode
-(require 'org-babel-python)    ;; python, and python-mode
-;; (require 'org-babel-ruby)      ;; ruby, irb, ruby-mode, and inf-ruby
-;; (require 'org-babel-sass)      ;; sass, sass-mode
-(require 'org-babel-sh)           ;; sass, sass-mode
-(require 'org-babel-sql)          ;; none
-
-;; add clojure to babel
-(org-babel-add-interpreter "clojure")
-(add-to-list 'org-babel-tangle-langs '("clojure" "clj" "#!/usr/bin/env clojure"))
-
-;; set lang modes
-(setq org-src-lang-modes '())
-(add-to-list 'org-src-lang-modes '("clojure" . clojure))
-
-;; load my personal blog
-;;(load "~/Personal/blog/web/publish_config.el")
+;; Standard org directory and a directory to
+;; append the path after.
+(setq org-directory "~/Personal/Planning/")
+(defun org-path (fname)
+  (concat org-directory fname))
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -131,20 +107,15 @@
 
 (setq org-remember-templates
      '(
-      ("Todo" ?t "* TODO %^{Brief Description} %^g\n%?\nAdded: %U\nLink: %a" "~/Planning/gtd.gtd" "Refile")
-      ("Journal" ?j "\n* %^{topic} %T \n%i%c%?\nLink: %a\n" "~/Planning/journal.gtd")
-      ("Note" ?n "\n* %^{topic} %T \n%i%?\n" "~/Planning/gtd.gtd" "Notes")
-      ("Someday" ?s "\n* %^{topic} %T \n%i%?\n" "~/Planning/maybe.gtd")
+      ("Todo" ?t "* TODO %^{Brief Description} %^g\n%?\nAdded: %U\nLink: %a" "~/Personal/Planning/gtd.gtd" "Refile")
+      ("Journal" ?j "\n* %^{topic} %T \n%i%c%?\nLink: %a\n" "~/Personal/Planning/journal.gtd")
+      ("Note" ?n "\n* %^{topic} %T \n%i%?\n" "~/Personal/Planning/gtd.gtd" "Notes")
+      ("Someday" ?s "\n* %^{topic} %T \n%i%?\n" "~/Personal/Planning/maybe.gtd")
       ))
 
 ;; global shortcut to invoke remember
 (define-key global-map "\C-cr" 'org-remember)
 
-;; Standard org directory and a directory to
-;; append the path after.
-(setq org-directory "~/Planning/")
-(defun org-path (fname)
-  (concat org-directory fname))
 
 ;; some handy settings
 (setq org-timeline-show-empty-dates t)
@@ -247,33 +218,6 @@
 ;(setq org-agenda-time-grid
 ;      (quote (nil "----------------"
 ;                  (800 1000 1200 1400 1600 1800 2000))))
-
-
-;; PROJECTS
-(setq org-publish-project-alist
-           '(("market"
-              :base-directory "~/Projects/python/market/"
-              :base-extension "gtd"
-              :publishing-directory "/ssh:m4nic@tagged.nl:/projects/pylons/market/market/public/"
-              :publishing-function org-publish-org-to-html
-;              :exclude "PrivatePage.org"   ;; regexp
-              :headline-levels 4
-              :section-numbers t 
-              :table-of-contents t 
-;              :style "<link rel=\"stylesheet\"
-;                       href=\"/style.css\" type=\"text/css\"/>"
-              :auto-preamble t
-              :auto-postamble nil)))
-
-
-;; exporting to pdf
-  ; experimenting with docbook exports - not finished
-(require 'org-docbook)
-(setq org-export-docbook-xsl-fo-proc-command "fop %s %s")
-(setq org-export-docbook-xslt-proc-command "xsltproc --output %s /usr/share/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl %s")
-
-(require 'org-xoxo)
-(require 'org-html)
 
 ;; custom keys
 (define-key org-agenda-keymap (kbd "w") 'org-agenda-refile)

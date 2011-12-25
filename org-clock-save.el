@@ -1,1 +1,1 @@
-;; org-persist.el - Idefix-Ubuntu at <2010-06-18 Fri 20:09>
+;; org-persist.el - KXCG-Maass-MacBook-Pro.local at <2011-12-25 Sun 22:23>

@@ -17,11 +17,11 @@
 (setq *macbook-pro-support-enabled* nil)
 (setq *erlang-support-enabled* nil)
 (setq *darcs-support-enabled* t)
-(setq *rails-support-enabled* nil)
+(setq *rails-support-enabled* t)
 (setq *spell-check-support-enabled* nil)
 (setq *byte-code-cache-enabled* nil)
-(setq *twitter-support-enabled* t)
-(setq *snippet-support-enabled* t)
+(setq *twitter-support-enabled* nil)
+(setq *snippet-support-enabled* nil)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
@@ -225,7 +225,6 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 (require 'init-proxies)
 
-
 ;;----------------------------------------------------------------------------
 ;; Enhanced dired
 ;;----------------------------------------------------------------------------
@@ -233,12 +232,10 @@ in `exec-path', or nil if no such command exists"
 (setq dired-recursive-deletes 'top)
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
-
 ;;----------------------------------------------------------------------------
 ;; Show and edit all lines matching a regex
 ;;----------------------------------------------------------------------------
 (require 'all)
-
 
 ;;----------------------------------------------------------------------------
 ;; VI emulation and related key mappings
@@ -281,6 +278,7 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map ";x" 'smex)
   (define-key viper-vi-global-user-map ";X" 'smex-update-and-run)
   (define-key viper-vi-global-user-map ";a" 'anything)
+  (define-key viper-vi-global-user-map ";t" 'ido-find-tag)
   (define-key viper-vi-global-user-map "zo" 'show-entry)
   (define-key viper-vi-global-user-map "zc" 'hide-entry)
   (define-key viper-vi-global-user-map "zr" 'show-all)
@@ -305,7 +303,6 @@ in `exec-path', or nil if no such command exists"
   (put 'viper-mode-string 'risky-local-variable t)
   )
 
-
 ;; Work around a problem in Cocoa emacs, wherein setting the cursor coloring
 ;; is incredibly slow; viper sets the cursor very frequently in insert mode
 (when (and *vi-emulation-support-enabled* *is-cocoa-emacs*)
@@ -317,13 +314,11 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 (setq default-indicate-empty-lines t)
 
-
 ;;----------------------------------------------------------------------------
 ;; Don't disable case-change functions
 ;;----------------------------------------------------------------------------
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
-
 
 ;;----------------------------------------------------------------------------
 ;; Navigate window layouts with "C-c <left>" and "C-c <right>"
@@ -334,7 +329,6 @@ in `exec-path', or nil if no such command exists"
 ;; Navigate windows "C-<arrow>"
 ;;----------------------------------------------------------------------------
 (windmove-default-keybindings 'shift)
-
 
 ;;----------------------------------------------------------------------------
 ;; Use regex searches by default.
@@ -350,7 +344,6 @@ in `exec-path', or nil if no such command exists"
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
-
 ;;----------------------------------------------------------------------------
 ;; Easily count words (http://emacs-fu.blogspot.com/2009/01/counting-words.html)
 ;;----------------------------------------------------------------------------
@@ -361,25 +354,21 @@ in `exec-path', or nil if no such command exists"
       (e (if mark-active end (point-max))))
     (message "Word count: %s" (how-many "\\w+" b e))))
 
-
 ;;----------------------------------------------------------------------------
 ;; Modeline tweaks
 ;;----------------------------------------------------------------------------
 (size-indication-mode)
-
 
 ;;----------------------------------------------------------------------------
 ;; Modeline tweaks
 ;;----------------------------------------------------------------------------
 (autoload 'linum-mode "linum" "Toggle line numbering" t)
 
-
 ;;----------------------------------------------------------------------------
 ;; Scroll the window smoothly with the up/down arrows
 ;;----------------------------------------------------------------------------
 (require 'smooth-scrolling)
 (setq scroll-preserve-screen-position t)
-
 
 ;;----------------------------------------------------------------------------
 ;; Nicer naming of buffers for files with identical names
@@ -390,7 +379,6 @@ in `exec-path', or nil if no such command exists"
 (setq uniquify-separator " • ")
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
-
 
 ;;----------------------------------------------------------------------------
 ;; Use ibuffer instead of the built in buffer list
@@ -405,31 +393,31 @@ in `exec-path', or nil if no such command exists"
   '(setq hippie-expand-try-functions-list
 	 (remove 'try-expand-line hippie-expand-try-functions-list)))
 
-
 ;;----------------------------------------------------------------------------
 ;; Highlight URLs in comments/strings
 ;;----------------------------------------------------------------------------
 ;;(add-hook 'find-file-hooks 'goto-address-prog-mode)
 
+;;----------------------------------------------------------------------------
+;; ECB = Emacs Code Browser
+;;----------------------------------------------------------------------------
+(require 'init-ecb)
 
 ;;----------------------------------------------------------------------------
 ;; Basic flymake configuration
 ;;----------------------------------------------------------------------------
 (require 'init-flymake)
 
-
 ;;----------------------------------------------------------------------------
 ;; Luke Gorrie's "lively.el"
 ;;----------------------------------------------------------------------------
 (autoload 'lively "lively" "Interactively updating text" t)
-
 
 ;;----------------------------------------------------------------------------
 ;; Twitter
 ;;----------------------------------------------------------------------------
 (when *twitter-support-enabled*
   (require 'init-twitter))
-
 
 ;;----------------------------------------------------------------------------
 ;; Erlang
@@ -444,7 +432,6 @@ in `exec-path', or nil if no such command exists"
   ;;(require 'distel)
   ;;(add-hook 'erlang-mode-hook 'distel-erlang-mode-hook))
 
-
 ;;----------------------------------------------------------------------------
 ;; Javascript
 ;;----------------------------------------------------------------------------
@@ -456,25 +443,21 @@ in `exec-path', or nil if no such command exists"
 (add-auto-mode 'html-mode "\\.(jsp|tmpl)$")
 (add-auto-mode 'tcl-mode "Portfile$")
 
-
 ;;----------------------------------------------------------------------------
 ;; Crontab mode
 ;;----------------------------------------------------------------------------
 (autoload 'crontab-mode "crontab-mode" "Mode for editing crontab files" t)
 (add-auto-mode 'crontab-mode "\\.?cron\\(tab\\)?\\'")
 
-
 ;;----------------------------------------------------------------------------
 ;; Textile-mode
 ;;----------------------------------------------------------------------------
 (autoload 'textile-mode "textile-mode" "Mode for editing Textile documents" t)
 
-
 ;;----------------------------------------------------------------------------
 ;; Markdown-mode
 ;;----------------------------------------------------------------------------
 (autoload 'markdown-mode "markdown-mode" "Mode for editing Markdown documents" t)
-
 
 ;;----------------------------------------------------------------------------
 ;; Regex-tool
@@ -482,12 +465,10 @@ in `exec-path', or nil if no such command exists"
 (autoload 'regex-tool "regex-tool" "Mode for exploring regular expressions" t)
 (setq regex-tool-backend 'perl)
 
-
 ;;----------------------------------------------------------------------------
 ;; Subversion
 ;;----------------------------------------------------------------------------
 (require 'psvn)
-
 
 ;;----------------------------------------------------------------------------
 ;; Darcs
@@ -495,18 +476,15 @@ in `exec-path', or nil if no such command exists"
 (when *darcs-support-enabled*
   (require 'init-darcs))
 
-
 ;;----------------------------------------------------------------------------
 ;; Git
 ;;----------------------------------------------------------------------------
 (require 'init-git)
 
-
 ;;----------------------------------------------------------------------------
 ;; Multiple major modes (obsolte now we use mumamo-modes
 ;;----------------------------------------------------------------------------
 ;;(require 'init-mmm)
-
 
 ;;----------------------------------------------------------------------------
 ;; File and buffer navigation
@@ -515,7 +493,7 @@ in `exec-path', or nil if no such command exists"
 (setq recentf-max-saved-items 100)
 (require 'init-ido)
 (require 'init-anything)
-
+;(require 'icicles)
 
 ;;----------------------------------------------------------------------------
 ;; Yasnippet
@@ -528,11 +506,10 @@ in `exec-path', or nil if no such command exists"
   (yas/initialize)
   (yas/load-directory (concat (directory-of-library "yasnippet") "snippets")))
 
-
 ;;----------------------------------------------------------------------------
 ;; Tags
 ;;----------------------------------------------------------------------------
-;;(load "~/.emacs.d/site-lisp/vtags/vtags.el")
+;;(load "~/.emacs.d/site-lisp/vtags/vtags.el") ;; doesn't work
 (require 'etags-select)
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
 (global-set-key "\M-." 'etags-select-find-tag)
@@ -559,7 +536,7 @@ in `exec-path', or nil if no such command exists"
 (dolist (mode '(log-edit-mode org-mode text-mode haml-mode 
 		sass-mode yaml-mode csv-mode espresso-mode haskell-mode
 		html-mode nxml-mode sh-mode smarty-mode clojure-mode
-		lisp-mode textile-mode markdown-mode tuareg-mode))
+		lisp-mode textile-mode markdown-mode tuareg-mode coffee-mode))
   (add-to-list 'ac-modes mode))
 
 
@@ -686,6 +663,11 @@ in `exec-path', or nil if no such command exists"
 (autoload 'gnuplot-mode "gnuplot" "gnuplot major mode" t)
 (autoload 'gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot-mode" t)
 
+;;----------------------------------------------------------------------------
+;; Eproject
+;;----------------------------------------------------------------------------
+;(require 'eproject)
+;(require 'eproject-extras)
 
 ;;----------------------------------------------------------------------------
 ;; Org-mode
@@ -709,9 +691,9 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Ruby & Rails
 ;;----------------------------------------------------------------------------
-;(require 'init-ruby-mode)
-;(when *rails-support-enabled*
-;  (require 'init-rails))
+(require 'init-ruby-mode)
+(when *rails-support-enabled*
+  (require 'init-rails))
 
 
 ;;----------------------------------------------------------------------------
@@ -739,9 +721,9 @@ in `exec-path', or nil if no such command exists"
 ;;add-hook 'html-helper-load-hook '(lambda () (require 'html-font)))
 
 ;; nxhtml-mode
-(load "~/.emacs.d/site-lisp/nxhtml/autostart.el")
-(add-auto-mode 'nxhtml-mode "\\.html$")
-(add-auto-mode 'sgml-mode "\\.mak$")
+;(load "~/.emacs.d/site-lisp/nxhtml/autostart.el")
+;(add-auto-mode 'nxhtml-mode "\\.html$")
+;(add-auto-mode 'sgml-mode "\\.mak$")
 ;(add-auto-mode 'mako-nxhtml-mumamo-mode "\\.mak$")
 
 ;;(add-auto-mode 'sgml-mode "\\.mak$")
@@ -820,7 +802,7 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Gnus emailclient from emacs
 ;;----------------------------------------------------------------------------
-(require 'init-gnus)
+;;(require 'init-gnus)
 
 
 ;;----------------------------------------------------------------------------
@@ -829,6 +811,26 @@ in `exec-path', or nil if no such command exists"
 (when *spell-check-support-enabled*
   (require 'init-flyspell))
 
+;;----------------------------------------------------------------------------
+;; Coffee script
+;;----------------------------------------------------------------------------
+(require 'coffee-mode)
+
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2)
+ (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+ (define-key coffee-mode-map [(meta R)] 'coffee-compile-region))
+
+(add-hook 'coffee-mode-hook
+  '(lambda()
+     (coffee-custom)))
+
+;;----------------------------------------------------------------------------
+;; Haml-mode / Sass-mode
+;;----------------------------------------------------------------------------
+(require 'haml-mode)
+(require 'sass-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Log typed commands into a buffer for demo purposes
@@ -870,6 +872,7 @@ in `exec-path', or nil if no such command exists"
   (set-terminal-coding-system 'utf-8)
   (set-selection-coding-system 'utf-8)
   (prefer-coding-system 'utf-8))
+
 
 ;; ----------------------------------------------------------------------------
 ;; Include command line completion of M-x using smex

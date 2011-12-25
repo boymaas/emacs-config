@@ -8,7 +8,7 @@
 (ido-mode t)  ; use 'buffer rather than t to use only buffer switching
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point t)
+(setq ido-use-filename-at-point nil)
 (setq ido-auto-merge-work-directories-length 0)
 
 (defun steve-ido-choose-from-recentf ()
@@ -16,7 +16,6 @@
   (interactive)
   (find-file (ido-completing-read "Open file: " recentf-list nil t)))
 (global-set-key [(meta f11)] 'steve-ido-choose-from-recentf)
-
 
 ;;----------------------------------------------------------------------------
 ;; ido completion in M-x
@@ -31,6 +30,19 @@
      (let (cmd-list)
        (mapatoms (lambda (S) (when (commandp S) (setq cmd-list (cons (format "%S" S) cmd-list)))))
        cmd-list)))))
+
+;; ido tag completion
+(defun ido-find-tag ()
+    "Find a tag using ido"
+    (interactive)
+    (tags-completion-table)
+    (let (tag-names)
+      (mapc (lambda (x)
+              (unless (integerp x)
+                (push (prin1-to-string x t) tag-names)))
+            tags-completion-table)
+      (find-tag (ido-completing-read "Tag: " tag-names))))
+
 
 ;(global-set-key "\M-x" 'ido-execute)
 

@@ -1,8 +1,6 @@
 (setq viper-inhibit-startup-message 't)
 (setq viper-expert-level '5)
 
-(setq viper-shift-width 4) ; don't touch or else...
-
 
 (viper-record-kbd-macro ";c" 'vi-state [(control x) (control s) (control c) (control k)] 'clojure-mode)
 
@@ -17,3 +15,5 @@
 
 
 (viper-record-kbd-macro ";[" 'vi-state [\; x c l i p b o a r d - k i l l - r i g n (control h) (control h) n g - s a v e (control m)] 't)
+
+(setq viper-shift-width 2) ; don't touch or else...

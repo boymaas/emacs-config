@@ -19,6 +19,12 @@
 
 
 ;;----------------------------------------------------------------------------
+;; Ruby - rvm
+;;----------------------------------------------------------------------------
+(require 'rvm)
+
+
+;;----------------------------------------------------------------------------
 ;; Ruby - flymake
 ;;----------------------------------------------------------------------------
 (require 'flymake-ruby)
@@ -44,9 +50,14 @@
 
 (setq compile-command "rake ")
 
-(autoload 'ri "ri-ruby" "Show ri documentation for Ruby symbols" t)
-(setq ri-ruby-script (concat (directory-of-library "ri-ruby") "ri-emacs.rb"))
+(require 'ri)
+;(autoload 'ri "ri-ruby" "Show ri documentation for Ruby symbols" t)
+;(setq ri-ruby-script (concat (directory-of-library "ri-ruby") "ri-emacs.rb"))
 
+
+;; SPEC
+(require 'rspec-mode)
+(define-key rspec-mode-keymap (kbd "C-c ,s") 'rspec-verify-single)
 
 ;;----------------------------------------------------------------------------
 ;; Ruby - erb
@@ -102,6 +113,10 @@
 (add-hook 'ruby-mode-hook (lambda () (local-set-key [f7] 'ruby-compilation-this-test)))
 
 (add-hook 'ruby-mode-hook (lambda () (local-set-key [f6] 'recompile)))
+
+;; Ruby debugging
+(require 'rdebug)
+(add-hook 'rdebug-mode-hook 'rdebug-turn-on-short-key-mode)
 
 
 (provide 'init-ruby-mode)
