@@ -1,8 +1,9 @@
+*.elc
+*~
+.*.sw?
+.*~
 /.emacs.desktop
 /.emacs.desktop.lock
+/.session
 /smex.save
-*.elc
-.*~
-.*.sw?
 \#*#
-*~

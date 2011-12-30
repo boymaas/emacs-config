@@ -3,26 +3,26 @@
 ;;----------------------------------------------------------------------------
 ;; Which functionality to enable (use t or nil for true and false)
 ;;----------------------------------------------------------------------------
-(setq *vi-emulation-support-enabled* nil) ; "viper-mode"
-(setq *evil-enabled* t) ; "viper-mode"
+(setq *evil-enabled* t) ; "viper-mode replacemant"
+(setq *ecb-support-enabled* nil) 
 (setq *haskell-support-enabled* nil)
 (setq *python-support-enabled* nil)
-;; when ropemacs is activated help function
-;; seases to work and emacs doesn't load properly
-;; need to fix first
-(setq *python-ropemacs-support-enabled* nil)
 (setq *ocaml-support-enabled* nil)
 (setq *common-lisp-support-enabled* nil)
-(setq *clojure-support-enabled* t)
+(setq *clojure-support-enabled* nil)
 (setq *scheme-support-enabled* nil)
-(setq *macbook-pro-support-enabled* t)
 (setq *erlang-support-enabled* nil)
-(setq *darcs-support-enabled* t)
+(setq *darcs-support-enabled* nil)
+(setq *ruby-support-enabled* t)
 (setq *rails-support-enabled* t)
 (setq *spell-check-support-enabled* nil)
 (setq *byte-code-cache-enabled* nil)
 (setq *twitter-support-enabled* nil)
 (setq *snippet-support-enabled* nil)
+
+(setq *macbook-pro-support-enabled* nil) ;; init-maxframe
+
+;; Get some context awareness
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
@@ -217,8 +217,7 @@ in `exec-path', or nil if no such command exists"
     (global-set-key (kbd "M-c") 'ns-copy-including-secondary)
     (global-set-key (kbd "M-v") 'ns-paste-secondary))
   ;; Use Apple-w to close current buffer on OS-X (is normally bound to kill-ring-save)
-  (when *vi-emulation-support-enabled*
-    (global-set-key [(meta w)] 'kill-this-buffer)))
+  (global-set-key [(meta w)] 'kill-this-buffer))
 
 
 ;;----------------------------------------------------------------------------
@@ -238,7 +237,9 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 (require 'all)
 
-;; EVIL vim empulation .. seems to be better than viper
+;;----------------------------------------------------------------------------
+;; VI emulation and related key mappings (EVIL)
+;;----------------------------------------------------------------------------
 (when *evil-enabled* 
   ;; require the vim evil :-)
   (require 'evil)
@@ -278,78 +279,6 @@ in `exec-path', or nil if no such command exists"
   (define-key evil-normal-state-map ";a" 'anything)
   (define-key evil-normal-state-map ";t" 'ido-find-tag)
   (define-key evil-normal-state-map ";p" 'textmate-goto-file))
-
-;;----------------------------------------------------------------------------
-;; VI emulation and related key mappings
-;;----------------------------------------------------------------------------
-(when *vi-emulation-support-enabled*
-  ;; C-z is usually 'iconify-or-deiconify-frame, but viper uses it to toggle
-  ;; vi/emacs input modes, causing confusion in non-viper buffers
-  (global-unset-key "\C-z")
-  (setq viper-mode t)
-  (setq viper-custom-file-name (convert-standard-filename "~/.emacs.d/.viper"))
-  (require 'viper)
-  (require 'vimpulse)
-  (define-key viper-insert-global-user-map (kbd "C-n") 'dabbrev-expand)
-  (define-key viper-insert-global-user-map (kbd "C-p") 'dabbrev-expand)
-
-  ;; rate at which macros should be typed
-  (setq viper-fast-keyseq-timeout 200)
-  
-  ;; Stop C-u from clobbering prefix-arg -- I always use C-b/C-f to scroll
-  (define-key viper-vi-basic-map "\C-u" nil)
-
-  ;; Vim-style searching of the symbol at point, made easy by highlight-symbol
-  (autoload 'highlight-symbol-next "highlight-symbol" "Highlight symbol at point")
-  (autoload 'highlight-symbol-prev "highlight-symbol" "Highlight symbol at point")
-  (setq highlight-symbol-on-navigation-p t)
-  (define-key viper-vi-global-user-map "*" 'highlight-symbol-next)
-  (define-key viper-vi-global-user-map "#" 'highlight-symbol-prev)
-  (define-key viper-vi-global-user-map "=" 'indent-region)
-  (define-key viper-vi-global-user-map "g;" 'session-jump-to-last-change)
-  (define-key viper-vi-global-user-map ";b" 'ibuffer)
-  (define-key viper-vi-global-user-map "Q" 'kmacro-start-macro)
-  (define-key viper-vi-global-user-map "q" 'kmacro-end-macro)
-  (define-key viper-vi-global-user-map ";s" 'apply-macro-to-region-lines)
-  (define-key viper-vi-global-user-map ";;" 'switch-to-buffer)
-  (define-key viper-vi-global-user-map ";'" 'delete-window)
-  (define-key viper-vi-global-user-map ";\\" 'delete-other-windows)
-  (define-key viper-vi-global-user-map ";o" 'other-window)
-  (define-key viper-vi-global-user-map ";d" 'dired)
-  (define-key viper-vi-global-user-map ";f" 'ido-find-file)
-  (define-key viper-vi-global-user-map ";x" 'smex)
-  (define-key viper-vi-global-user-map ";X" 'smex-update-and-run)
-  (define-key viper-vi-global-user-map ";a" 'anything)
-  (define-key viper-vi-global-user-map ";t" 'ido-find-tag)
-  (define-key viper-vi-global-user-map ";p" 'textmate-goto-file)
-  (define-key viper-vi-global-user-map "zo" 'show-entry)
-  (define-key viper-vi-global-user-map "zc" 'hide-entry)
-  (define-key viper-vi-global-user-map "zr" 'show-all)
-  (define-key viper-vi-global-user-map "zm" 'hide-body)
-  ;; other keys are defined in .viper
-
-  ;; make modes more prominent
-  (setq viper-vi-state-id (concat (propertize "<V>" 'face 'hi-blue-b) " "))
-  (setq viper-emacs-state-id (concat (propertize "<E>" 'face 'hi-red-b) " "))
-  (setq viper-insert-state-id (concat (propertize "<I>" 'face 'hi-blue-b) " "))
-  (setq viper-replace-state-id (concat (propertize "<R>" 'face 'hi-blue-b) " "))
-
-  ;; use jumplist just like vim
-  ;(require 'init-ejumplist)
-  (global-set-key "\C-o"
-                  '(lambda ()
-                     (interactive)
-                     (set-mark-command 0)))
-
-  ;; the property `risky-local-variable' is a security measure for mode line
-  ;; variables that have properties.
-  (put 'viper-mode-string 'risky-local-variable t)
-  )
-
-;; Work around a problem in Cocoa emacs, wherein setting the cursor coloring
-;; is incredibly slow; viper sets the cursor very frequently in insert mode
-(when (and *vi-emulation-support-enabled* *is-cocoa-emacs*)
-  (defun viper-change-cursor-color (new-color &optional frame)))
 
 
 ;;----------------------------------------------------------------------------
@@ -444,7 +373,8 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; ECB = Emacs Code Browser
 ;;----------------------------------------------------------------------------
-(require 'init-ecb)
+(when *ecb-support-enabled* 
+  (require 'init-ecb))
 
 ;;----------------------------------------------------------------------------
 ;; Basic flymake configuration
@@ -558,7 +488,6 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 (require 'hideshow-org)
 
-
 ;;----------------------------------------------------------------------------
 ;; Autocomplete
 ;;----------------------------------------------------------------------------
@@ -589,12 +518,6 @@ in `exec-path', or nil if no such command exists"
 ;; add auto-complete-mode for emacs lisp
 (require 'auto-complete-emacs-lisp)
 (ac-emacs-lisp-init)
-
-(when *vi-emulation-support-enabled*
-  (define-key ac-complete-mode-map (kbd "C-n") 'dabbrev-expand)
-  (define-key ac-complete-mode-map (kbd "C-p") 'dabbrev-expand)
-  (define-key ac-complete-mode-map viper-ESC-key 'viper-intercept-ESC-key))
-
 
 ;;----------------------------------------------------------------------------
 ;; When splitting window, show (other-buffer) in the new window
@@ -735,9 +658,10 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Ruby & Rails
 ;;----------------------------------------------------------------------------
-(require 'init-ruby-mode)
-(when *rails-support-enabled*
-  (require 'init-rails))
+(when *ruby-support-enabled* 
+  (require 'init-ruby-mode)
+  (when *rails-support-enabled*
+    (require 'init-rails)))
 
 
 ;;----------------------------------------------------------------------------
