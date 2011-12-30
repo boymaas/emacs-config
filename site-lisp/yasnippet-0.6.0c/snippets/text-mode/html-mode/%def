@@ -1,3 +1,0 @@
-<%def name="${1:function-name}(${2:params})">
-  ${3:function-definition}
-</%def>
