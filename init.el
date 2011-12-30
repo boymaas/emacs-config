@@ -3,9 +3,10 @@
 ;;----------------------------------------------------------------------------
 ;; Which functionality to enable (use t or nil for true and false)
 ;;----------------------------------------------------------------------------
-(setq *vi-emulation-support-enabled* t) ; "viper-mode"
-(setq *haskell-support-enabled* t)
-(setq *python-support-enabled* t)
+(setq *vi-emulation-support-enabled* nil) ; "viper-mode"
+(setq *evil-enabled* t) ; "viper-mode"
+(setq *haskell-support-enabled* nil)
+(setq *python-support-enabled* nil)
 ;; when ropemacs is activated help function
 ;; seases to work and emacs doesn't load properly
 ;; need to fix first
@@ -14,7 +15,7 @@
 (setq *common-lisp-support-enabled* nil)
 (setq *clojure-support-enabled* t)
 (setq *scheme-support-enabled* nil)
-(setq *macbook-pro-support-enabled* nil)
+(setq *macbook-pro-support-enabled* t)
 (setq *erlang-support-enabled* nil)
 (setq *darcs-support-enabled* t)
 (setq *rails-support-enabled* t)
@@ -237,6 +238,47 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 (require 'all)
 
+;; EVIL vim empulation .. seems to be better than viper
+(when *evil-enabled* 
+  ;; require the vim evil :-)
+  (require 'evil)
+  (evil-mode 1)
+
+  ;; use surround.vim but then for emacs ..
+  (require 'surround)
+
+  
+  ;; Remap org-mode meta keys for convenience
+  (mapcar (lambda (evil-state)
+	    (evil-declare-key evil-state org-mode-map
+			      (kbd "M-l") 'org-metaright
+			      (kbd "M-h") 'org-metaleft
+			      (kbd "M-k") 'org-metaup
+			      (kbd "M-j") 'org-metadown
+			      (kbd "M-L") 'org-shiftmetaright
+			      (kbd "M-H") 'org-shiftmetaleft
+			      (kbd "M-K") 'org-shiftmetaup
+			      (kbd "M-J") 'org-shiftmetadown))
+	  '(normal insert))
+
+  ;; C-w is just a habit I want to keep 
+  (define-key evil-insert-state-map (kbd "C-w") 'backward-kill-word)
+
+  (define-key evil-normal-state-map "g;" 'session-jump-to-last-change)
+  (define-key evil-normal-state-map ";b" 'ibuffer)
+  (define-key evil-normal-state-map ";;" 'switch-to-buffer)
+  (define-key evil-normal-state-map ";'" 'delete-window)
+  (define-key evil-normal-state-map ";\\" 'delete-other-windows)
+  (define-key evil-normal-state-map ";o" 'other-window)
+  (define-key evil-normal-state-map ";d" 'dired)
+  (define-key evil-normal-state-map ";f" 'ido-find-file)
+  (define-key evil-normal-state-map ";r" 'steve-ido-choose-from-recentf)
+  (define-key evil-normal-state-map ";x" 'smex)
+  (define-key evil-normal-state-map ";X" 'smex-update-and-run)
+  (define-key evil-normal-state-map ";a" 'anything)
+  (define-key evil-normal-state-map ";t" 'ido-find-tag)
+  (define-key evil-normal-state-map ";p" 'textmate-goto-file))
+
 ;;----------------------------------------------------------------------------
 ;; VI emulation and related key mappings
 ;;----------------------------------------------------------------------------
@@ -279,6 +321,7 @@ in `exec-path', or nil if no such command exists"
   (define-key viper-vi-global-user-map ";X" 'smex-update-and-run)
   (define-key viper-vi-global-user-map ";a" 'anything)
   (define-key viper-vi-global-user-map ";t" 'ido-find-tag)
+  (define-key viper-vi-global-user-map ";p" 'textmate-goto-file)
   (define-key viper-vi-global-user-map "zo" 'show-entry)
   (define-key viper-vi-global-user-map "zc" 'hide-entry)
   (define-key viper-vi-global-user-map "zr" 'show-all)
@@ -493,6 +536,7 @@ in `exec-path', or nil if no such command exists"
 (setq recentf-max-saved-items 100)
 (require 'init-ido)
 (require 'init-anything)
+(require 'textmate)
 ;(require 'icicles)
 
 ;;----------------------------------------------------------------------------
@@ -509,10 +553,7 @@ in `exec-path', or nil if no such command exists"
 ;;----------------------------------------------------------------------------
 ;; Tags
 ;;----------------------------------------------------------------------------
-;;(load "~/.emacs.d/site-lisp/vtags/vtags.el") ;; doesn't work
-(require 'etags-select)
-(global-set-key "\M-?" 'etags-select-find-tag-at-point)
-(global-set-key "\M-." 'etags-select-find-tag)
+(require 'init-etags)
 
 ;;----------------------------------------------------------------------------
 (require 'hideshow-org)
@@ -615,6 +656,9 @@ in `exec-path', or nil if no such command exists"
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+;; Visible bell
+(setq visible-bell 1)
 
 (require 'init-maxframe)
 

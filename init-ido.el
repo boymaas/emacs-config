@@ -1,8 +1,7 @@
 ;; some useful keybindings
-(add-hook 'ido-define-mode-map-hook 'ido-my-keys)
+(add-hook 'ido-setup-hook 'ido-my-keys)
 (defun ido-my-keys ()
-  (define-key ido-mode-map [left] 'ido-prev-match)
-  (define-key ido-mode-map [right] 'ido-next-match))
+  (define-key ido-completion-map "\C-w" 'ido-delete-backward-word-updir))
 
 ;; Use C-f during file selection to switch to regular find-file
 (ido-mode t)  ; use 'buffer rather than t to use only buffer switching
@@ -14,22 +13,8 @@
 (defun steve-ido-choose-from-recentf ()
   "Use ido to select a recently opened file from the `recentf-list'"
   (interactive)
-  (find-file (ido-completing-read "Open file: " recentf-list nil t)))
+  (find-file (ido-completing-read "Open recent file: " recentf-list nil t)))
 (global-set-key [(meta f11)] 'steve-ido-choose-from-recentf)
-
-;;----------------------------------------------------------------------------
-;; ido completion in M-x
-;;----------------------------------------------------------------------------
-;; See http://www.emacswiki.org/cgi-bin/wiki/InteractivelyDoThings#toc5
-(defun ido-execute ()
-  (interactive)
-  (call-interactively
-   (intern
-    (ido-completing-read
-     "M-x "
-     (let (cmd-list)
-       (mapatoms (lambda (S) (when (commandp S) (setq cmd-list (cons (format "%S" S) cmd-list)))))
-       cmd-list)))))
 
 ;; ido tag completion
 (defun ido-find-tag ()
@@ -43,8 +28,6 @@
             tags-completion-table)
       (find-tag (ido-completing-read "Tag: " tag-names))))
 
-
-;(global-set-key "\M-x" 'ido-execute)
 
 ;;----------------------------------------------------
 ;; smex better M-x completion, uses most recently used first
