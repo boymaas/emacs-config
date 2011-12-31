@@ -16,9 +16,8 @@
 (setq *ruby-support-enabled* t)
 (setq *rails-support-enabled* t)
 (setq *spell-check-support-enabled* nil)
-(setq *byte-code-cache-enabled* nil)
+(setq *byte-code-cache-enabled* t)
 (setq *twitter-support-enabled* nil)
-(setq *snippet-support-enabled* nil)
 
 (setq *macbook-pro-support-enabled* nil) ;; init-maxframe
 
@@ -467,18 +466,6 @@ in `exec-path', or nil if no such command exists"
 (require 'init-ido)
 (require 'init-anything)
 (require 'textmate)
-;(require 'icicles)
-
-;;----------------------------------------------------------------------------
-;; Yasnippet
-;;----------------------------------------------------------------------------
-(when *snippet-support-enabled*
-  (require 'yasnippet)
-  ;; Don't map TAB to yasnippet
-  ;; In fact, set it to something we'll never use because we'll only ever trigger it indirectly.
-  ;; (setq yas/trigger-key (kbd "<TAB>"))
-  (yas/initialize)
-  (yas/load-directory (concat (directory-of-library "yasnippet") "snippets")))
 
 ;;----------------------------------------------------------------------------
 ;; Tags
@@ -486,7 +473,7 @@ in `exec-path', or nil if no such command exists"
 (require 'init-etags)
 
 ;;----------------------------------------------------------------------------
-(require 'hideshow-org)
+;;(require 'hideshow-org)
 
 ;;----------------------------------------------------------------------------
 ;; Autocomplete
