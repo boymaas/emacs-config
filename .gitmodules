@@ -1,0 +1,3 @@
+[submodule "site-lisp/evil-sm"]
+	path = site-lisp/evil-sm
+	url = git://gitorious.org/evil/evil.git
