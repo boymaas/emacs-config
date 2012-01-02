@@ -5,6 +5,7 @@
 /.emacs.desktop
 /.emacs.desktop.lock
 /.session
+/ac-comphist.dat
 /org-clock-save.el
 /smex.save
 \#*#

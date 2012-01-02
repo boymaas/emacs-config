@@ -1,38 +1,17 @@
 ;; -*- coding: utf-8 -*-
 
-;;----------------------------------------------------------------------------
-;; Which functionality to enable (use t or nil for true and false)
-;;----------------------------------------------------------------------------
-(setq *evil-enabled* t) ; "viper-mode replacemant"
-(setq *ecb-support-enabled* nil) 
-(setq *haskell-support-enabled* nil)
-(setq *python-support-enabled* nil)
-(setq *ocaml-support-enabled* nil)
-(setq *common-lisp-support-enabled* nil)
-(setq *clojure-support-enabled* nil)
-(setq *scheme-support-enabled* nil)
-(setq *erlang-support-enabled* nil)
-(setq *darcs-support-enabled* nil)
-(setq *ruby-support-enabled* t)
-(setq *ruby-rsense-enabled* nil) ; optional since it starts a server
-(setq *ruby-rcodetools-enabled* nil) ; optional since it starts a server
-(setq *rails-support-enabled* t)
-(setq *spell-check-support-enabled* nil)
-(setq *byte-code-cache-enabled* nil)
-(setq *twitter-support-enabled* nil)
-
+;; Get some context awareness
 (setq *macbook-pro-support-enabled* nil) ;; init-maxframe
 
-;; Get some context awareness
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
-
 
 ;;----------------------------------------------------------------------------
 ;; Make elisp more civilised
 ;;----------------------------------------------------------------------------
 (require 'cl)
+
 
 ;;----------------------------------------------------------------------------
 ;; Set load path
@@ -47,746 +26,25 @@
 (setq load-path (cons (expand-file-name "~/.emacs.d") load-path))
 
 ;;----------------------------------------------------------------------------
-;; Automatically byte-compile .el files
+;; Load our utility functions, most importantly the defsubmodule
 ;;----------------------------------------------------------------------------
-(when *byte-code-cache-enabled*
-  (require 'init-byte-code-cache))
+(require 'init-utility-functions)
 
-
-;;----------------------------------------------------------------------------
-;; Use elisp package manager (http://tromey.com/elpa/)
-;;----------------------------------------------------------------------------
-(setq load-path (cons (expand-file-name "~/.emacs.d/elpa") load-path))
-(require 'package)
-(package-initialize)
-
-
-;;----------------------------------------------------------------------------
-;; Handier way to add modes to auto-mode-alist
-;;----------------------------------------------------------------------------
-(defun add-auto-mode (mode &rest patterns)
-  (dolist (pattern patterns)
-    (add-to-list 'auto-mode-alist (cons pattern mode))))
-
-
-;;----------------------------------------------------------------------------
-;; Find the directory containing a given library
-;;----------------------------------------------------------------------------
-(require 'find-func)
-(defun directory-of-library (library-name)
-  (file-name-as-directory (file-name-directory (find-library-name library-name))))
-
-
-;;----------------------------------------------------------------------------
-;; Easy way to check that we're operating on a specific file type
-;;----------------------------------------------------------------------------
-(defun filename-has-extension-p (extensions)
-  (and buffer-file-name
-       (string-match (concat "\\." (regexp-opt extensions t) "\\($\\|\\.\\)") buffer-file-name)))
-
-
-;;----------------------------------------------------------------------------
-;; Locate executables
-;;----------------------------------------------------------------------------
-(defun find-executable (name)
-  "Return the full path of an executable file name `name'
-in `exec-path', or nil if no such command exists"
-  (loop for dir in exec-path
-	for full-path = (expand-file-name (concat dir "/" name))
-	when (file-executable-p full-path)
-	return full-path))
-
-
-;;----------------------------------------------------------------------------
-;; Augment search path for external programs (for OSX)
-;;----------------------------------------------------------------------------
-(when *is-a-mac*
-  (eval-after-load "woman"
-    '(setq woman-manpath (append (list "/opt/local/man") woman-manpath)))
-  (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin"
-					   "/opt/local/lib/postgresql83/bin" "~/bin")))
-    (setenv "PATH" (concat dir ":" (getenv "PATH")))
-    (setq exec-path (append (list dir) exec-path))))
-
-
-;;----------------------------------------------------------------------------
-;; Add hooks to allow conditional setup of window-system and console frames
-;;----------------------------------------------------------------------------
-(defvar after-make-console-frame-hooks '()
-  "Hooks to run after creating a new TTY frame")
-(defvar after-make-window-system-frame-hooks '()
-  "Hooks to run after creating a new window-system frame")
-
-(defun run-after-make-frame-hooks (frame)
-  "Selectively run either `after-make-console-frame-hooks' or
-`after-make-window-system-frame-hooks'"
-  (select-frame frame)
-  (run-hooks (if window-system
-		 'after-make-window-system-frame-hooks
-	       'after-make-console-frame-hooks)))
-
-(add-hook 'after-make-frame-functions 'run-after-make-frame-hooks)
-
-
-;;----------------------------------------------------------------------------
-;; Console-specific set-up
-;;----------------------------------------------------------------------------
-(defun fix-up-xterm-control-arrows ()
-  (define-key function-key-map "\e[1;5A" [C-up])
-  (define-key function-key-map "\e[1;5B" [C-down])
-  (define-key function-key-map "\e[1;5C" [C-right])
-  (define-key function-key-map "\e[1;5D" [C-left])
-  (define-key function-key-map "\e[5A"   [C-up])
-  (define-key function-key-map "\e[5B"   [C-down])
-  (define-key function-key-map "\e[5C"   [C-right])
-  (define-key function-key-map "\e[5D"   [C-left]))
-
-(add-hook 'after-make-console-frame-hooks
-	  (lambda ()
-	    (fix-up-xterm-control-arrows)
-	    (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
-	    (mwheel-install)))
-
-(add-hook 'after-make-frame-functions
-	  (lambda (frame)
-	    (let ((prev-frame (selected-frame)))
-	      (select-frame frame)
-	      (prog1
-		  (unless window-system
-		    (set-frame-parameter frame 'menu-bar-lines 0))
-		(select-frame prev-frame)))))
-
-
-;;----------------------------------------------------------------------------
-;; Include buffer name and file path in title bar
-;;----------------------------------------------------------------------------
-(defvar *user*    (user-login-name) "user login name")
-(defvar *hostname*
-  (let ((n (system-name))) (substring n 0 (string-match "\\." n))) "unqualified host name")
-
-(defun network-location ()
-  "Report the network location of this computer; only implemented for Macs"
-  (when *is-a-mac*
-    (let ((scselect (shell-command-to-string "/usr/sbin/scselect")))
-      (if (string-match "^ \\* .*(\\(.*\\))$" scselect)
-	  (match-string 1 scselect)))))
-
-(defun concise-network-location ()
-  (let ((l (network-location)))
-    (if (and l (not (string-equal "Automatic" l)))
-	(concat "[" l "]")
-      "")))
-
-(defun concise-buffer-file-name ()
-  (when (buffer-file-name)
-    (replace-regexp-in-string (regexp-quote (getenv "HOME")) "~" (buffer-file-name))))
-(setq frame-title-format '("%b - " *user* "@" *hostname*
-			   (:eval (concise-network-location)) " - "
-			   (:eval (concise-buffer-file-name))))
-
-
-;;----------------------------------------------------------------------------
-;; Make yes-or-no questions answerable with 'y' or 'n'
-;;----------------------------------------------------------------------------
-(fset 'yes-or-no-p 'y-or-n-p)
-
-
-;;----------------------------------------------------------------------------
-;; To be able to M-x without meta
-;;----------------------------------------------------------------------------
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-
-;;  -------------------------------------------
-;;  Highlight the line we are currently editing
-(global-hl-line-mode t)
-
-
-;;----------------------------------------------------------------------------
-;; OS X usability tweaks
-;;----------------------------------------------------------------------------
-(when *is-a-mac*
-  (setq mac-command-modifier 'meta)
-  (setq default-input-method "MacOSX")
-  ;; Make mouse wheel / trackpad scrolling less jerky
-  (setq mouse-wheel-scroll-amount '(0.001))
-  (when *is-cocoa-emacs*
-    ;; Woohoo!!
-    (global-set-key (kbd "M-`") 'ns-next-frame)
-    (global-set-key (kbd "M-h") 'ns-do-hide-emacs)
-    (global-set-key (kbd "M-ˍ") 'ns-do-hide-others)  ;; what describe-key reports
-    (global-set-key (kbd "M-c") 'ns-copy-including-secondary)
-    (global-set-key (kbd "M-v") 'ns-paste-secondary))
-  ;; Use Apple-w to close current buffer on OS-X (is normally bound to kill-ring-save)
-  (global-set-key [(meta w)] 'kill-this-buffer))
-
-
-;;----------------------------------------------------------------------------
-;; Network proxy configuration
-;;----------------------------------------------------------------------------
-(require 'init-proxies)
-
-;;----------------------------------------------------------------------------
-;; Enhanced dired
-;;----------------------------------------------------------------------------
-(require 'dired+)
-(setq dired-recursive-deletes 'top)
-(define-key dired-mode-map [mouse-2] 'dired-find-file)
-
-;;----------------------------------------------------------------------------
-;; Show and edit all lines matching a regex
-;;----------------------------------------------------------------------------
-(require 'all)
-
-;;----------------------------------------------------------------------------
-;; VI emulation and related key mappings (EVIL)
-;;----------------------------------------------------------------------------
-(when *evil-enabled* 
-  ;; require the vim evil :-)
-  (require 'evil)
-  (evil-mode 1)
-
-  ;; use surround.vim but then for emacs ..
-  (require 'surround)
-  (global-surround-mode 1)
-
-  
-  ;; Remap org-mode meta keys for convenience
-  (mapcar (lambda (evil-state)
-	    (evil-declare-key evil-state org-mode-map
-			      (kbd "M-l") 'org-metaright
-			      (kbd "M-h") 'org-metaleft
-			      (kbd "M-k") 'org-metaup
-			      (kbd "M-j") 'org-metadown
-			      (kbd "M-L") 'org-shiftmetaright
-			      (kbd "M-H") 'org-shiftmetaleft
-			      (kbd "M-K") 'org-shiftmetaup
-			      (kbd "M-J") 'org-shiftmetadown))
-	  '(normal insert))
-
-  (define-key evil-normal-state-map "g;" 'session-jump-to-last-change)
-  (define-key evil-normal-state-map ";b" 'ibuffer)
-  (define-key evil-normal-state-map ";;" 'switch-to-buffer)
-  (define-key evil-normal-state-map ";'" 'delete-window)
-  (define-key evil-normal-state-map ";\\" 'delete-other-windows)
-  (define-key evil-normal-state-map ";o" 'other-window)
-  (define-key evil-normal-state-map ";d" 'dired)
-  (define-key evil-normal-state-map ";f" 'ido-find-file)
-  (define-key evil-normal-state-map ";r" 'steve-ido-choose-from-recentf)
-  (define-key evil-normal-state-map ";x" 'smex)
-  (define-key evil-normal-state-map ";X" 'smex-update-and-run)
-  (define-key evil-normal-state-map ";a" 'anything)
-  (define-key evil-normal-state-map ";t" 'ido-find-tag)
-  (define-key evil-normal-state-map ";p" 'textmate-goto-file))
-
-
-;;----------------------------------------------------------------------------
-;; Show a marker in the left fringe for lines not in the buffer
-;;----------------------------------------------------------------------------
-(setq default-indicate-empty-lines t)
-
-;;----------------------------------------------------------------------------
-;; Don't disable case-change functions
-;;----------------------------------------------------------------------------
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-
-;;----------------------------------------------------------------------------
-;; Navigate window layouts with "C-c <left>" and "C-c <right>"
-;;----------------------------------------------------------------------------
-(winner-mode 1)
-
-;;----------------------------------------------------------------------------
-;; Navigate windows "C-<arrow>"
-;;----------------------------------------------------------------------------
-(windmove-default-keybindings 'shift)
-
-;;----------------------------------------------------------------------------
-;; Use regex searches by default.
-;;----------------------------------------------------------------------------
-(global-set-key "\C-s" 'isearch-forward-regexp)
-(global-set-key "\C-r" 'isearch-backward-regexp)
-(global-set-key "\C-\M-s" 'isearch-forward)
-(global-set-key "\C-\M-r" 'isearch-backward)
-
-;; Activate occur easily inside isearch
-(define-key isearch-mode-map (kbd "C-o")
-  (lambda () (interactive)
-    (let ((case-fold-search isearch-case-fold-search))
-      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
-
-;;----------------------------------------------------------------------------
-;; Easily count words (http://emacs-fu.blogspot.com/2009/01/counting-words.html)
-;;----------------------------------------------------------------------------
-(defun count-words (&optional begin end)
-  "count words between BEGIN and END (region); if no region defined, count words in buffer"
-  (interactive "r")
-  (let ((b (if mark-active begin (point-min)))
-      (e (if mark-active end (point-max))))
-    (message "Word count: %s" (how-many "\\w+" b e))))
-
-;;----------------------------------------------------------------------------
-;; Modeline tweaks
-;;----------------------------------------------------------------------------
-(size-indication-mode)
-
-;;----------------------------------------------------------------------------
-;; Modeline tweaks
-;;----------------------------------------------------------------------------
-(autoload 'linum-mode "linum" "Toggle line numbering" t)
-
-;;----------------------------------------------------------------------------
-;; Scroll the window smoothly with the up/down arrows
-;;----------------------------------------------------------------------------
-(require 'smooth-scrolling)
-(setq scroll-preserve-screen-position t)
-
-;;----------------------------------------------------------------------------
-;; Nicer naming of buffers for files with identical names
-;;----------------------------------------------------------------------------
-(require 'uniquify)
-
-(setq uniquify-buffer-name-style 'reverse)
-(setq uniquify-separator " • ")
-(setq uniquify-after-kill-buffer-p t)
-(setq uniquify-ignore-buffers-re "^\\*")
-
-;;----------------------------------------------------------------------------
-;; Use ibuffer instead of the built in buffer list
-;;----------------------------------------------------------------------------
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "<f2>") 'ibuffer)
-
-;;----------------------------------------------------------------------------
-;; Dynamic expansion tweaks
-;;----------------------------------------------------------------------------
-(eval-after-load "hippie-exp"
-  '(setq hippie-expand-try-functions-list
-	 (remove 'try-expand-line hippie-expand-try-functions-list)))
-
-;;----------------------------------------------------------------------------
-;; Highlight URLs in comments/strings
-;;----------------------------------------------------------------------------
-;;(add-hook 'find-file-hooks 'goto-address-prog-mode)
-
-;;----------------------------------------------------------------------------
-;; ECB = Emacs Code Browser
-;;----------------------------------------------------------------------------
-(when *ecb-support-enabled* 
-  (require 'init-ecb))
-
-;;----------------------------------------------------------------------------
-;; Basic flymake configuration
-;;----------------------------------------------------------------------------
-(require 'init-flymake)
-
-;;----------------------------------------------------------------------------
-;; Luke Gorrie's "lively.el"
-;;----------------------------------------------------------------------------
-(autoload 'lively "lively" "Interactively updating text" t)
-
-;;----------------------------------------------------------------------------
-;; Twitter
-;;----------------------------------------------------------------------------
-(when *twitter-support-enabled*
-  (require 'init-twitter))
-
-;;----------------------------------------------------------------------------
-;; Erlang
-;;----------------------------------------------------------------------------
-(when *erlang-support-enabled*
-  ;;(setq load-path (cons (expand-file-name "/usr/local/share/emacs/site-lisp/distel") load-path))
-  ;;(defun my-erlang-load-hook ()
-  ;; (setq erlang-root-dir "/opt/otp/lib/erlang"))
-  ;;(add-hook 'erlang-load-hook 'my-erlang-load-hook)
-  (setq erlang-root-dir "/opt/local/lib/erlang")
-  (require 'erlang-start))
-  ;;(require 'distel)
-  ;;(add-hook 'erlang-mode-hook 'distel-erlang-mode-hook))
-
-;;----------------------------------------------------------------------------
-;; Javascript
-;;----------------------------------------------------------------------------
-(require 'init-javascript)
-
-;;----------------------------------------------------------------------------
-;; Extensions -> Modes
-;;----------------------------------------------------------------------------
-(add-auto-mode 'html-mode "\\.(jsp|tmpl)$")
-(add-auto-mode 'tcl-mode "Portfile$")
-
-;;----------------------------------------------------------------------------
-;; Crontab mode
-;;----------------------------------------------------------------------------
-(autoload 'crontab-mode "crontab-mode" "Mode for editing crontab files" t)
-(add-auto-mode 'crontab-mode "\\.?cron\\(tab\\)?\\'")
-
-;;----------------------------------------------------------------------------
-;; Textile-mode
-;;----------------------------------------------------------------------------
-(autoload 'textile-mode "textile-mode" "Mode for editing Textile documents" t)
-
-;;----------------------------------------------------------------------------
-;; Markdown-mode
-;;----------------------------------------------------------------------------
-(autoload 'markdown-mode "markdown-mode" "Mode for editing Markdown documents" t)
-
-;;----------------------------------------------------------------------------
-;; Regex-tool
-;;----------------------------------------------------------------------------
-(autoload 'regex-tool "regex-tool" "Mode for exploring regular expressions" t)
-(setq regex-tool-backend 'perl)
-
-;;----------------------------------------------------------------------------
-;; Subversion
-;;----------------------------------------------------------------------------
-(require 'psvn)
-
-;;----------------------------------------------------------------------------
-;; Darcs
-;;----------------------------------------------------------------------------
-(when *darcs-support-enabled*
-  (require 'init-darcs))
-
-;;----------------------------------------------------------------------------
-;; Git
-;;----------------------------------------------------------------------------
-(require 'init-git)
-
-;;----------------------------------------------------------------------------
-;; Multiple major modes (obsolte now we use mumamo-modes
-;;----------------------------------------------------------------------------
-;;(require 'init-mmm)
-
-;;----------------------------------------------------------------------------
-;; File and buffer navigation
-;;----------------------------------------------------------------------------
-(require 'recentf)
-(setq recentf-max-saved-items 100)
-(require 'init-ido)
-(require 'init-anything)
-(require 'textmate)
-
-;;----------------------------------------------------------------------------
-;; Tags
-;;----------------------------------------------------------------------------
-(require 'init-etags)
-
-;;----------------------------------------------------------------------------
-;; Autocomplete
-;;----------------------------------------------------------------------------
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/auto-complete/dict/")
-(ac-config-default)
-(global-auto-complete-mode t)
-;(ac-set-trigger-key "TAB")
-(setq ac-auto-start 2)
-(define-key ac-mode-map (kbd "M-/") 'auto-complete)
-(setq ac-dwim nil)
-
-;; This stops "end" followed by "RET" getting completed to something
-;; like "endomorph" - have to use an explicit "TAB" to complete.
-(define-key ac-complete-mode-map (kbd "\r") nil)
-
-;;----------------------------------------------------------------------------
-;; When splitting window, show (other-buffer) in the new window
-;;----------------------------------------------------------------------------
-(require 'init-window-split)
-
-
-;;----------------------------------------------------------------------------
-;; Desktop saving
-;;----------------------------------------------------------------------------
-;; save a list of open files in ~/.emacs.d/.emacs.desktop
-;; save the desktop file automatically if it already exists
-(setq desktop-path '("~/.emacs.d"))
-(setq desktop-save 'if-exists)
-(desktop-save-mode 1)
-
-
-(autoload 'save-current-configuration "revive" "Save status" t)
-(autoload 'resume "revive" "Resume Emacs" t)
-(autoload 'wipe "revive" "Wipe Emacs" t)
-(define-key ctl-x-map "S" 'save-current-configuration)
-(define-key ctl-x-map "F" 'resume)
-(define-key ctl-x-map "K" 'wipe)
-
-
-;;----------------------------------------------------------------------------
-;; Restore histories and registers after saving
-;;----------------------------------------------------------------------------
-(require 'session)
-(setq session-save-file (expand-file-name "~/.emacs.d/.session"))
-(add-hook 'after-init-hook 'session-initialize)
-
-;; save a bunch of variables to the desktop file
-;; for lists specify the len of the maximal saved data also
-(setq desktop-globals-to-save
-      (append '((extended-command-history . 30)
-		(file-name-history        . 100)
-		(ido-last-directory-list  . 100)
-		(ido-work-directory-list  . 100)
-		(ido-work-file-list       . 100)
-		(grep-history             . 30)
-		(compile-history          . 30)
-		(minibuffer-history       . 50)
-		(query-replace-history    . 60)
-		(read-expression-history  . 60)
-		(regexp-history           . 60)
-		(regexp-search-ring       . 20)
-		(search-ring              . 20)
-		(shell-command-history    . 50)
-		tags-file-name
-		register-alist)))
-
-
-;;----------------------------------------------------------------------------
-;; Window size and features
-;;----------------------------------------------------------------------------
-;;(tool-bar-mode -1)
-;;(scroll-bar-mode -1)
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-;; Visible bell
-(setq visible-bell 1)
-
-(require 'init-maxframe)
-
-
-;;----------------------------------------------------------------------------
-;; Fonts
-;;----------------------------------------------------------------------------
-(require 'init-fonts)
-
-
-;;----------------------------------------------------------------------------
-;; Color themes
-;;----------------------------------------------------------------------------
-(require 'init-themes)
-
-
-;;----------------------------------------------------------------------------
-;; Delete the current file
-;;----------------------------------------------------------------------------
-(defun delete-this-file ()
-  (interactive)
-  (or (buffer-file-name) (error "no file is currently being edited"))
-  (when (yes-or-no-p "Really delete this file?")
-    (delete-file (buffer-file-name))
-    (kill-this-buffer)))
-
-
-;;----------------------------------------------------------------------------
-;; Compilation
-;;----------------------------------------------------------------------------
-;(require 'todochiku) ;; growl notifications when compilation finishes
-;(add-hook 'compilation-mode-hook (lambda () (local-set-key [f6] 'recompile)))
-
-
-;;----------------------------------------------------------------------------
-;; Browse current HTML file
-;;----------------------------------------------------------------------------
-(defun browse-current-file ()
-  (interactive)
-  (browse-url (concat "file://" (buffer-file-name))))
-
-
-;;----------------------------------------------------------------------------
-;; Gnuplot
-;;----------------------------------------------------------------------------
-(autoload 'gnuplot-mode "gnuplot" "gnuplot major mode" t)
-(autoload 'gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot-mode" t)
-
-;;----------------------------------------------------------------------------
-;; Eproject
-;;----------------------------------------------------------------------------
-;(require 'eproject)
-;(require 'eproject-extras)
-
-;;----------------------------------------------------------------------------
-;; Org-mode
-;;----------------------------------------------------------------------------
-(require 'init-org)
-
-
-;;----------------------------------------------------------------------------
-;; NXML
-;;----------------------------------------------------------------------------
-;;(require 'init-nxml)
-
-
-;;----------------------------------------------------------------------------
-;; Python
-;;----------------------------------------------------------------------------
-(when *python-support-enabled*
-  (require 'init-python-mode))
-
-
-;;----------------------------------------------------------------------------
-;; Ruby & Rails
-;;----------------------------------------------------------------------------
-(when *ruby-support-enabled* 
-  (require 'init-ruby-mode)
-  (when *rails-support-enabled*
-    (require 'init-rails)))
-
-
-;;----------------------------------------------------------------------------
-; Automatically set execute perms on files if first line begins with '#!'
-;;----------------------------------------------------------------------------
-(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
-
-
-;;----------------------------------------------------------------------------
-;; htmlize
-;;----------------------------------------------------------------------------
-(dolist (sym
-	 (list 'htmlize-file 'htmlize-region 'htmlize-buffer
-	       'htmlize-many-files 'htmlize-many-files-dired))
-  (autoload sym "htmlize"))
-
-
-;;----------------------------------------------------------------------------
-;; HTML mode
-;;----------------------------------------------------------------------------
-;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
-;;(add-auto-mode 'html-helper-mode "\\.html$")
-;;(add-auto-mode 'html-helper-mode "\\.mak$")
-;;(setq tempo-interactive t)
-;;add-hook 'html-helper-load-hook '(lambda () (require 'html-font)))
-
-;; nxhtml-mode
-;(load "~/.emacs.d/site-lisp/nxhtml/autostart.el")
-;(add-auto-mode 'nxhtml-mode "\\.html$")
-;(add-auto-mode 'sgml-mode "\\.mak$")
-;(add-auto-mode 'mako-nxhtml-mumamo-mode "\\.mak$")
-
-;;(add-auto-mode 'sgml-mode "\\.mak$")
-
-;;----------------------------------------------------------------------------
-;; CSS mode
-;;----------------------------------------------------------------------------
-(require 'init-css)
-
-;;----------------------------------------------------------------------------
-;; YAML mode
-;;----------------------------------------------------------------------------
-(autoload 'yaml-mode "yaml-mode" "Mode for editing YAML files" t)
-(add-auto-mode 'yaml-mode "\\.ya?ml$")
-
-
-;;----------------------------------------------------------------------------
-;; CSV mode and csv-nav mode
-;;----------------------------------------------------------------------------
-(autoload 'csv-mode "csv-mode" "Major mode for editing comma-separated value files." t)
-(add-auto-mode 'csv-mode "\\.[Cc][Ss][Vv]\\'")
-(autoload 'csv-nav-mode "csv-nav-mode" "Major mode for navigating comma-separated value files." t)
-
-
 ;;----------------------------------------------------------------------------
-;; Shell mode
+;; Define all submodules, so we can enable / disable them by hand or on demand
 ;;----------------------------------------------------------------------------
-(autoload 'flymake-shell-load "flymake-shell" "On-the-fly syntax checking of shell scripts" t)
-(add-hook 'sh-mode-hook 'flymake-shell-load)
+(require 'init-submodules)
 
-
-;;----------------------------------------------------------------------------
-;; PHP
-;;----------------------------------------------------------------------------
-(autoload 'php-mode "php-mode" "mode for editing php files" t)
-(add-auto-mode 'php-mode "\\.php[345]?\\'\\|\\.phtml\\." "\\.(inc|tpl)$" "\\.module$")
-(add-hook 'php-mode-hook
-	  (lambda ()
-	    (require 'flymake-php)
-	    (flymake-mode t)))
-(autoload 'smarty-mode "smarty-mode" "Smarty Mode" t)
-(add-auto-mode 'smarty-mode "\\.tpl$")
-
-
-;;----------------------------------------------------------------------------
-;; Lisp / Scheme / Slime
-;;----------------------------------------------------------------------------
-(require 'init-lisp)
-(when *common-lisp-support-enabled*
-  (require 'init-common-lisp))
-(when *clojure-support-enabled*
-  (require 'init-clojure))
-(when *scheme-support-enabled*
-  ; See http://bc.tech.coop/scheme/scheme-emacs.htm
-  (require 'quack))
-
-;;----------------------------------------------------------------------------
-;; Haskell
-;;----------------------------------------------------------------------------
-(when *haskell-support-enabled*
-  (require 'init-haskell))
-
-;;----------------------------------------------------------------------------
-;; Haxe
-;;----------------------------------------------------------------------------
-(require 'init-haxe)
-
-;;----------------------------------------------------------------------------
-;; OCaml
-;;----------------------------------------------------------------------------
-(when *ocaml-support-enabled*
-  (setq auto-mode-alist (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
-  (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
-  (autoload 'camldebug "camldebug" "Run the Caml debugger" t))
-
-;;----------------------------------------------------------------------------
-;; Gnus emailclient from emacs
 ;;----------------------------------------------------------------------------
-;;(require 'init-gnus)
-
-
-;;----------------------------------------------------------------------------
-;; Add spell-checking in comments for all programming language modes
-;;----------------------------------------------------------------------------
-(when *spell-check-support-enabled*
-  (require 'init-flyspell))
-
-;;----------------------------------------------------------------------------
-;; Coffee script
-;;----------------------------------------------------------------------------
-(require 'coffee-mode)
-
-(defun coffee-custom ()
-  "coffee-mode-hook"
- (set (make-local-variable 'tab-width) 2)
- (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
- (define-key coffee-mode-map [(meta R)] 'coffee-compile-region))
-
-(add-hook 'coffee-mode-hook
-  '(lambda()
-     (coffee-custom)))
-
-;;----------------------------------------------------------------------------
-;; Haml-mode / Sass-mode
-;;----------------------------------------------------------------------------
-(require 'haml-mode)
-(require 'sass-mode)
-
-;;----------------------------------------------------------------------------
-;; Log typed commands into a buffer for demo purposes
+;; Define autolaods, as to delay loading of submodules only when needed.
 ;;----------------------------------------------------------------------------
-(autoload 'mwe:log-keyboard-commands "mwe-log-commands"
-  "Log commands executed in the current buffer" t)
-
-
-;;----------------------------------------------------------------------------
-;; Conversion of line endings
-;;----------------------------------------------------------------------------
-;; Can also use "C-x ENTER f dos" / "C-x ENTER f unix" (set-buffer-file-coding-system)
-(require 'eol-conversion)
-
+(require 'init-autoloads)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
-(server-start)
-
+(defsubmodule emacs-server
+  (server-start))
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
@@ -794,24 +52,63 @@ in `exec-path', or nil if no such command exists"
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;;----------------------------------------------------------------------------
+;; Setup default locale and everything else
+;;----------------------------------------------------------------------------
+(require 'init-locales)
+
+;; ----------------------------------------------------------------------------
+;; General usability tweaks, small settings that make my life easier
+;; ----------------------------------------------------------------------------
+(require 'init-tweaks-and-settings)
+(require 'init-auto-mode-settings)
 
 ;;----------------------------------------------------------------------------
-;; Locales (setting them earlier in this file doesn't work in X)
+;; Enable bare minimum functionality
 ;;----------------------------------------------------------------------------
-(when (or window-system (string-match "UTF-8" (shell-command-to-string "locale")))
-  (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
-  (set-language-environment 'utf-8)
-  (when *is-carbon-emacs*
-    (set-keyboard-coding-system 'utf-8-mac))
-  (setq locale-coding-system 'utf-8)
-  (set-default-coding-systems 'utf-8)
-  (set-terminal-coding-system 'utf-8)
-  (set-selection-coding-system 'utf-8)
-  (prefer-coding-system 'utf-8))
+(module-enable-setup-mac-specific)    ;; need this for load paths executables and manfiles
+(module-enable-elpa)                  ;; some packages are installed via the package manager
+(module-enable-evil)                  ;; VIM bindings
+(module-enable-auto-complete)         ;; save my knuckles and gather information
+(module-enable-git)                   ;; I wanna control ...
+(module-enable-enhanced-dired)        ;; better dir-editor
+(module-enable-flymake)               ;; on the fly syntax checking ..
 
+(module-enable-org-mode)              ;; where would I be without it :-D
+
+(module-enable-lisp)                  ;; generic lisp functionality, paredit etc
+
+;;----------------------------------------------------------------------------
+;; Enable frequently used functionality
+;;----------------------------------------------------------------------------
+(module-enable-ruby)
+(module-enable-rails)
+(module-enable-haml)
+(module-enable-sass)
+(module-enable-yaml)
+(module-enable-coffeescript)
+(module-enable-javascript)
+;; For other modules check init-modules ... all are defined there
+
+;;----------------------------------------------------------------------------
+;; optional modules
+;;----------------------------------------------------------------------------
+;(module-enable-etags)
 
 ;; ----------------------------------------------------------------------------
 ;; Include command line completion of M-x using smex
-;; needs tobe initialized at the end.
+;; needs to be initialized at the end. Since it indexes all symbols which
+;; are required in the different submodules
 ;; ----------------------------------------------------------------------------
-(smex-initialize)
+(module-enable-file-and-buffer-navigation)
+
+;; ----------------------------------------------------------------------------
+;; Let's not forget our looks
+;; ----------------------------------------------------------------------------
+(module-enable-colorthemes)
+(module-enable-maxframe)
+
+;; ----------------------------------------------------------------------------
+;; And restore our context 
+;; ----------------------------------------------------------------------------
+;(module-enable-desktop-and-session-saving)

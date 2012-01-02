@@ -3,7 +3,7 @@
 (setq interpreter-mode-alist
       (cons '("ruby" . ruby-mode) interpreter-mode-alist))
 
-(add-auto-mode 'ruby-mode "\\.rb$" "Rakefile$" "\.rake$" "\.rxml$" "\.rjs" ".irbrc")
+(add-auto-mode 'ruby-mode "\\.rb$" "Gemfile" "Rakefile$" "\.rake$" "\.rxml$" "\.rjs" ".irbrc")
 
 
 (autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
@@ -44,7 +44,7 @@
 ;; Ruby - Rsense
 ;;----------------------------------------------------------------------------
 ;(add-to-list 'load-path "~/.emacs.d/site-lisp/ruby/rsense/etc/")
-(when *ruby-rsense-enabled* 
+(defsubmodule ruby-rsense
   (require 'rsense)
   (setq rsense-home (expand-file-name "~/.emacs.d/site-lisp/ruby/rsense"))
   (defun rsense-configure-ac-sources ()
@@ -56,7 +56,7 @@
 ;;----------------------------------------------------------------------------
 ;; Ruby - RcodeTools
 ;;----------------------------------------------------------------------------
-(when *ruby-rcodetools-enabled* 
+(defsubmodule ruby-rcodetools
   (require 'rcodetools)
 ;; (setq rct-debug t)
   ;; (setq rct-debug t)
