@@ -50,7 +50,7 @@
   path = site-lisp/ruby-rspec
   url = https://github.com/pezra/rspec-mode.git
 [submodule "rsense"]
-  path = site-lisp/rsense
+  path = site-lisp/ruby/rsense
   url = http://github.com/m2ym/rsense
 [submodule "rvm.el.git"]
   path = site-lisp/rvm
