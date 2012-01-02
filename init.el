@@ -14,9 +14,11 @@
 (setq *erlang-support-enabled* nil)
 (setq *darcs-support-enabled* nil)
 (setq *ruby-support-enabled* t)
+(setq *ruby-rsense-enabled* nil) ; optional since it starts a server
+(setq *ruby-rcodetools-enabled* nil) ; optional since it starts a server
 (setq *rails-support-enabled* t)
 (setq *spell-check-support-enabled* nil)
-(setq *byte-code-cache-enabled* t)
+(setq *byte-code-cache-enabled* nil)
 (setq *twitter-support-enabled* nil)
 
 (setq *macbook-pro-support-enabled* nil) ;; init-maxframe
@@ -246,6 +248,7 @@ in `exec-path', or nil if no such command exists"
 
   ;; use surround.vim but then for emacs ..
   (require 'surround)
+  (global-surround-mode 1)
 
   
   ;; Remap org-mode meta keys for convenience
@@ -260,9 +263,6 @@ in `exec-path', or nil if no such command exists"
 			      (kbd "M-K") 'org-shiftmetaup
 			      (kbd "M-J") 'org-shiftmetadown))
 	  '(normal insert))
-
-  ;; C-w is just a habit I want to keep 
-  (define-key evil-insert-state-map (kbd "C-w") 'backward-kill-word)
 
   (define-key evil-normal-state-map "g;" 'session-jump-to-last-change)
   (define-key evil-normal-state-map ";b" 'ibuffer)
@@ -473,38 +473,20 @@ in `exec-path', or nil if no such command exists"
 (require 'init-etags)
 
 ;;----------------------------------------------------------------------------
-;;(require 'hideshow-org)
-
-;;----------------------------------------------------------------------------
 ;; Autocomplete
 ;;----------------------------------------------------------------------------
-(require 'auto-complete nil t)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/auto-complete/dict/")
+(ac-config-default)
 (global-auto-complete-mode t)
-(setq ac-auto-start 3)
+;(ac-set-trigger-key "TAB")
+(setq ac-auto-start 2)
+(define-key ac-mode-map (kbd "M-/") 'auto-complete)
 (setq ac-dwim nil)
-(set-default 'ac-sources
-	     (if (> emacs-major-version 22)
-		 (progn
-		   (require 'ac-dabbrev)
-		   '(ac-source-dabbrev ac-source-words-in-buffer))
-	       ;; dabbrev is very slow in emacs 22
-	       '(ac-source-words-in-buffer)))
-
-(dolist (mode '(log-edit-mode org-mode text-mode haml-mode 
-		sass-mode yaml-mode csv-mode espresso-mode haskell-mode
-		html-mode nxml-mode sh-mode smarty-mode clojure-mode
-		lisp-mode textile-mode markdown-mode tuareg-mode coffee-mode))
-  (add-to-list 'ac-modes mode))
-
-
 
 ;; This stops "end" followed by "RET" getting completed to something
 ;; like "endomorph" - have to use an explicit "TAB" to complete.
 (define-key ac-complete-mode-map (kbd "\r") nil)
-
-;; add auto-complete-mode for emacs lisp
-(require 'auto-complete-emacs-lisp)
-(ac-emacs-lisp-init)
 
 ;;----------------------------------------------------------------------------
 ;; When splitting window, show (other-buffer) in the new window

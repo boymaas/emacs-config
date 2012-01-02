@@ -5,6 +5,11 @@
 (require 'org-agenda)
 (require 'org-install)
 
+(require 'cal-move)
+
+;; Enable fontlocking etc for org mode ..
+(require 'hideshow-org)
+
 ;; Standard org directory and a directory to
 ;; append the path after.
 (setq org-directory "~/Personal/Planning/")
@@ -136,7 +141,7 @@
                ((agenda)
                 (tags-todo "@refile")
                 (tags-todo "@tasks")
-                (todo "STARTED")
+                (todo "TODO")
                 (tags "@daily+LEVEL=2/-DONE")
                 (tags-todo "@shopping")))
               ("n" "Notes" tags "note" nil))))

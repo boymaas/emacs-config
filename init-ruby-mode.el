@@ -35,10 +35,34 @@
 ;; Ruby - Electric mode
 ;;----------------------------------------------------------------------------
 (autoload 'ruby-electric-mode "ruby-electric" "Electric brackes/quotes/keywords for Ruby source" t)
-(require 'rcodetools)
 (setq ruby-electric-expand-delimiters-list nil)  ; Only use ruby-electric for adding 'end'
 (add-hook 'ruby-mode-hook
           (lambda () (ruby-electric-mode t)))
+
+
+;;----------------------------------------------------------------------------
+;; Ruby - Rsense
+;;----------------------------------------------------------------------------
+;(add-to-list 'load-path "~/.emacs.d/site-lisp/ruby/rsense/etc/")
+(when *ruby-rsense-enabled* 
+  (require 'rsense)
+  (setq rsense-home (expand-file-name "~/.emacs.d/site-lisp/ruby/rsense"))
+  (defun rsense-configure-ac-sources ()
+    (add-to-list 'ac-sources 'ac-source-rsense-method)
+    ;(add-to-list 'ac-sources 'ac-source-rsense-constant)
+    )
+  (add-hook 'ruby-mode-hook 'rsense-configure-ac-sources))
+
+;;----------------------------------------------------------------------------
+;; Ruby - RcodeTools
+;;----------------------------------------------------------------------------
+(when *ruby-rcodetools-enabled* 
+  (require 'rcodetools)
+;; (setq rct-debug t)
+  ;; (setq rct-debug t)
+  (defun rcodetools-configure-ac-sources ()
+    (add-to-list 'ac-sources 'ac-source-rcodetools))
+  (add-hook 'ruby-mode-hook 'rcodetools-configure-ac-sources))
 
 
 ;;----------------------------------------------------------------------------

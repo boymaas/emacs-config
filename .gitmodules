@@ -1,3 +1,69 @@
-[submodule "site-lisp/evil-sm"]
+[submodule "site-lisp/evil"]
 	path = site-lisp/evil-sm
 	url = git://gitorious.org/evil/evil.git
+[submodule "auto-complete"]
+        path = site-lisp/auto-complete
+        url = http://github.com/m2ym/auto-complete
+[submodule "coffee-mode.git"]
+  path = site-lisp/coffee-mode
+  url = https://github.com/defunkt/coffee-mode.git
+[submodule "color-theme-tango-2.git"]
+  path = site-lisp/color-theme-tango-2
+  url = git://github.com/wfarr/color-theme-tango-2.git
+[submodule "emacs-rails-reloaded.git"]
+  path = site-lisp/emacs-rails-reloaded
+  url = https://github.com/dima-exe/emacs-rails-reloaded.git
+[submodule "eproject.git"]
+  path = site-lisp/eproject
+  url = git://github.com/jrockway/eproject.git
+[submodule "evil.git"]
+  path = site-lisp/evil
+  url = git://gitorious.org/evil/evil.git
+[submodule "evil-surround.git"]
+  path = site-lisp/evil-surround
+  url = https://github.com/timcharper/evil-surround.git
+[submodule "haml-mode.git"]
+  path = site-lisp/haml-mode
+  url = https://github.com/nex3/haml-mode.git
+[submodule "hideshow-org.git"]
+  path = site-lisp/hideshow-org
+  url = git://github.com/secelis/hideshow-org.git
+[submodule "mainline.git"]
+  path = site-lisp/magit
+  url = git://gitorious.org/magit/mainline.git
+[submodule "markdown-mode.git"]
+  path = site-lisp/markdown-mode
+  url = git://jblevins.org/git/markdown-mode.git
+[submodule "mode-compile"]
+  path = site-lisp/mode-compile
+  url = https://github.com/emacsmirror/mode-compile
+[submodule "org-mode.git"]
+  path = site-lisp/org-mode
+  url = git://repo.or.cz/org-mode.git
+[submodule "remember-el.git"]
+  path = site-lisp/remember
+  url = git://repo.or.cz/remember-el.git
+[submodule "rinari.git"]
+  path = site-lisp/rinari
+  url = https://github.com/eschulte/rinari.git
+[submodule "ruby-rspec.git"]
+  path = site-lisp/ruby-rspec
+  url = https://github.com/pezra/rspec-mode.git
+[submodule "rsense"]
+  path = site-lisp/rsense
+  url = http://github.com/m2ym/rsense
+[submodule "rvm.el.git"]
+  path = site-lisp/rvm
+  url = https://github.com/senny/rvm.el.git
+[submodule "sass-mode.git"]
+  path = site-lisp/sass-mode
+  url = https://github.com/nex3/sass-mode.git
+[submodule "smex.git"]
+  path = site-lisp/smex
+  url = git://github.com/nonsequitur/smex.git
+[submodule "textmate.el.git"]
+  path = site-lisp/textmate
+  url = https://github.com/defunkt/textmate.el.git
+[submodule "vimpulse.git"]
+  path = site-lisp/vimpulse
+  url = git://git.assembla.com/vimpulse.git
