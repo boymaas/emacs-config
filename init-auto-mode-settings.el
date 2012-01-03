@@ -6,5 +6,6 @@
 (add-auto-mode 'crontab-mode "\\.?cron\\(tab\\)?\\'")
 (add-auto-mode 'yaml-mode "\\.ya?ml$")
 (add-auto-mode 'csv-mode "\\.[Cc][Ss][Vv]\\'")
+(add-auto-mode 'markdown-mode "\\.mkd")
 
 (provide 'init-auto-mode-settings)

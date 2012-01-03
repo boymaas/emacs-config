@@ -5,11 +5,9 @@
 
 (add-auto-mode 'ruby-mode "\\.rb$" "Gemfile" "Rakefile$" "\.rake$" "\.rxml$" "\.rjs" ".irbrc")
 
-
 (autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode")
-
 (add-hook 'ruby-mode-hook 'inf-ruby-keys)
 
 
@@ -23,13 +21,11 @@
 ;;----------------------------------------------------------------------------
 (require 'rvm)
 
-
 ;;----------------------------------------------------------------------------
 ;; Ruby - flymake
 ;;----------------------------------------------------------------------------
 (require 'flymake-ruby)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
-
 
 ;;----------------------------------------------------------------------------
 ;; Ruby - Electric mode
@@ -38,7 +34,6 @@
 (setq ruby-electric-expand-delimiters-list nil)  ; Only use ruby-electric for adding 'end'
 (add-hook 'ruby-mode-hook
           (lambda () (ruby-electric-mode t)))
-
 
 ;;----------------------------------------------------------------------------
 ;; Ruby - Rsense
@@ -64,7 +59,6 @@
     (add-to-list 'ac-sources 'ac-source-rcodetools))
   (add-hook 'ruby-mode-hook 'rcodetools-configure-ac-sources))
 
-
 ;;----------------------------------------------------------------------------
 ;; Ruby - misc
 ;;----------------------------------------------------------------------------
@@ -75,7 +69,9 @@
 ;(setq ri-ruby-script (concat (directory-of-library "ri-ruby") "ri-emacs.rb"))
 
 
-;; SPEC
+;;----------------------------------------------------------------------------
+;; Rspec
+;;----------------------------------------------------------------------------
 (require 'rspec-mode)
 (define-key rspec-mode-keymap (kbd "C-c ,s") 'rspec-verify-single)
 
@@ -134,7 +130,9 @@
 
 (add-hook 'ruby-mode-hook (lambda () (local-set-key [f6] 'recompile)))
 
+;;----------------------------------------------------------------------------
 ;; Ruby debugging
+;;----------------------------------------------------------------------------
 (require 'rdebug)
 (add-hook 'rdebug-mode-hook 'rdebug-turn-on-short-key-mode)
 
