@@ -36,7 +36,7 @@
   url = git://jblevins.org/git/markdown-mode.git
 [submodule "mode-compile"]
   path = site-lisp/mode-compile
-  url = https://github.com/emacsmirror/mode-compile
+  url = git://github.com/emacsmirror/mode-compile.git
 [submodule "org-mode.git"]
   path = site-lisp/org-mode
   url = git://repo.or.cz/org-mode.git
@@ -51,7 +51,7 @@
   url = https://github.com/pezra/rspec-mode.git
 [submodule "rsense"]
   path = site-lisp/ruby/rsense
-  url = http://github.com/m2ym/rsense
+  url = git://github.com/m2ym/rsense.git
 [submodule "rvm.el.git"]
   path = site-lisp/rvm
   url = https://github.com/senny/rvm.el.git
