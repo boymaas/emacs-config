@@ -7,11 +7,8 @@
 (global-surround-mode 1)
 
 ;; some modes aren't meant for evil
-(add-to-list 'evil-emacs-state-modes 'el-get-package-menu-mode)
-;(add-to-list 'evil-emacs-state-modes 'magit-log-edit-mode)
-(add-to-list 'evil-emacs-state-modes 'git-status-mode)
-(add-to-list 'evil-emacs-state-modes 'org-mode)
-
+(dolist (m '(el-get-package-menu-mode git-status-mode org-mode grep-mode))
+	(add-to-list 'evil-emacs-state-modes m))
 
 ;; Remap org-mode meta keys for convenience
 (mapcar (lambda (evil-state)
@@ -36,6 +33,7 @@
 (define-key evil-normal-state-map ";f" 'ido-find-file)
 (define-key evil-normal-state-map ";r" 'steve-ido-choose-from-recentf)
 (define-key evil-normal-state-map ";x" 'smex)
+(define-key evil-visual-state-map ";x" 'smex)
 (define-key evil-normal-state-map ";X" 'smex-update-and-run)
 (define-key evil-normal-state-map ";a" 'anything)
 (define-key evil-normal-state-map ";t" 'ido-find-tag)
