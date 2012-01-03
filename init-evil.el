@@ -6,6 +6,12 @@
 (require 'surround)
 (global-surround-mode 1)
 
+;; some modes aren't meant for evil
+(add-to-list 'evil-emacs-state-modes 'el-get-package-menu-mode)
+;(add-to-list 'evil-emacs-state-modes 'magit-log-edit-mode)
+(add-to-list 'evil-emacs-state-modes 'git-status-mode)
+(add-to-list 'evil-emacs-state-modes 'org-mode)
+
 
 ;; Remap org-mode meta keys for convenience
 (mapcar (lambda (evil-state)
