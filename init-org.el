@@ -17,6 +17,7 @@
   (concat org-directory fname))
 
 (define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-cL" 'org-insert-link)
 (define-key global-map "\C-ca" 'org-agenda)
 ;(define-key org-mode-map "\t" 'org-indent-line-function)
 (setq org-log-done t)
@@ -169,8 +170,12 @@
 (defun gtd ()
     (interactive)
     (find-file (org-path "gtd.gtd")))
+(defun journal ()
+    (interactive)
+    (find-file (org-path "journal.gtd")))
 ;; and a global shortcut for it
 (global-set-key (kbd "C-c g") 'gtd)
+(global-set-key (kbd "C-c j") 'journal)
 
 ; Set default column view headings: Task Effort Clock_Summary
 (setq org-columns-default-format "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")

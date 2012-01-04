@@ -7,7 +7,7 @@
 (global-surround-mode 1)
 
 ;; some modes aren't meant for evil
-(dolist (m '(el-get-package-menu-mode git-status-mode org-mode grep-mode))
+(dolist (m '(el-get-package-menu-mode git-status-mode grep-mode))
 	(add-to-list 'evil-emacs-state-modes m))
 
 ;; Remap org-mode meta keys for convenience

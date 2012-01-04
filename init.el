@@ -80,6 +80,7 @@
 ;;----------------------------------------------------------------------------
 ;; Enable frequently used functionality
 ;;----------------------------------------------------------------------------
+(module-enable-ecb)
 (module-enable-ruby)
 (module-enable-rails)
 (module-enable-rinari)
