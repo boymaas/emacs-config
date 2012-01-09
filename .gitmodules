@@ -64,3 +64,6 @@
 [submodule "vimpulse.git"]
   path = site-lisp/vimpulse
   url = git://git.assembla.com/vimpulse.git
+[submodule "site-lisp/magit"]
+	path = site-lisp/magit
+	url = https://github.com/magit/magit.git
