@@ -15,7 +15,7 @@
  '(ecb-tree-buffer-style (quote image))
  '(ecb-windows-width 0.2)
  '(org-agenda-files (quote ("~/Personal/Planning/gtd.gtd")))
- '(rspec-spec-command "rspec")
+ '(rspec-spec-command "spec")
  '(rspec-use-rake-flag nil)
  '(rspec-use-rvm t)
  '(slime-net-coding-system (quote utf-8-unix)))

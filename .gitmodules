@@ -28,9 +28,6 @@
 [submodule "hideshow-org.git"]
   path = site-lisp/hideshow-org
   url = git://github.com/secelis/hideshow-org.git
-[submodule "mainline.git"]
-  path = site-lisp/magit
-  url = git://gitorious.org/magit/mainline.git
 [submodule "markdown-mode.git"]
   path = site-lisp/markdown-mode
   url = git://jblevins.org/git/markdown-mode.git
