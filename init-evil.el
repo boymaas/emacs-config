@@ -2,6 +2,8 @@
 (require 'evil)
 (evil-mode 1)
 
+(setq evil-shift-width 2)
+
 ;; use surround.vim but then for emacs ..
 (require 'surround)
 (global-surround-mode 1)
