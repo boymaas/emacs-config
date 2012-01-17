@@ -235,5 +235,34 @@
 ;; (backing-up policy)
 (run-at-time "00:59" 3600 'org-save-all-org-buffers)
 
+;; Publishing
+(setq org-publish-project-alist
+      '(("org-weblog"
+         ;; Path to your org files.
+         :base-directory "~/Sites/weblog/org/"
+         :base-extension "org"
+
+         ;; Path to your Jekyll project.
+         :publishing-directory "~/Sites/weblog/jekyll/"
+         :recursive t
+         :publishing-function org-publish-org-to-html
+         :headline-levels 4
+         :html-extension "markdown"
+         :body-only t)
+
+        ("org-static-weblog"
+          :base-directory "~/Sites/weblog/org/"
+          :base-extension "png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+          :publishing-directory "~/Sites/weblog/jekyll/attachments"
+          :recursive t
+          :publishing-function org-publish-attachment)
+
+        ("weblog" :components ("org-weblog"
+                               "org-static-weblog"))))
+
+;; strange thing this has to be set to nil otherwise
+;; export won't happen
+(setq org-export-copy-to-kill-ring nil)
+
 (provide 'init-org)
 

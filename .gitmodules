@@ -67,3 +67,6 @@
 [submodule "vimpulse.git"]
   path = site-lisp/vimpulse
   url = git://git.assembla.com/vimpulse.git
+[submodule "site-lisp/twittering-mode"]
+	path = site-lisp/twittering-mode
+	url = https://github.com/hayamiz/twittering-mode.git
