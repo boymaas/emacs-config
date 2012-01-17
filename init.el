@@ -80,7 +80,7 @@
 ;;----------------------------------------------------------------------------
 ;; Enable frequently used functionality
 ;;----------------------------------------------------------------------------
-(module-enable-ecb)
+;(module-enable-ecb)
 (module-enable-ruby)
 (module-enable-rails)
 (module-enable-rinari)
@@ -106,7 +106,7 @@
 ;; ----------------------------------------------------------------------------
 ;; Let's not forget our looks
 ;; ----------------------------------------------------------------------------
-(module-enable-colorthemes)
+;(module-enable-colorthemes)
 (module-enable-maxframe)
 
 ;; ----------------------------------------------------------------------------
