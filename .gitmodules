@@ -28,9 +28,6 @@
 [submodule "hideshow-org.git"]
   path = site-lisp/hideshow-org
   url = git://github.com/secelis/hideshow-org.git
-[submodule "mainline.git"]
-  path = site-lisp/magit
-  url = git://gitorious.org/magit/mainline.git
 [submodule "markdown-mode.git"]
   path = site-lisp/markdown-mode
   url = git://jblevins.org/git/markdown-mode.git
@@ -70,3 +67,6 @@
 [submodule "site-lisp/twittering-mode"]
 	path = site-lisp/twittering-mode
 	url = https://github.com/hayamiz/twittering-mode.git
+[submodule "site-lisp/magit"]
+	path = site-lisp/magit
+	url = https://github.com/magit/magit.git

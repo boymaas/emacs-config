@@ -1,6 +1,10 @@
-(require 'rails-autoload)
+(defsubmodule rails-reloaded
+	(require 'rails-autoload))
 
+;; rinari-mode-prefixes should be defined after rails-autoload ... since
+;; it overrides
 (defsubmodule rinari
+	(setq rinari-minor-mode-prefixes (list "/")) 
   (require 'rinari)
   (dolist (hook '(nxml-mode-hook haml-mode-hook sass-mode-hook magit-mode-hook))
     (add-hook hook (lambda () (rinari-launch)))))

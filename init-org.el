@@ -61,7 +61,7 @@
 ;; Don't clock out when moving task to a done state
 (setq org-clock-out-when-done nil)
 ;; Save the running clock and all clock history when exiting Emacs, load it on startup
-(setq org-clock-persist t)
+(setq org-clock-persist 'history)
 
 ;; org-checklist functionality
 (eval-after-load "org"

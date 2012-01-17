@@ -2109,10 +2109,12 @@ for \\[find-tag] (which see)."
 (defun tags-activate (&optional other-window-p)
   "Get the 'action from the properties and do it."
   (interactive)
-  (let ((action nil))
+  (let ((action nil)
+				(tagsbuffer (current-buffer)))
     (beginning-of-line)
     (setq action (get-text-property (point) 'action))
-    (funcall action other-window-p)))
+    (funcall action other-window-p)
+		(kill-buffer tagsbuffer)))
   
 
 ;;;###autoload
