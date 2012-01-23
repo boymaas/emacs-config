@@ -16,8 +16,8 @@
 ;;----------------------------------------------------------------------------
 ;; Navigate window layouts with "C-c <left>" and "C-c <right>"
 ;;----------------------------------------------------------------------------
-(winner-mode 1)
-(windmove-default-keybindings 'shift)
+;(winner-mode 1)
+;(windmove-default-keybindings (kbd "C-w"))
 
 ;;----------------------------------------------------------------------------
 ;; Make yes-or-no questions answerable with 'y' or 'n'

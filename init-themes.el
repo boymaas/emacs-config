@@ -5,11 +5,14 @@
 
 (require 'color-theme)
 (require 'color-theme-tango-2)
+(require 'color-theme-solarized)
 ;(require 'color-theme-autoloads)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-tango-2)))
+;; (eval-after-load "color-theme"
+;;   '(progn
+;;      (color-theme-tango-2)))
 
+(color-theme-solarized-dark)
+;; (color-theme-tango-2)
 ;; (color-theme-pierson) ; Light, favourite
 ;; (color-theme-high-contrast)
 ;; (color-theme-snowish)
